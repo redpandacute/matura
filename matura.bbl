@@ -1,4 +1,24 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{volley}
+Android.
+\newblock \emph{Volley overview}.
+\newblock \url{https://developer.android.com/training/volley/}, 2018.
+\newblock Abgerufen am: 07.05.18.
+
+\bibitem{ERM}
+M.~Begerow.
+\newblock \emph{Entity-Relationship-Modell (ER-Modell / ERM)}.
+\newblock
+  \url{http://www.datenbanken-verstehen.de/datenmodellierung/entity-relationship-modell//}.
+\newblock Abgerufen am: 03.05.18.
+
+\bibitem{android}
+J.~Callaham.
+\newblock \emph{The history of Android OS: its name, origin and more}.
+\newblock
+  \url{https://www.androidauthority.com/history-android-os-name-789433/}, 2018.
+\newblock Abgerufen am: 06.05.18.
 
 \bibitem{fachadmin.de:ServerClient}
 fachadmin.de.
@@ -6,12 +26,64 @@ fachadmin.de.
 \newblock
   \url{https://www.fachadmin.de/index.php?title=Client-Server_Prinzip&oldid=3425},
   2011.
-\newblock Abgerufen am: 01.03.12.
+\newblock Abgerufen am: 01.05.18.
+
+\bibitem{FirebaseRTDB}
+Firebase.
+\newblock \emph{Firebase Realtime Database}.
+\newblock \url{https://firebase.google.com/docs/database/}, 2018.
+\newblock Abgerufen am: 05.05.18.
+
+\bibitem{ERM2}
+U.~Göttingen.
+\newblock \emph{Datenmodellierung mit dem Entity Relationship-Modell}.
+\newblock
+  \url{http://www.winfoline.uni-goettingen.de/gast/eas/html/text/5/2/text_3.htm}.
+\newblock Abgerufen am: 03.05.18.
+
+\bibitem{JSON}
+json.org.
+\newblock \emph{Introducing JSON}.
+\newblock \url{https://www.json.org/json-de.html}.
+\newblock Abgerufen am: 03.05.18.
 
 \bibitem{IT-Handbuch}
 S.~Kersken.
 \newblock {\em IT-Handbuch für Fachinformatiker}, volume 8., aktualisierte
   Auflage.
 \newblock Rheinwerk Verlag GmbH, 2017.
+
+\bibitem{PHP}
+php.net.
+\newblock \emph{What is PHP?}
+\newblock \url{http://php.net/manual/de/intro-whatis.php}.
+\newblock Abgerufen am: 03.05.18.
+
+\bibitem{Firebase}
+R.~S.
+\newblock \emph{Introduction to Firebase}.
+\newblock \url{https://hackernoon.com/introduction-to-firebase-218a23186cd7}.
+\newblock Abgerufen am: 05.05.18.
+
+\bibitem{tecmint.com}
+tecmint.com.
+\newblock \emph{MySQL and MariaDB}.
+\newblock
+  \url{https://www.tecmint.com/the-story-behind-acquisition-of-mysql-and-the-rise-of-mariadb/},
+  2017.
+\newblock Abgerufen am: 03.05.18.
+
+\bibitem{PHP:function}
+A.-A.-G. Völkermarkt.
+\newblock \emph{Wie funktioniert PHP?}
+\newblock
+  \url{http://www.gym1.at/schulinformatik/aus-fortbildung/fachdidaktik/vo-01/php/wie_funktioniert_php.htm}.
+\newblock Abgerufen am: 03.05.18.
+
+\bibitem{RealtimeDatabase}
+W.~Wingerath.
+\newblock \emph{Real-Time Databases Explained}.
+\newblock \url{https://www.youtube.com/watch?v=HiQgQ88AdYo}.
+\newblock Abgerufen am: 05.05.18.
 
 \end{thebibliography}

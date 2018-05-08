@@ -10,24 +10,29 @@
 \contentsline {section}{\numberline {4.1}System\IeC {\"u}berblick}{6}{section.4.1}
 \contentsline {section}{\numberline {4.2}Datenbank Server}{6}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}MySQL Datenbank}{7}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}PHP Skripte}{8}{subsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.2.1}Login}{8}{subsubsection.4.2.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2.2}Registrierung}{8}{subsubsection.4.2.2.2}
-\contentsline {subsubsection}{\numberline {4.2.2.3}\IeC {\"A}nderungen via Einstellungen vom Client}{8}{subsubsection.4.2.2.3}
-\contentsline {subsubsection}{\numberline {4.2.2.4}Suchanfrage}{9}{subsubsection.4.2.2.4}
-\contentsline {section}{\numberline {4.3}Firebase Realtime Server}{9}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Firebase}{9}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Firebasestruktur}{9}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Client}{9}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Programmiersprache}{9}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Architektur des Clients}{9}{subsection.4.4.2}
-\contentsline {subsubsection}{\numberline {4.4.2.1}Klassen\IeC {\"u}bersicht}{9}{subsubsection.4.4.2.1}
-\contentsline {subsection}{\numberline {4.4.3}Module}{9}{subsection.4.4.3}
-\contentsline {subsubsection}{\numberline {4.4.3.1}Login Activity}{9}{subsubsection.4.4.3.1}
-\contentsline {subsubsection}{\numberline {4.4.3.2}Register Activity}{9}{subsubsection.4.4.3.2}
-\contentsline {subsubsection}{\numberline {4.4.3.3}Mainpage Activity}{9}{subsubsection.4.4.3.3}
-\contentsline {subsubsection}{\numberline {4.4.3.4}Settings Activity}{10}{subsubsection.4.4.3.4}
-\contentsline {subsubsection}{\numberline {4.4.3.5}Filter Activity}{10}{subsubsection.4.4.3.5}
-\contentsline {subsubsection}{\numberline {4.4.3.6}Searchresults Activty}{10}{subsubsection.4.4.3.6}
-\contentsline {subsubsection}{\numberline {4.4.3.7}Userprofile Activty}{10}{subsubsection.4.4.3.7}
-\contentsline {subsubsection}{\numberline {4.4.3.8}Chat Activity}{10}{subsubsection.4.4.3.8}
+\contentsline {subsection}{\numberline {4.2.2}MySQL Datenbankstruktur}{7}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}PHP Skripte}{10}{subsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Login}{10}{subsubsection.4.2.3.1}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Registrierung}{11}{subsubsection.4.2.3.2}
+\contentsline {subsubsection}{\numberline {4.2.3.3}\IeC {\"A}nderungen via Einstellungen vom Client}{12}{subsubsection.4.2.3.3}
+\contentsline {subsubsection}{\numberline {4.2.3.4}Suchanfrage}{13}{subsubsection.4.2.3.4}
+\contentsline {section}{\numberline {4.3}Firebase}{14}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Firebase Realtime Datenbank}{14}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Firebasestruktur}{15}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Warum genau diese Struktur?}{15}{subsubsection.4.3.2.1}
+\contentsline {section}{\numberline {4.4}Client}{16}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Programmiersprache}{16}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Architektur des Clients}{17}{subsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.2.1}Klassen\IeC {\"u}bersicht}{17}{subsubsection.4.4.2.1}
+\contentsline {paragraph}{Die Request Klassen}{17}{section*.2}
+\contentsline {paragraph}{Die Adapter Klassen}{17}{section*.3}
+\contentsline {paragraph}{Die userInfo und JSONtoInfo Klasse}{17}{section*.4}
+\contentsline {subsection}{\numberline {4.4.3}Module}{18}{subsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.3.1}Login Activity}{18}{subsubsection.4.4.3.1}
+\contentsline {subsubsection}{\numberline {4.4.3.2}Register Activity}{19}{subsubsection.4.4.3.2}
+\contentsline {subsubsection}{\numberline {4.4.3.3}Mainpage Activity}{19}{subsubsection.4.4.3.3}
+\contentsline {subsubsection}{\numberline {4.4.3.4}Settings Activity}{19}{subsubsection.4.4.3.4}
+\contentsline {subsubsection}{\numberline {4.4.3.5}Filter Activity}{19}{subsubsection.4.4.3.5}
+\contentsline {subsubsection}{\numberline {4.4.3.6}Searchresults Activty}{19}{subsubsection.4.4.3.6}
+\contentsline {subsubsection}{\numberline {4.4.3.7}Userprofile Activty}{20}{subsubsection.4.4.3.7}
+\contentsline {subsubsection}{\numberline {4.4.3.8}Chat Activity}{20}{subsubsection.4.4.3.8}
