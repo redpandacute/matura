@@ -6,33 +6,34 @@
 \contentsline {section}{\numberline {2.1}Zielsetzung}{4}{section.2.1}
 \contentsline {chapter}{\numberline {3}Konzeptionelle Grundlagen}{5}{chapter.3}
 \contentsline {section}{\numberline {3.1}Client-Server Prinzip}{5}{section.3.1}
-\contentsline {chapter}{\numberline {4}Projektentwicklung}{6}{chapter.4}
-\contentsline {section}{\numberline {4.1}System\IeC {\"u}berblick}{6}{section.4.1}
-\contentsline {section}{\numberline {4.2}Datenbank Server}{6}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}MySQL Datenbank}{7}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}MySQL Datenbankstruktur}{7}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}PHP Skripte}{10}{subsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.3.1}Login}{10}{subsubsection.4.2.3.1}
-\contentsline {subsubsection}{\numberline {4.2.3.2}Registrierung}{11}{subsubsection.4.2.3.2}
-\contentsline {subsubsection}{\numberline {4.2.3.3}\IeC {\"A}nderungen via Einstellungen vom Client}{12}{subsubsection.4.2.3.3}
-\contentsline {subsubsection}{\numberline {4.2.3.4}Suchanfrage}{13}{subsubsection.4.2.3.4}
-\contentsline {section}{\numberline {4.3}Firebase}{14}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Firebase Realtime Datenbank}{14}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Firebasestruktur}{15}{subsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.2.1}Warum genau diese Struktur?}{15}{subsubsection.4.3.2.1}
-\contentsline {section}{\numberline {4.4}Client}{16}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Programmiersprache}{16}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Architektur des Clients}{17}{subsection.4.4.2}
-\contentsline {subsubsection}{\numberline {4.4.2.1}Klassen\IeC {\"u}bersicht}{17}{subsubsection.4.4.2.1}
-\contentsline {paragraph}{Die Request Klassen}{17}{section*.2}
-\contentsline {paragraph}{Die Adapter Klassen}{17}{section*.3}
-\contentsline {paragraph}{Die userInfo und JSONtoInfo Klasse}{17}{section*.4}
-\contentsline {subsection}{\numberline {4.4.3}Module}{18}{subsection.4.4.3}
-\contentsline {subsubsection}{\numberline {4.4.3.1}Login Activity}{18}{subsubsection.4.4.3.1}
-\contentsline {subsubsection}{\numberline {4.4.3.2}Register Activity}{19}{subsubsection.4.4.3.2}
-\contentsline {subsubsection}{\numberline {4.4.3.3}Mainpage Activity}{19}{subsubsection.4.4.3.3}
-\contentsline {subsubsection}{\numberline {4.4.3.4}Settings Activity}{19}{subsubsection.4.4.3.4}
-\contentsline {subsubsection}{\numberline {4.4.3.5}Filter Activity}{19}{subsubsection.4.4.3.5}
-\contentsline {subsubsection}{\numberline {4.4.3.6}Searchresults Activty}{19}{subsubsection.4.4.3.6}
-\contentsline {subsubsection}{\numberline {4.4.3.7}Userprofile Activty}{20}{subsubsection.4.4.3.7}
-\contentsline {subsubsection}{\numberline {4.4.3.8}Chat Activity}{20}{subsubsection.4.4.3.8}
+\contentsline {section}{\numberline {3.2}Das Modell-View-Presenter Konzept (Passive View)}{5}{section.3.2}
+\contentsline {chapter}{\numberline {4}Projektentwicklung}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}System\IeC {\"u}berblick}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2}Datenbank Server}{7}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}MySQL Datenbank}{8}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}MySQL Datenbankstruktur}{9}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}PHP Skripte}{11}{subsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Login}{12}{subsubsection.4.2.3.1}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Registrierung}{13}{subsubsection.4.2.3.2}
+\contentsline {subsubsection}{\numberline {4.2.3.3}\IeC {\"A}nderungen via Einstellungen vom Client}{14}{subsubsection.4.2.3.3}
+\contentsline {subsubsection}{\numberline {4.2.3.4}Suchanfrage}{14}{subsubsection.4.2.3.4}
+\contentsline {section}{\numberline {4.3}Firebase}{15}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Firebase Realtime Datenbank}{16}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Firebasestruktur}{17}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Warum genau diese Struktur?}{17}{subsubsection.4.3.2.1}
+\contentsline {section}{\numberline {4.4}Client}{18}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Programmiersprache}{18}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Architektur des Clients}{18}{subsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.2.1}Klassen\IeC {\"u}bersicht}{19}{subsubsection.4.4.2.1}
+\contentsline {paragraph}{Die Request Klassen}{19}{section*.2}
+\contentsline {paragraph}{Die Adapter Klassen}{19}{section*.3}
+\contentsline {paragraph}{Die userInfo und JSONtoInfo Klasse}{19}{section*.4}
+\contentsline {subsection}{\numberline {4.4.3}Module}{20}{subsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.3.1}Login Activity}{20}{subsubsection.4.4.3.1}
+\contentsline {subsubsection}{\numberline {4.4.3.2}Register Activity}{20}{subsubsection.4.4.3.2}
+\contentsline {subsubsection}{\numberline {4.4.3.3}Mainpage Activity}{21}{subsubsection.4.4.3.3}
+\contentsline {subsubsection}{\numberline {4.4.3.4}Settings Activity}{22}{subsubsection.4.4.3.4}
+\contentsline {subsubsection}{\numberline {4.4.3.5}Filter Activity}{22}{subsubsection.4.4.3.5}
+\contentsline {subsubsection}{\numberline {4.4.3.6}Searchresults Activty}{23}{subsubsection.4.4.3.6}
+\contentsline {subsubsection}{\numberline {4.4.3.7}Userprofile Activty}{23}{subsubsection.4.4.3.7}
+\contentsline {subsubsection}{\numberline {4.4.3.8}Chat Activity}{24}{subsubsection.4.4.3.8}

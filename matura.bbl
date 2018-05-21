@@ -6,6 +6,14 @@ Android.
 \newblock \url{https://developer.android.com/training/volley/}, 2018.
 \newblock Abgerufen am: 07.05.18.
 
+\bibitem{mvp}
+U.~Author.
+\newblock \emph{Presentation Patterns : MVC, MVP, PM, MVVM}.
+\newblock
+  \url{https://manojjaggavarapu.wordpress.com/2012/05/02/presentation-patterns-mvc-mvp-pm-mvvm/},
+  2012.
+\newblock Abgerufen am: 10.05.18.
+
 \bibitem{ERM}
 M.~Begerow.
 \newblock \emph{Entity-Relationship-Modell (ER-Modell / ERM)}.
@@ -18,7 +26,7 @@ J.~Callaham.
 \newblock \emph{The history of Android OS: its name, origin and more}.
 \newblock
   \url{https://www.androidauthority.com/history-android-os-name-789433/}, 2018.
-\newblock Abgerufen am: 06.05.18.
+\newblock Abgerufen am: 07.05.18.
 
 \bibitem{fachadmin.de:ServerClient}
 fachadmin.de.
