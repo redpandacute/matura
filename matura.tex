@@ -66,9 +66,21 @@
 		Wichtig bei dem MVP Konzept mit einem passiven View ist es, dass nur der Presenter die Möglichkeit hat, auf die beiden anderen Komponenten zuzugreifen. Der View und das Model sollen unter keinen Umständen direkt miteinander kommunizieren. Sämtlicher benötigter Informationsaustausch soll stets vom Presenter kontrolliert werden.\cite{mvp} Ein grosser Vorteil einer nach diesen Regeln entwickelter Applikation ist, dass die einzelnen Komponenten weitgehend unabhängig von einander sind. Somit kann zum Beispiel der View komplett neu gestaltet werden, ohne dass der Presenter oder das Modell geändert werden müssen, damit die Applikation weiterhin funktioniert.
 		
 		%TODO BILD VON MVP MODELL
+		
+	\chapter{Die Entwickelte Applikation}
+	Die im Rahmen dieser Arbeit entwickelte Applikation wurde für Mobiltelefone mit einer Version des Betriebssystems Android entwickelt. Sie kann darauf installiert und anschliessend ausgeführt werden. Für den Gebrauch der Applikation ist einzig eine Verbindung zum Internet notwendig.
+	
+	\section{Features}
+	Damit die Applikation auch die aufgegebenen Aufgaben erfüllen kann, besitzt sie eine Reihe von Features von welchen Benutzer/Benutzerinnen Gebrauch machen können.
+	
+	\begin{itemize}
+		\item Das \emph{Account-Feature}: Die Applikation bietet den Benutzern/Benutzerinnen die Möglichkeit, sich einen persönlichen Account zu erstellen und ihn zu Personalisieren. Es ist ihnen möglich, auf ihrem Profil ihren Namen, ihre besuchte Schule und ihr Geburtsjahr anzugeben. Weiter können sie auch noch eine kurze Beschreibung von sich selber schreiben und sie haben die Möglichkeit, falls sie selber Nachhilfe anbieten wollen, Fächer auszuwählen, in welchen sie das tun möchten. Das Profil selber ist für andere Benutzer/Benutzerinnen einsehbar. Die meisten Accountdetails können über die Applikation auch noch nach der Registrierung jederzeit bearbeitet werden.
+		\item Das \emph{Such-Feature}: Es ist registrierten Benutzern/Benutzerinnen möglich, über eine Suchfunktion nach anderen registrierten Benutzern zu suchen. Dabei kann nach bestimmten Namen gesucht werden oder nach ausgewählten Fächern. Die gefundenen Profile der verschiedenen Benutzern/Benutzerinnen können anschliessend angesehen werden.
+		\item Das \emph{Chat-Feature}: Sollte der Benutzer/die Benutzerin einen anderen Benutzer oder Benutzerin gefunden haben, mit welchem/welcher er/sie kontakt aufnehmen möchte, so kann eine Chat via das Gefundene Profil geöffnet werden. Darin können dann in Echtzeit miteinander kurze Textnachrichten ausgetauscht werden. Sollte ein Chat geöffnet sein, können sowohl Sender/Senderin sowie Empfänger/Empfängerin ganz einfach von ihrem eigenen Profil auf ihn zugreifen.
+	\end{itemize}
 	
 	%Projektentwicklung
-	\chapter{Projektentwicklung}
+	\chapter{Applikationskomponenten}
 	In diesem Kapitel wird auf die entwickelte Applikation eingegangen. Die einzelnen in der Applikation verwendeten Elemente sollen erklärt werden und ihre Rolle in der entwickelten Applikation ersichtlich werden.
 		\section{Systemüberblick}
 		Die Applikation wurde nach dem Client-Server Prinzip entworfen und entspricht weitgehend dem MVP Konzept (siehe Kapitel \ref{konzepte}). Der Presenter und die View finden sich beide auf Seiten des Clients (siehe Kapitel \ref{client}) während das Model sich in Form der beiden Server wiederfindet (siehe Kapitel \ref{server} und \ref{fb}).
