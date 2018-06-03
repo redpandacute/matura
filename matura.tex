@@ -5,10 +5,13 @@
 
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[export]{adjustbox}[2011/08/13]
+\usepackage{minted}
 %Linux
 %\usepackage[latin1]{inputenc}
 \usepackage{blindtext}
 \usepackage{graphicx}
+%\usepackage{xcolor}
 
 %minimale page header & footer
 \usepackage{fancyhdr}
@@ -67,27 +70,30 @@
 		
 		%TODO BILD VON MVP MODELL
 		
-	\chapter{Die Entwickelte Applikation}
-	Die im Rahmen dieser Arbeit entwickelte Applikation wurde für Mobiltelefone mit einer Version des Betriebssystems Android entwickelt. Sie kann darauf installiert und anschliessend ausgeführt werden. Für den Gebrauch der Applikation ist einzig eine Verbindung zum Internet notwendig.
+	\chapter{Die entwickelte Applikation}
+	Die im Rahmen dieser Arbeit entwickelte Applikation wurde für Mobiltelefone mit einer Version des Betriebssystems Android entwickelt. Sie kann darauf installiert und anschliessend ausgeführt werden. Für den Gebrauch der Applikation ist eine Verbindung zum Internet notwendig.
 	
 	\section{Features}
 	Damit die Applikation auch die aufgegebenen Aufgaben erfüllen kann, besitzt sie eine Reihe von Features von welchen Benutzer/Benutzerinnen Gebrauch machen können.
 	
 	\begin{itemize}
-		\item Das \emph{Account-Feature}: Die Applikation bietet den Benutzern/Benutzerinnen die Möglichkeit, sich einen persönlichen Account zu erstellen und ihn zu Personalisieren. Es ist ihnen möglich, auf ihrem Profil ihren Namen, ihre besuchte Schule und ihr Geburtsjahr anzugeben. Weiter können sie auch noch eine kurze Beschreibung von sich selber schreiben und sie haben die Möglichkeit, falls sie selber Nachhilfe anbieten wollen, Fächer auszuwählen, in welchen sie das tun möchten. Das Profil selber ist für andere Benutzer/Benutzerinnen einsehbar. Die meisten Accountdetails können über die Applikation auch noch nach der Registrierung jederzeit bearbeitet werden.
-		\item Das \emph{Such-Feature}: Es ist registrierten Benutzern/Benutzerinnen möglich, über eine Suchfunktion nach anderen registrierten Benutzern zu suchen. Dabei kann nach bestimmten Namen gesucht werden oder nach ausgewählten Fächern. Die gefundenen Profile der verschiedenen Benutzern/Benutzerinnen können anschliessend angesehen werden.
-		\item Das \emph{Chat-Feature}: Sollte der Benutzer/die Benutzerin einen anderen Benutzer oder Benutzerin gefunden haben, mit welchem/welcher er/sie kontakt aufnehmen möchte, so kann eine Chat via das Gefundene Profil geöffnet werden. Darin können dann in Echtzeit miteinander kurze Textnachrichten ausgetauscht werden. Sollte ein Chat geöffnet sein, können sowohl Sender/Senderin sowie Empfänger/Empfängerin ganz einfach von ihrem eigenen Profil auf ihn zugreifen.
+		\item Das \emph{Account-Feature}: Die Applikation bietet den Benutzern/Benutzerinnen die Möglichkeit, sich einen persönlichen Account zu erstellen und ihn zu personalisieren. Es ist ihnen möglich, auf ihrem Profil ihren Namen, ihre besuchte Schule und ihr Geburtsjahr anzugeben. Weiter können sie auch eine kurze Beschreibung von sich selber schreiben und sie haben die Möglichkeit, falls sie selber Nachhilfe anbieten wollen, Fächer auszuwählen, in welchen sie das tun möchten. Das Profil selber ist für andere Benutzer/Benutzerinnen einsehbar. Die meisten Accountdetails können über die Applikation auch noch nach der Registrierung bearbeitet werden.
+		\item Das \emph{Such-Feature}: Es ist registrierten Benutzern/Benutzerinnen möglich, über eine Suchfunktion nach anderen registrierten Benutzern/Benutzerinnen zu suchen. Dabei kann nach dem Namen oder nach ausgewählten Fächern gesucht werden. Die gefundenen Profile der verschiedenen Benutzern/Benutzerinnen können anschliessend angesehen werden.
+		\item Das \emph{Chat-Feature}: Sollte der Benutzer/die Benutzerin einen anderen Benutzer oder Benutzerin gefunden haben, mit welchem/welcher er/sie Kontakt aufnehmen möchte, so kann ein neuer Chat via das gefundene Profil geöffnet werden. Darin können Benutzer/Benutzerinnen in Echtzeit kurze Textnachrichten miteinander austauschen. Sollte ein Chat geöffnet sein, kann sowohl der Sender/die Senderin wie auch der Empfänger/die Empfängerin ganz einfach von ihrem eigenen Profil auf ihn zugreifen.
 	\end{itemize}
+
+	\section{Benutzung}%TODO PROFILBILD WIRD HIER VORAUSGESTEZT + SCREENSHOT VON MAINPAGE, CHAT, SUCHE, PROFIL, LOGIN UND REGISTER
+	Wenn die Applikation auf dem Mobilgerät ausgeführt wird, öffnet sich der Login-Screen (siehe Abbildung \ref{}). Der Benutzer/Die Benutzerin kann sich nun hier, sollte er/sie bereits einen Account besitzen, mit seinem/ihrem Benutzernamen und Passwort einloggen. Sollte die Person noch keinen Account besitzen, kann sie über einen Schriftzug unterhalb der Logindaten zu einem Registrierungsformular gelangen (siehe Abbildung \ref{}). Im Registrierungsformular wird nach sämtlichen Daten gefragt, die benötigt werden, um einen Account zu erstellen. Dazu gehört ein Benutzername, Vor- und Nachname, eine E-Mail Adresse, ein Passwort, ein Geburtsdatum sowie die momentan besuchte Schule. Ist die Registrierung erfolgreich, kann der Benutzer/die Benutzerin ab sofort sich in seinen/ihren neuen Account einloggen. Nach dem erfolgreichem Einloggen öffnet sich die Hauptseite der Applikation. Sie besteht hauptsächlich aus dem Profil des Benutzers/der Benutzerin (siehe Abbildung \ref{}). Standardmässig findet sich hier ein Profilbild, der Name des Benutzers/der Benutzerin, sein/ihre Geburtsjahr und die besuchte Schule. Weitere Angaben wie angebotene Fächer und eine Beschreibung können in den Einstellungen konfiguriert werden, welche über eine Schaltfläche in der oberen rechten Ecke erreicht werden können. Die ausgewählten Fächer werden in Form von Emblems auf dem Profil dargestellt. Ebenfalls auf der Hauptseite findet sich ein ausfahrbares \emph{BottomSheet} am unteren Ende des Bildschirms. Es kann über eine runde Schaltfläche in der Mitte oder ein einfaches Streichen nach oben ausgefahren werden. Im BottomSheet selber finden sich Einträge für alle offenen Chats des Benutzers/der Benutzerin(siehe Abbildung \ref{}). Über einen einfachen Klick können sie geöffnet werden. Neben dem BottomSheet findet sich ebenfalls im linken unteren Ende eine runde Schaltfläche mit einer Lupe. Über sie kann auf das Such-Feature zugegriffen werden und sie führt einen auf einen neuen Screen, auf welchem die Kriterien für die Suche definiert werden können (siehe Abbildung \ref{}). Hier könne Dinge wie Name und Fächer angegeben werden, nach welchen gesucht werden soll. Ist der Benutzer/die Benutzerin zufrieden mit den Einstellungen kann über eine Schaltfläche die Suche ausgeführt werden. Alle Suchergebnisse werden in Form einer Liste daraufhin im Client aufgeführt. Sollte den Benutzer/die Benutzerin Interesse an einem der Ergebnisse haben, kann durch einfaches Auswählen des Eintrags das Profil des/der gefundenen Benutzer/Benutzerin aufgerufen werden (siehe Abbildung \ref{}). Ist der Benutzer/die Benutzerin interessiert, Kontakt mit dem/der gefundenen Benutzer/Benutzerin aufzunehmen, kann über eine Schaltfläche auf dem Profil ein neuer Chat geöffnet werden (siehe Abbildung \ref{}). Dort können genauere Informationen über eine mögliche Zusammenarbeit ausgetauscht werden.
 	
 	%Projektentwicklung
 	\chapter{Applikationskomponenten}
-	In diesem Kapitel wird auf die entwickelte Applikation eingegangen. Die einzelnen in der Applikation verwendeten Elemente sollen erklärt werden und ihre Rolle in der entwickelten Applikation ersichtlich werden.
+	In diesem Kapitel wird verwendete Komponenten innerhalb der Applikation eingegangen. Die einzelnen Komponenten sollen erklärt werden und ihre Rolle in der entwickelten Applikation ersichtlich werden.
 		\section{Systemüberblick}
-		Die Applikation wurde nach dem Client-Server Prinzip entworfen und entspricht weitgehend dem MVP Konzept (siehe Kapitel \ref{konzepte}). Der Presenter und die View finden sich beide auf Seiten des Clients (siehe Kapitel \ref{client}) während das Model sich in Form der beiden Server wiederfindet (siehe Kapitel \ref{server} und \ref{fb}).
+		Die Applikation basiert auf dem Client-Server Prinzip. Der Client findet sich in Form der entwickelten Anwendung, die auf Mobiltelefonen von den Benutzern/Benutzerinnen installiert werden kann. Der Server wird von den beiden Datenbanken gebildet. Die Interaktionen der einzelnen Komponenten entsprechen weitgehend dem MVP Konzept (siehe Kapitel \ref{konzepte}). Der Presenter und die View finden sich beide auf Seiten des Clients (siehe Kapitel \ref{client}) während das Model sich in Form der beiden Server wiederfindet (siehe Kapitel \ref{server} und \ref{fb}).
 		
 		%Die Server
 			\section{Datenbank Server} \label{server}
-			Eine der wohl wichtigsten Aufgaben von Computern ist das Speichern, Verwalten und auch Manipulieren von Informationen. Anwendungen, die sich hauptsächlich mit dieser Aufgabe beschäftigen werden allgemein als \emph{Datanbanken} bezeichnet. Sie haben die Aufgabe, Informationen systematisch zu ordnen, zu speichern und bei Bedarf zu verändern. Grundsätzlich bezeichnet der Begriff Datenbank gleich zwei Dinge auf einmal. Zum einen wird ein strukturierter Speicher von Informationen als Datenbank bezeichnet und zum anderen jedoch auch die Anwendung, die das Verwalten der Daten überhaupt erst ermöglicht. Solche Anwendungen werden auch als \emph{Database Management System} (DBMS) bezeichnet und sind meist hochkomplex in ihren Funktionsweisen. \cite{IT-Handbuch}
+			Eine der wohl wichtigsten Aufgaben von Computern ist das Speichern, Verwalten und auch Manipulieren von Informationen. Anwendungen, die sich hauptsächlich mit dieser Aufgabe beschäftigen werden allgemein als \emph{Datenbanken} bezeichnet. Sie haben die Aufgabe, Informationen systematisch zu ordnen, zu speichern und bei Bedarf zu verändern. Grundsätzlich bezeichnet der Begriff Datenbank gleich zwei Dinge auf einmal. Zum einen wird ein strukturierter Speicher von Informationen als Datenbank bezeichnet und zum anderen jedoch auch die Anwendung, die das Verwalten der Daten überhaupt erst ermöglicht. Solche Anwendungen werden auch als \emph{Database Management System} (DBMS) bezeichnet und sind meist hochkomplex in ihren Funktionsweisen. \cite{IT-Handbuch}
 			
 			Datenbanken selbst wiederum können in  verschiedene Typen eingeteilt werden, die alle ihre eigenen Vor- und Nachteile mit sich bringen. Die einfachste Form eines Datenbanktyps ist wohl die \emph{Einzeltabellendatenbank}. Sie besteht aus nur einer Tabelle, in welcher alle Informationen abgespeichert werden. Sie eignet sich gut für kleine, übersichtliche Tabellenstrukturen wie zum Beispiel eine einfache Liste von Adressen. Die Einzeltabellendatenbank stösst jedoch spätestens dann an ihrer Grenzen, wenn die Informationen nicht mehr in nur einer, sondern gleich mehreren Tabellen gespeichert werden. Hier tritt ein anderer Datenbanktyp ins Spiel. Eine \emph{relationale Datenbank} ist in der Lage, verschiedene Tabellen logisch miteinander zu verknüpfen und sich darin zu orientieren. Diese logische Verknüpfung ist möglich aufgrund eindeutigen Eigenschaften eines Eintrags. Dies kann zum Beispiel eine Kundennummer oder ein Name sein. Ein solches Feld wird auch als ein \emph{Key} bezeichnet. Wichtig dabei ist, dass jeder Key nur einmal in einer Tabelle vorkommt, da ansonsten keine eindeutige Verknüpfungen möglich sind. Die Anwendung zur Verwaltung einer solchen relationalen Datenbank wird \emph{Relational Database Management System} (RDBMS) genannt. \cite[S. 745 - 751]{IT-Handbuch}
 
@@ -96,7 +102,7 @@
 				%TODO MySQL ODER MariaDB
 				Ein Beispiel für ein solches RDBMS ist die weit verbreitete MySQL Datenbank. Das System wurde ursprünglich von den drei Gründern Allan Larsson, Michael Widenius und David Axmark 1995 entwickelt, wurde später von \emph{Sun Microsytems} aufgekauft und gelangte schlussendlich in den Besitz des amerikanischen Softwareherstellers \emph{Oracle}. MySQL ist unter einem dualen Lizenzsystem eingetragen, sodass die Software zum einen unter einer \emph{General Public Licence} (GPL), aber auch unter eine proprietäre Lizenz gestellt ist. \cite{tecmint.com} Das MySQL System darf aufgrund der GPL gratis heruntergeladen, installiert und modifiziert werden.
 				
-				In Kombination mit der Programmiersprache PHP bildet sie eines der meist verwendeten Datenspeichersysteme für Webdienste aller Art. Im Falle eines solchen Webdienstes befindet sich die Datenbank meist auf einem zentralen Server, auf welchem sich ebenfalls die benötigten PHP-Skripte befinden. Die PHP-Skripte haben die Aufgabe, Abfragen von den Clients entgegenzunehmen und über sogenannte \emph{Queries} (Datenbank Abfragen) auf die Informationen in der Datenbank zuzugreifen. Im Falle einer MySQL Datenbank werden solche Queries in der Datenbanksprache \emph{SQL} formuliert. Queries können in vier Arten von Abfragen unterteilt werden: \cite[S. 760]{IT-Handbuch}
+				In Kombination mit der Programmiersprache PHP bildet sie eines der meist verwendeten Datenspeichersysteme für Webdienste aller Art. Im Falle eines solchen Webdienstes befindet sich die Datenbank meist auf einem zentralen Server, auf welchem sich ebenfalls die benötigten PHP-Skripte befinden. Die PHP-Skripte haben die Aufgabe, Abfragen von den Clients entgegenzunehmen und über sogenannte \emph{Queries} (Datenbank Abfragen) auf die Informationen in der Datenbank zuzugreifen. Im Falle einer MySQL Datenbank werden solche Queries in der Datenbanksprache \emph{SQL} (Structured Query Language) formuliert. Queries können in vier Arten von Abfragen unterteilt werden: \cite[S. 760]{IT-Handbuch}
 				
 				\begin{itemize}
 					\item Auswahlabfragen (\emph{Select Queries}) geben den Inhalt von einem oder mehreren Feldern aus einer oder verschiedenen Tabellen zurück. Dabei kann bei Bedarf nach Kriterien gefiltert werden, um die Suche nach bestimmten Datensätzen einzugrenzen.\cite[S. 746]{IT-Handbuch}
@@ -109,14 +115,14 @@
 				
 				\begin{figure}
 					\begin{center}
-						\includegraphics{user_archive.png}
+						\includegraphics[center]{user_archive.png}
 						\caption{Die user\_archive Tabelle, aufgenommen aus dem phpMyAdmin Interface}
 						\label{user_archive:PNG}
 					\end{center}
 				\end{figure}
 				\begin{figure}
 					\begin{center}
-						\includegraphics{user_subjects.png}
+						\includegraphics[center]{user_subjects.png}
 						\caption{Die user\_subjects Tabelle, aufgenommen aus dem phpMyAdmin Interface}
 						\label{user_subjects:PNG}
 					\end{center}
@@ -134,7 +140,9 @@
 
 				In der entwickelten Applikation wird genau ein solches MySQL Datanbanksystem in Kombination mit PHP (siehe Kapitel \ref{ssec:PHP}) benutzt. Die Datenbank wird verwendet, um die Accountdaten der einzelnen Benutzer zu speichern und den Clients zur Verfügung zu stellen. Sie befindet sich auf dem Schulserver vom Ergänzungsfach. Die Datenbank umfasst 2 Tabellen: die \emph{user\_archive} Tabelle und die \emph{user\_subjects} Tabelle. In der user\_archive Tabelle findet sich ein Eintrag für jeden registrierten Benutzer mit Informationen wie Benutzername, Passwort und Jahrgang (siehe Abbildung \ref{user_archive:PNG}). Die andere Tabelle beinhaltet Felder für alle von der entwickelten Applikation unterstützten Fächer (siehe Abbildung \ref{user_subjects:PNG}). Mithilfe der Werte 1 und 0 wird angegeben, in welchen Fächern ein Benutzer/eine Benutzerin Unterstützung anbietet. Die Struktur der Datenbank kann durch ein \emph{Entitiy-Relationship-Modell} (ERM) dargestellt werden. ERMs sollen visualisieren, in welcher Beziehung verschiedene Bestandteile von Datenstrukturen (\emph{Enities}) zu einander stehen. ERMs sind oftmals der erste Schritt wenn es um die Planung einer neuen Datenbank geht. Das ERM der im Rahmen dieser Arbeit benutzen Datenbank ist in Abbildung \ref{ERM} visualisiert. Die Verhältnisse werden im Schema (1, 1) geschrieben. Die erste Ziffer gibt die minimale Anzahl an herrschenden Beziehungen an, die zweite Ziffer die maximale Anzahl. Im Falle von (1, 1) Beziehungen bedeutet dies, dass es immer genau eine solche Beziehung geben darf und auch muss. Sind die Anzahl Beziehungen unlimitiert, steten anstelle der Ziffern stellvertretend die Variablen \emph{m} oder \emph{n}. Die Tabellen sind über den Key user\_id miteinander Verknüpfbar.\cite[S. 750]{IT-Handbuch} \cite{ERM} \cite{ERM2}
 				
-				Abbildungen von den beiden Tabellen findet sich in den Abbildungen \ref{user_archive:PNG} und \ref{user_subjects:PNG}. Im oberen Teil der Abbildungen sieht man die Konfiguration der einzelnen Felder. In der Spalte \emph{Field} ist der Name der Felder eingetragen. In der Spalte \emph{Type} wird der zugelassene Datentyp des Feldes definiert. Ist der Datentyp eine Form von Text, wird in der Spalte \emph{Collation} die Kodierung der Unicode-Zeichen angegeben. In der Spalte \emph{Extras} können noch eine Reihe von speziellen Eigenschaften den Feldern zugewiesen werden. Eine davon ist die im Feld \emph{user\_id} verwendete \emph{auto\_increment} Funktion. Sie führt dazu, dass neue Einträge in der Tabelle in diesem Feld automatisch durchnummeriert werden. Das Feld user\_id ist in beiden Tabellen als Key markiert. Das heisst, dass das die user\_id von der Datenbank zur eindeutigen Verknüpfung der beiden Tabellen benutzt werden soll. Ebenfalls zu erwähnen ist das Feld \emph{user\_username}. Es ist als \emph{unique} markiert, was heisst, dass es in der Tabelle keine identische Benutzernamen geben darf (siehe Kapitel \ref{login:php}). Im unteren Teil der Abbildung findet sich ein beispielhafter Ausschnitt, wie eine solche Tabelle Aussehen könnte.
+				Abbildungen von den beiden Tabellen findet sich in den Abbildungen \ref{user_archive:PNG} und \ref{user_subjects:PNG}. Im oberen Teil der Abbildungen sieht man die Konfiguration der einzelnen Felder. In der Spalte \emph{Field} ist der Name der Felder eingetragen. In der Spalte \emph{Type} wird der zugelassene Datentyp des Feldes definiert. Ist der Datentyp eine Form von Text, wird in der Spalte \emph{Collation} die Kodierung der Unicode-Zeichen angegeben. In der Spalte \emph{Extras} können noch eine Reihe von speziellen Eigenschaften den Feldern zugewiesen werden. Eine davon ist die im Feld \emph{user\_id} verwendete \emph{auto\_increment} Funktion. Sie führt dazu, dass neue Einträge in der Tabelle in diesem Feld automatisch durchnummeriert werden. Das Feld user\_id ist in beiden Tabellen als Key markiert. Das heisst, dass das die user\_id von der Datenbank zur eindeutigen Verknüpfung der beiden Tabellen benutzt werden soll. Ebenfalls zu erwähnen ist das Feld \emph{user\_username}. Es ist als \emph{unique} markiert, was heisst, dass es in der Tabelle keine identische Benutzernamen geben darf (siehe Kapitel \ref{login:php}). 
+				
+				Im unteren Teil der Abbildungen findet sich ein beispielhafter Ausschnitt, wie eine solche Tabelle mit ausgefüllten Feldern Aussehen könnte.
 				%TODO GLOSSAR OBJEKTORIENTIERT
 				\subsection{PHP Skripte} \label{ssec:PHP}
 				Nebst dem Datenbanksystem selbst befinden sich ebenfalls diverse PHP Skripte auf dem Server. Sie sind in der Open-Source Skriptsprache PHP geschrieben. PHP ist ein rekursives Akronym für \emph{Hypertext Preprocessor} und ist eine speziell für die Webprogrammierung entwickelte Programmiersprache, welche zu den objektorientierten Programmiersprachen gehört. PHP wird hauptsächlich für die Programmierung innerhalb von Webservern verwendet und bietet den grossen Vorteil, dass Clientbenutzer zwar durchaus die Skripte auf dem Server ausführen, jedoch nicht ansehen können. Sie erhalten lediglich eine Antwort ohne je die Codestruktur des PHP Skriptes zu Gesicht bekommen zu haben.\cite{PHP} Dies ist möglich, da der PHP-Code ausschliesslich serverseitig ausgeführt wird. Ein \emph{Interpreter} führt ihn auf dem Server aus und erst die vom Interpreter generierte Ausgabe wird dem Client als Antwort zugeschickt. Die Antwort ist meist in der Auszeichnungssprache HTML (\emph{Hypertext Markup Language}) verfasst, können jedoch durchaus auch in PDF, JavaScript, JSON oder sogar Bildformaten sein.\cite{PHP:function} Die Website \emph{json.org} (\cite{JSON}) beschreibt JSON wie folgt:
@@ -148,47 +156,59 @@
 				
 				%TODO: MB POST ERWÄHNEN BEI ENTGEGENGENOMMENEN BENTZERNAME UND PASSWORT
 					\subsubsection{Login}\label{login:php}
-					Damit ein Client Zugriff auf einen Datensatz in der Datenbank bekommt, muss sich der Benutzer/ die Benutzerin zuerst unter einem bestehenden Account einloggen. Dabei wird auf dem Client Benutzername (Username) und Passwort eingegeben (siehe Kapitel \ref{login:act}). Daraufhin ruft der Client das Skript \emph{login.php} via Webadresse auf und übergibt ihm Benutzername und Passwort. Das aufgerufene Loginskript erstellt eine Verbindung zur lokalen MySQL Datenbank. Als nächstes wird versucht einen Eintrag in der user\_archive Tabelle zu finden, bei welchem die Felder user\_username und user\_password mit den empfangenen Werten übereinstimmen. Dies wird über ein sogenanntes \emph{MySQL Statement} getan. In diesem Statement wird in der Datenbank nachgefragt, ob es einen Eintrag mit den bestimmten Angaben gibt (Select Query).
-					\begin{quotation}
-						{\fontfamily{qcr}\selectfont\noindent 'SELECT * FROM user\_archive WHERE user\_username=? AND user\_password=?'}
-					\end{quotation}
-				
-					%TODO REWRITE AND SIMPLIFY
-					%Wenn die Suche erfolgreich ist, wird auf das Statement mit dem Inhalt eines Datensatzes geantwortet, welcher dann vom PHP Skript wiederum lokalen Variablen zugewiesen wird. Nun ist auch die user\_id des Benutzers bekannt und es kann über ein zweites Statement den entsprechenden Datensatz aus der user\_subjects Tabelle ausgelesen werden. Wieder werden zurückgegebenen Werte in lokalen Variablen gespeichert. Die Werte aller gespeicherten Variablen werden nun in ein Array mit dem Namen \emph{response} übertragen und ihnen wird jeweils einen \emph{Key} (Zeichen, unter welchem der Wert im Array gespeichert ist) zugewiesen. Ebenfalls wird eine zusätzliche Variable unter dem Key \url{success} mit dem Wert \url{true} in den Array gespeichert. Die Variable \url{success} Teilt dem Client mit, dass die Anfrage erfolgreich war. Ist jedoch die Suche nach einem registrierten Benutzer mit eingegebenen Daten in der Datenbank erfolglos, verfasst das PHP Skript ein JSON Datei mit der Variable \url{response["success"] = false} und fügt keine weiteren Daten mehr an. Schlussendlich wird der Antwortarray mit den gespeicherten Daten in einem JSON Format gespeichert und das erstellte JSON File wird an den Client zurückgeschickt. Damit es beim Login zu keinen Mehrdeutigkeiten kommt ist es von Wichtigkeit, dass jeder Benutzername nur einmal in der Tabelle vorkommt (siehe Kapitel \ref{databankstructure}).
+					Damit ein Client Zugriff auf einen Datensatz in der Datenbank bekommt, muss sich der Benutzer/ die Benutzerin zuerst unter einem bestehenden Account einloggen. Dabei wird auf dem Client Benutzername (Username) und Passwort eingegeben (siehe Kapitel \ref{login:act}). Daraufhin ruft der Client das Skript \emph{login.php} via Webadresse auf und übergibt ihm Benutzername und Passwort. Das aufgerufene Loginskript erstellt eine Verbindung zur lokalen MySQL Datenbank. Als nächstes wird versucht einen Eintrag in der user\_archive Tabelle zu finden, bei welchem die Felder user\_username und user\_password mit den empfangenen Werten übereinstimmen. Dies wird über ein sogenanntes \emph{MySQL Statement} getan. In diesem Statement wird in der Datenbank nachgefragt, ob es einen Eintrag mit den bestimmten Angaben gibt (Select Query)(siehe Abbildung \ref{SQL:SELECT}).
+				\begin{figure}
+					\begin{center}
+						\begin{minted}[breaklines]{sql}
+SELECT * FROM user_archive WHERE user_username=? AND user_password=?
+						\end{minted}
+						\caption{SQL Select Query des login.php Skriptes an die user\_archive Tabelle}\label{SQL:SELECT}
+					\end{center}
+				\end{figure}
+					Wenn die Suche erfolgreich ist, wird dem Statement mit dem Inhalt eines Datensatzes geantwortet. Es ist wichtig, dass jeweils nur maximal ein Eintrag dabei gefunden werden kann. Deshalb muss der Benutzername aller Benutzer/Benutzerinnen einzigartig sein (siehe Kapitel \ref{databankstructure}). Mit diesen Informationen kann nun über die user\_id ebenfalls der Datensatz des Benutzers/der Benutzerin aus der Tabelle user\_subject ausgelesen werden. Alle nun erhaltenen Daten aus der Datenbank werden anschliessen im JSON-Format an den Client geantwortet und teilt gleichzeitig auch noch dem Client mit, dass das Login erfolgreich war. Hat die Suche jedoch keine Ergebnisse geliefert, wird dem Client über ein JSON-Format geantwortet, dass das Login fehlgeschlagen ist.
 					
-					Wenn du Suche erfolgreich ist, wird dem Statement mit dem Inhalt eines Datensatzes geantwortet. Es ist wichtig, dass jeweils nur maximal ein Eintrag dabei gefunden werden kann. Deshalb muss der Benutzername aller Benutzer/Benutzerinnen einzigartig sein (siehe Kapitel \ref{databankstructure}). Mit diesen Informationen kann nun über die user\_id ebenfalls der Datensatz des Benutzers/der Benutzerin aus der Tabelle user\_subject ausgelesen werden. Alle nun erhaltenen Daten aus der Datenbank werden anschliessen im JSON-Format an den Client geantwortet und teilt gleichzeitig auch noch dem Client mit, dass das Login erfolgreich war. Hat die Suche jedoch keine Ergebnisse geliefert, wird dem Client über ein JSON-Format geantwortet, dass das Login fehlgeschlagen ist.
-					\subsubsection{Registrierung}
-					Wenn ein Benutzer/eine Benutzerin noch keinen Account hat, soll er/sie die Möglichkeit haben, einen zu erstellen. Hierzu kann er/sie auf dem Client die benötigten Daten eingeben (siehe Kapitel \ref{register:act}) und es wird eine Anfrage an das Skript \emph{register.php} auf dem Server geschickt. Dieses Skript hat die Aufgabe in beiden Tabellen einen neuen Eintrag für den Benutzer/die Benutzerin zu erstellen, sofern die Daten legitim sind. Zuerst wird dafür eine Verbindung mit der lokalen Datenbank aufgenommen. War dies erfolgreich, wird ein Auswahlabfrage formuliert, welche nach einem Datensatz mit dem eingegebenen Benutzernamen sucht. Nur wenn kein solcher Datensatz gefunden werden kann, wird fortgefahren, ansonsten wird frühzeitig eine Antwort an den Client geschickt, die ihm mitteilt, dass die Registrierung erfolglos war, da bereits ein Eintrag mit diesem Benutzernamen existiert (siehe Kapitel \ref{login:php}). Wenn kein bestehender Datensatz mit dem gewählten Benutzernamen gefunden worden ist, wird ein SQL Statement vorbereitet, welches einen neuen Datensatz in die Tabelle user\_archive einfügt (Insert Query), und bei welchem sogleich alle vom Benutzer/von der Benutzerin angegebenen Daten in die Felder eingefügt werden. Die Fragezeichen stehen stellvertretend für die einzufügenden Werten, die erst später zugewiesen werden. Mehr dazu in Kapitel (\ref{security}).
-					\begin{quotation}
-						{\fontfamily{qcr}\selectfont\noindent 'INSERT INTO user\_archive(user\_username, user\_name, [...]) VALUES (?, ?, [...])'}
-					\end{quotation}
+					\subsubsection{Registrierung}%TODO SQL Injektionen GLOSSAR
+					Wenn ein Benutzer/eine Benutzerin noch keinen Account hat, soll er/sie die Möglichkeit haben, einen zu erstellen. Hierzu kann er/sie auf dem Client die benötigten Daten eingeben (siehe Kapitel \ref{register:act}) und es wird eine Anfrage an das Skript \emph{register.php} auf dem Server geschickt. Dieses Skript hat die Aufgabe in beiden Tabellen einen neuen Eintrag für den Benutzer/die Benutzerin zu erstellen, sofern die Daten legitim sind. Zuerst wird dafür eine Verbindung mit der lokalen Datenbank aufgenommen. War dies erfolgreich, wird ein Auswahlabfrage formuliert, welche nach einem Datensatz mit dem eingegebenen Benutzernamen sucht. Nur wenn kein solcher Datensatz gefunden werden kann, wird fortgefahren, ansonsten wird frühzeitig eine Antwort an den Client geschickt, die ihm mitteilt, dass die Registrierung erfolglos war, da bereits ein Eintrag mit diesem Benutzernamen existiert (siehe Kapitel \ref{login:php}). Wenn kein bestehender Datensatz mit dem gewählten Benutzernamen gefunden worden ist, wird ein SQL Statement vorbereitet, welches einen neuen Datensatz in die Tabelle user\_archive einfügt (Insert Query), und bei welchem sogleich alle vom Benutzer/von der Benutzerin angegebenen Daten in die Felder eingefügt werden (siehe Abbildung \ref{SQL:INSERT}). Die Fragezeichen stehen stellvertretend für die einzufügenden Werten, die erst später zugewiesen werden. Statements, die auf diese weise formuliert werden werden als sogenannte \emph{Prepared Statements} bezeichnet. Sie sind der wohl effektivste Weg, um sogenannten \emph{SQL Injections} vorzubeugen.\cite{preparedstatement}
+				\begin{figure} 
+					\begin{center}
+					\begin{minted}[breaklines]{sql}
+INSERT INTO user_archive(user_username, user_name, [...]) VALUES (?, ?, [...])
+					\end{minted}
+					\caption{SQL Insert Query des register.php Skriptes in die user\_archive Tabelle}
+					\label{SQL:INSERT}
+				\end{center}
+				\end{figure}	
+					Als nächstes soll noch ein Eintrag in der user\_subjects Tabelle erstellt werden, welcher die gleiche user\_id hat, wie der soeben neu erfasste Datensatz in der user\_archive Tabelle. Hierzu wird über ein Statement die von der Datenbank automatisch zugewiesene user\_id aus der user\_archive Tabelle ausgelesen. Daraufhin wird eine weitere Insert Query mit der ausgelesenen user\_id und dem Wert 0 für alle Fächer in die user\_subjects Tabelle gestellt. Der Wert 0 steht in den Feldern stellvertretend für den Wert \url{false}, da neu erstellte Accounts standardmässig keine Fächer ausgewählt haben sollen. Schlussendlich, wird eine JSON Antwort verfasst, welche dem Client eine erfolgreiche Registrierung mitteilt.
 					
-					Als nächstes soll noch ein Eintrag in der user\_subjects Tabelle erstellt werden, welcher die gleiche user\_id hat, wie der soeben neu erfasste Datensatz in der user\_archive Tabelle. Hierzu wird zuerst über ein Statement die von der Datenbank automatisch zugewiesene user\_id aus der user\_archive Tabelle ausgelesen. Daraufhin wird eine weitere Insert Query mit der ausgelesenen user\_id und dem Wert 0 für alle Fächer in die user\_subjects Tabelle gestellt. Der Wert 0 steht in den Feldern stellvertretend für den Wert \url{false}, da neu erstellte Accounts standardmässig keine Fächer ausgewählt haben sollen. Schlussendlich, wird eine JSON Antwort verfasst, welche dem Client eine erfolgreiche Registrierung mitteilt.
 					
+					\subsubsection{Änderungen via Einstellungen des Clients}
+					Es soll den Benutzern/Benutzerinnen möglich sein, gewisse Angaben wie Email, Passwort oder die ausgewählten Fächer nachträglich zu verändern. Der Client bietet dafür eine Settings Activity (siehe Kapitel \ref{settings:act}) mit welcher die Angaben editiert werden können. Wenn die editierten Angaben auf dem Client gespeichert werden, wird eine Anfragen an das Skript \emph{savesettings\_pw.php} geschickt. Dieses Skript ist in der Lage bereits bestehende Datensätze in der Datenbank zu verändern und die veränderten Daten zurückzuschicken. Hierzu wird zuerst eine Verbindung mit der Datenbank aufgenommen. Daraufhin wird überprüft, ob die Anfrage auch die Berechtigung für eine solche Änderungsabfrage (Update Query) hat. Im Falle der entwickelten Applikation ist das sehr simpel gelöst. Es wird ähnlich wie beim login.php Skript eine Auswahlabfrage formuliert, die nach einem Datensatz mit einer bestimmten user\_id und Passwort fragt. Das Passwort muss vom Nutzer nicht manuell eingegeben werden, sondern wird im Hintergrund von der Client Applikation automatisch geregelt. Diese Vorkehrung ist aus Sicherheitsgründen sehr wichtig. Sollte das Passwort nicht überprüft werden, wäre es möglich, dass unberechtigte Personen die Datensätze von Benutzern/Benutzerinnen editieren könnten. Ist die Auswahlabfrage erfolgreich, wird zunächst eine Update Query formuliert, welches den Datensatz in der Tabelle user\_archive durch den neuen mit den Aktualisierten Daten ersetzt (siehe Abbildung \ref{SQL:UPDATE}).
+				\begin{figure} 
+					\begin{center}
+						\begin{minted}[breaklines,mathescape]{sql}
+	UPDATE user_archive SET [...] WHERE user_id=?
+						\end{minted}
+						\caption{SQL Update Query des savesettings\_pw.php Skriptes}\label{SQL:UPDATE}
+					\end{center}
+				\end{figure}
+					Anschliessend wird der Datensatz per Auswahlabfrage wieder Ausgelesen und die Daten in lokalen Variablen gespeichert. Das gleiche mit der user\_subjects Tabelle gemacht. Sämtliche ausgelesenen Daten werden in einen Array gespeichert und dieser wird anschliessend im JSON Format an den Client zurückgeschickt. So wird gewährleistet, dass die lokalen Informationen auf dem Client mit Sicherheit mit denen in der Datenbank übereinstimmen.
 					
-					\subsubsection{Änderungen via Einstellungen vom Client}
-					Es soll den Benutzern/Benutzerinnen möglich sein, gewisse Angaben wie Email, Passwort oder die ausgewählten Fächer nachträglich zu verändern. Der Client bietet dafür eine Settings Activity (siehe Kapitel \ref{settings:act}) mit welcher die Angaben editiert werden können. Wenn die editierten Angaben auf dem Client gespeichert werden, wird eine Anfragen an das Skript \emph{savesettings\_pw.php} geschickt. Dieses Skript ist in der Lage bereits bestehende Datensätze in der Datenbank zu verändern und die veränderten Daten zurückzuschicken. Hierzu wird zuerst eine Verbindung mit der Datenbank aufgenommen. Daraufhin wird überprüft, ob die Anfrage auch die Berechtigung für eine solche Änderungsabfrage (Update Query) hat. Im Falle der entwickelten Applikation ist das sehr simpel gelöst. Es wird ähnlich wie beim login.php Skript eine Auswahlabfrage formuliert, die nach einem Datensatz mit einer bestimmten user\_id und Passwort fragt. Das Passwort muss vom Nutzer nicht manuell eingegeben werden, sondern wird im Hintergrund von der Client Applikation automatisch geregelt. Diese Vorkehrung ist aus Sicherheitsgründen sehr wichtig. Sollte das Passwort nicht überprüft werden, wäre es möglich, dass unberechtigte Personen die Datensätze von Benutzern/Benutzerinnen editieren könnten. Ist die Auswahlabfrage erfolgreich, wird zunächst eine Update Query formuliert, welches den Datensatz in der Tabelle user\_archive durch den neuen mit den Aktualisierten Daten ersetzt.
-					\begin{quotation}
-						{\fontfamily{qcr}\selectfont\noindent 'UPDATE user\_archive SET [...] WHERE user\_id=?'}
-					\end{quotation}
-					
-					Anschliessend wird der Datensatz per Auswahlabfrage wieder Ausgelesen und die Daten in lokalen Variablen gespeichert. Das gleiche mit der user\_subjects Tabelle gemacht. Sämtliche ausgelesenen Daten werden in einen Array gespeichert und dieser wird anschliessend im JSON Format an den Client zurückgeschickt. So wird gewährleistet, dass die lokalen Variablen auf dem Client mit Sicherheit mit denen in der Datenbank übereinstimmen.
 					\subsubsection{Suchanfrage} \label{sssec:Suchanfrage}
 					Damit es Benutzern/Benutzerinnen möglich ist, nach anderen Benutzern und Benutzerinnen zu suchen, wird ein PHP Skript benötigt, welches die Datenbank nach Datensätzen durchsucht, welche bestimmten Kriterien erfüllen. Diese Kriterien kann der Benutzer/die Benutzerinnen auf dem Client angeben (siehe Kapitel \ref{filter:act}). Es soll nach Namen und nach Fächern gesucht werden können. Das Skript serach.php übernimmt diese Aufgabe. Hierzu wird zuerst eine Verbindung mit der Datenbank aufgebaut. Ist das erfolgreich wird Select Query erstellt, die alle den Kriterien entsprechenden Datensätze zurückliefern soll. 
 					
-					Das MySQL Statement wird in zwei Schritten erstellt.Im ersten wird ein \emph{String} erstellt der gleich zwei Dinge tut. Zum einen schafft er eine Verknüpfung zwischen den beiden Tabellen user\_archive und user\_subjects. Dies wird durch die SQL Funktion \emph{INNER JOIN} erreicht. Diese Funktion ermöglicht es, die beiden Tabellen über die user\_id (Key) zu verbinden. Nun kann die Select Query in beiden Tabellen gleichzeitig nach mehreren Kriterien suchen und die Ergebnisse direkt zusammenführen.
-					\begin{quotation}
-						{\fontfamily{qcr}\selectfont\noindent 'SELECT user\_archive.*, user\_subjects.* 
-							
-						\noindent FROM user\_archive INNER JOIN user\_subjects ON
-						
-						\noindent user\_archive.user\_id = user\_subjects=user\_id WHERE user\_archive.user\_username LIKE ? OR [...]'}
-					\end{quotation} 
+					Das MySQL Statement wird in zwei Schritten erstellt.Im ersten wird ein \emph{String} erstellt der gleich zwei Dinge tut. Zum einen schafft er eine Verknüpfung zwischen den beiden Tabellen user\_archive und user\_subjects. Dies wird durch die SQL Funktion \emph{INNER JOIN} erreicht. Diese Funktion ermöglicht es, die beiden Tabellen über die user\_id (Key) zu verbinden. Nun kann die Select Query in beiden Tabellen gleichzeitig nach mehreren Kriterien suchen und die Ergebnisse direkt zusammenführen (siehe Abbildung \ref{SQL:INNERJOIN}).
+\begin{figure}
+\begin{minted}[breaklines]{sql}
+SELECT user_archive.*, user_subjects.* FROM user_archive INNER JOIN user_subjects ON user_archive.user_id=user_subjects.user_id WHERE user_archive.user_username LIKE ? OR user_archive.user_name LIKE ? OR [...]
+\end{minted}
+	\caption{Etwas abgekürzte Version der SQL Select Query des search.php Skriptes mit einem Inner Join der user\_archive Tabelle und er user\_subjects Tabelle
+	\label{SQL:INNERJOIN}
+\end{figure}	
 					Weiter ist im String auch bereits das Suchkriterium bezüglich des Namens enthalten. Dazu wird die SQL Funktion \emph{LIKE} verwendet. Diese Funktion ermöglicht es, das nach Daten gesucht wird, die den eingegebenen Wert enthalten, jedoch nicht unbedingt komplett identisch sind. Zum Beispiel würde bei der Suche nach einem \glqq Max\grqq{} auch der Datensatz von \glqq Maximilian\grqq{} gefunden werden. Dies ermöglicht es Benutzern/Benutzerinnen auch ein gewünschtes Suchresultat zu finden, wenn sie nicht den exakten Namen kennen. Es kann nach Benutzernamen, Vor- sowie Nachnamen gesucht werden.
 					
 					Im zweiten Schritt werden an den erstellten String noch die Kriterien für die ausgewählten Fächer angehängt. Dabei werden alle ausgewählten Fächer nacheinander als ein obligatorisches Kriterium an den String angehängt. Das bedeutet, dass wenn nach einer \glqq Magalie\grqq{} gesucht wird und gleichzeitig noch Mathematik als ein Kriterium ausgewählt ist, nur die Datensätze ausgewählt werden, bei welchen zum einen der Name \glqq Magalie\grqq{} vorkommt, aber auch Mathematik als angebotenes Fach markiert ist.
 					
-					Die Informationen der Suchergebnisse mit Ausnahme des Passwortes werden zuerst einzeln in eigenen Arrays gespeichert. Nun werden alle diese Arrays durchnummeriert in einen weiteren Array gespeichert. So sind alle Suchergebnisse kompakt und systematisch geordnet und können als ein einzelnes Element im Antwortarray referenziert werden. Nun wird noch der Wert \url{true} mit dem Key \url{"success"} im Antwortarray gespeichert und das ganze als JSON Datei dem Client zurückgeschickt.
+					Die Informationen der Suchergebnisse mit Ausnahme des Passwortes werden einzeln in eigenen Arrays gespeichert. Anschliessend werden alle diese Arrays durchnummeriert in einen weiteren Array gespeichert. So sind alle Suchergebnisse kompakt und systematisch geordnet und können als ein einzelnes Element im Antwortarray referenziert werden, welcher denn an den Client zurückgeschickt wird.
 					
 					
 			%TODO GLOSSAR API
@@ -214,20 +234,235 @@
 			\subsection{Programmiersprache}
 			Die Applikation wurde vorwiegend in der Programmiersprache Java entwickelt. Java ist eine Sprache der 3. Generation und gehört zu den objektorientierten Programmiersprachen. Sie wurde erstmals 1995 von Sun Microsystems veröffentlicht und ist seit 2010 in Besitz von Oracle. Java zeichnet sich besonders durch seine plattformunabhängigkeit aus und eignet sich daher besonders gut für kleinere Applikationen, die auf vielen verschiedenen Geräten funktionieren sollen.
 			
-			 Das Betriebssystem Android, für welche die Applikation entwickelt worden ist, ist das weltweit meist verwendete Betriebssystem für Mobiltelefone und unterstützt standardmässig die auf Java basierte Laufzeitumgebung \emph{Android Runtime}. Somit werden fast alle Applikationen für Android in der Sprache Java entwickelt, weshalb auch der Client dieser Arbeit in Java geschrieben wurde, um eine möglichst grosse Menge an Benutzern/Benutzerinnen zu erreichen.\cite{android}
+			Das Betriebssystem Android, für welche die Applikation entwickelt worden ist, ist das weltweit meist verwendete Betriebssystem für Mobiltelefone und unterstützt standardmässig die auf Java basierte Laufzeitumgebung \emph{Android Runtime}. Somit werden fast alle Applikationen für Android in der Sprache Java entwickelt, weshalb auch der Client dieser Arbeit in Java geschrieben wurde, um eine möglichst grosse Menge an Benutzern/Benutzerinnen zu erreichen.\cite{android}
+			
 			\subsection{Architektur des Clients} %TODO üBERSICHT (MAP)
-			Der Client der Applikation besteht aus insgesamt zehn sogenannten \emph{Activities}. Activities sind sozusagen die verschiedenen Fenster die in einer Applikation geöffnet werden können. Eine Übersicht über alle Activites findet sich in Abbildung \ref{}. Activities können grundsätzlich in zwei Teile aufgeteilt: eine \emph{View}, welche in der Layoutsprache XML geschrieben ist und das Userinterface der Activtiy definiert und die in Java programmierte \emph{Presenter}-Klasse (siehe Kapitel \ref{mvp}).
+			Der Client der Applikation besteht aus insgesamt zehn sogenannten \emph{Activities}. Activities entsprechen den verschiedenen Fenstern die in einer Applikation geöffnet werden können. Eine Übersicht über alle Activites findet sich in Abbildung \ref{}. Activities können grundsätzlich in zwei Teile aufgeteilt werden: eine \emph{View}, welche in der Layoutsprache XML geschrieben ist und das Userinterface der Activtiy definiert und die in Java programmierte \emph{Presenter}-Klasse (siehe Kapitel \ref{mvp}). Ein Beispiel, wie eine solche Activity genau aufgebaut ist, findet sich in Kapitel \ref{mainpage:explained}. An dieser Stelle ist anzumerken, dass die ab hier verwendeten Zeilenangaben sich jeweils ausschliesslich auf die abgebildeten Ausschnitte des Codes beziehen und nicht die eigentlichen Zeilen im Sourcecode repräsentieren. Ebenfalls sind teilweise stellen aus dem abgebildeten Sourcecode ausgeschnitten worden. Diese Stellen sind dann durch das Symbol \emph{[...]} in der Abbildung gekennzeichnet.
 				
 				\subsubsection{Klassenübersicht} %TODO SEHEN OB ES INSTANZEN HEISST
 				Nebst den Views und ihren jeweiligen Presenter sind auch noch eine Reihe von anderen Klassen verwendet worden.
 				\paragraph{Die Request Klassen}
-				Für die Anfragen an den Server werden Request-Klassen verwendet. Sie sind Instanzen der Klasse \emph{Stringrequest} und erstellen aus den zu versendenden Daten eine lokale Hashmap. Die Request Klassen beinhalten ebenfalls die URL der PHP-Files, an welches die Anfrage gesendet werden. Die Request-Klassen können, da sie von der Stringrequest Klasse abgeleitet sind, in sogenannten \emph{Request Queues}  ausgeführt werden. Die für diese Aufgabe verwendeten Funktionen finden sich alle in der \emph{Volley} Library. Volley bietet diverse Tools für das effiziente Arbeiten mit Netzwerken und eignet sich daher perfekt für diese Aufgabe.\cite{volley}
+				Für die Anfragen an den Server werden Request Klassen verwendet. Sie sind Instanzen der Klasse \emph{StringRequest} und erstellen aus den zu versendenden Daten eine lokale Hashmap auf dem Client. Hashmaps sind eine effiziente Lösung, um Reihen von Daten systematisch in einem Element zu speichern. Die Request Klassen beinhalten ebenfalls die URL der PHP-Files, an welches die Anfrage gesendet werden. Die Request Klassen können, da sie von der StringRequest Klasse abgeleitet sind, in sogenannten \emph{Request Queues}  als Anfragen an den Server ausgeführt werden. Die für diese Aufgabe verwendeten Funktionen finden sich alle in der \emph{Volley} Library. Volley bietet diverse Tools für das effiziente Arbeiten mit Netzwerken und eignet sich daher perfekt für diese Aufgabe.\cite{volley}
 				\paragraph{Die Adapter Klassen}
 				Adapter Klassen sind bestimmend für das Verhalten von Auflistungen. Es gibt einen Adapter für die Anzeige der Suchergebnisse, den Chat und dem Bottomsheet von der Haupseite, wo die offenen Chats angezeigt werden. Adapter geben der Applikation vor, wie die verschiedenen Elemente einer Liste anzuzeigen sind. Für die Suchergebnisse wird dafür eine Instanz der Klasse \emph{Base Adapter} aus der \emph{Widget} Library verwendet. Die anderen beiden Adapter sind Instanzen der \emph{Firebase Recycler Adapter} Klasse aus der Firebase Library. Sie sind für das Auflisten von Objekten in der Firebase Datenbank verantwortlich und haben jeweils eine Referenz zu einem Verzeichnis in der Firebase Datenbank, dessen Inhalt sie auflisten.
-				\paragraph{Die userInfo und JSONtoInfo Klasse}
-				Damit die einzelnen Activities nicht immer wieder von neuem Anfragen an den Server senden müssen, werden die Informationen jeweils an die nächste Activity weitergegeben. So muss nur einmal zu Beginn beim Login eine Anfrage an die Datenbank stattfinden. Die Informationen werden zwischen den Activities im selben JSON String weitergegeben, wie sie vom Server empfangen wurden. Der String ist kompakt und kann in nur einer Linie jeweils weitergegeben werden. Er eignet sich jedoch nicht zur Verwendung in den Activities selber. Hierzu gibt es die userInfo Klasse. Sie fungiert als eine Art \glqq Variabelcontainer\grqq{} und besitzt sämtliche Eigenschaften, die ein Benutzerprofil besitzt. Dazu gehört Namen, Fächer, Passwort etc. Diese gespeicherten Variablen können dann in den Activities an den angeforderten Stellen über sogenannte \emph{Getter}-Funktionen ausgelesen werden. Die JSONtoInfo Klasse wiederum besteht aus nur einer Funktion, die in der Lage ist, den JSON-String in eine Instanz der userInfo Klasse zu speichern. So wird in jeder Activity zuerst aus dem JSON-String eine userInfo Klasse instantiiert, die nachher für den Zugriff auf die Accountinformationen gebraucht werden kann.
+				\paragraph{Die userInfo und JSONtoInfo Klasse} \label{userInfo}
+				Damit die einzelnen Activities nicht immer wieder von Neuem Anfragen an den Server senden müssen, werden die benötigten Informationen jeweils an die nächste Activity weitergegeben. So muss nur einmal zu Beginn beim Login eine Anfrage an die Datenbank stattfinden. Die Informationen werden zwischen den Activities im selben JSON String weitergegeben, wie sie vom Server empfangen wurden. Der String ist kompakt und kann in nur einem String weitergegeben werden. Er eignet sich jedoch nicht zur Verwendung in den Activities selber. Hierzu gibt es die userInfo Klasse. Sie fungiert als eine Art \glqq Variabelcontainer\grqq{} und besitzt sämtliche Eigenschaften, die ein Benutzerprofil besitzt (siehe Abbildung \ref{java:userInfo}).
+\begin{figure}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+public userInfo(int id, String username, String name, String firstname, int yearofbirth, String description, boolean french, boolean spanish, boolean music, boolean english, boolean chemistry, boolean biology, boolean maths, boolean german, boolean physics) {
+	this.id = id;
+	this.username = username;
+	this.name = name;
+	this.firstname = firstname;
+	this.yearofbirth = yearofbirth;
+	this.description = description;
+	this.french = french;
+	this.spanish = spanish;
+	this.english = english;
+	this.music = music;
+	this.chemistry = chemistry;
+	this.biology = biology;
+	this.maths = maths;
+	this.physics = physics;
+	this.german = german;
+}
+		\end{minted}
+	\caption{Konstruktor der userInfo Klasse}\label{java:userInfo}
+	\end{center}
+\end{figure}
+				Dazu gehört Namen, Fächer, Passwort etc., wobei das Passwort jedoch nicht direkt über den Konstruktor gesetzt wird, da die Klasse auch für die Informationen anderer Benutzer benutzt wird. Diese gespeicherten Variablen können dann in den Activities an den angeforderten Stellen über sogenannte \emph{Getter}-Funktionen ausgelesen werden. Die JSONtoInfo Klasse wiederum besteht aus nur einer Funktion, die in der Lage ist, den JSON-String in eine Instanz der userInfo Klasse zu speichern. So wird in jeder Activity zuerst aus dem JSON-String eine Objekt der userInfo Klasse instantiiert, welches nachher für den Zugriff auf die Accountinformationen gebraucht werden kann (siehe Abbildung \ref{java:instanzUserInfo}).
+\begin{figure}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+userInfo clientInfo = new JSONtoInfo().createNewItem(new JSONObject(extrasBundle.getString("clientInfo")));
+		\end{minted}
+	\caption{Instantiierung eines userInfo Objektes aus dem JSON String aus den Extras}\label{java:instanzUserInfo}
+	\end{center}
+
+\end{figure}
+
+			\subsection{Die Mainpage Activity}
+			Die Mainpage Activity ist der zentrale Screen der Applikation. Nachdem ein Benutzer/eine Benutzerin sich erfolgreich eingeloggt hat, wird er/sie auf diesen Screen weitergeleitet. Von hier aus können alle Features der Applikation erreicht werden. Die Activity selber besteht aus den standardmässigen zwei Hauptkomponenten, der XML Datei, die das Layout definiert, und dem Java Sourcecode, der das Verhalten des Screens bestimmt. Auf die XML-Datei soll hier nicht gross eingegangen werden, das fertige Layout findet sich in Abbildung \ref{mainpage:screenshot}, der dazugehörige XML-Sourcecode befindet sich im Anhang. Der Java Sourcecode wiederum besteht im Wesentlichen aus drei Teilgebieten: der onCreate Methode, dem Listener für die verschiedenen Schaltflächen und aus einer Reihe von Komponenten, die das Auflisten und Öffnen der Chats via des Bottomsheets ermöglichen.
 			
+			\subsubsection{Die onCreate Methode}
+			Die onCreate Method ist der Kern einer Activity. Sie wird aufgerufen, wenn eine neue Activity gestartet wird und wir in der entwickelten Applikation hauptsächlich dazu verwendet, das Layout zu definieren und bestimmte Variablen zu instantiieren (siehe Abbildung \ref{java:onCreate}). Im folgenden Abschnitt wird direkt auf den abgebildeten Codeausschnitt eingegangen.
+			
+			Zu Beginn der onCreate Methode wird in Zeile 4 auf das zu verwendete XML-Layout Dokument verwiesen, welches verwendet für den Screen werden soll. In Zeile 6 wird dann auf den zu erscheinenden Titel des Screens verwiesen. Dieser ist in einem separaten XML Dokument gespeichert und beinhaltet hier den Text "Your Profile". In Zeile 7 werden die vom Login erhaltenen Extras mit dem JSON String in einer lokalen Variable referenziert. Diese Referenz kann dann auf Zeile 10 benutzt werden, um ein userInfo Objekt daraus zu instantiieren (siehe Kapitel \ref{userInfo}). In den Zeilen 14 und 15 werden dann die Referenzen zu den im einzelnen im Layout verwendeten Elementen erstellt. Hier sind das beispielhaft zwei Textfelder für den Namen des Benutzers/der Benutzerin und die Beschreibung. Über diese Referenzen kann dann später in den Zeilen 19 und 20 der Text, der in den Textfeldern erscheinen soll, bestimmt werden. Der Text wird dazu aus dem userInfo Objekt über eine sogenannte \emph{Getter} Methode ausgelesen. 
+\begin{figure}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_mainpage_activity);
+	getSupportActionBar().setHomeButtonEnabled(false);
+	getSupportActionBar().setTitle(R.string.clientprofile_title);
+	extrasBundle = getIntent().getExtras();
+	
+	try {
+		clientInfo = new JSONtoInfo().createNewItem(new JSONObject(extrasBundle.getString("clientInfo")));
+	
+		[...]
+	
+		final TextView nameandfirstname_tv = findViewById(R.id.userprofileact_name_textview);
+		final TextView description_tv = findViewById(R.id.userprofileact_description_textview);
+	
+		[...]
+	
+		nameandfirstname_tv.setText(clientInfo.getFirstname() + " " + clientInfo.getName());
+		description_tv.setText(clientInfo.getDescription());
+	
+		[...]
+}
+		\end{minted}
+	\caption{Ausschnitt aus der onCreate Methode der Mainpage Activity}\label{java:onCreate}
+	\end{center}
+
+\end{figure}
+		
+			\subsubsection{Die Listener}
+			Damit die entwickelte Applikation in der Lage ist, auf bestimmte Aktionen des Benutzers/der Benutzerin zu reagieren, werden sogenannte Listener verwendet. In ihnen wird bestimmt, was geschehen soll, wenn ein bestimmtes Ereignis, wie zum Beispiel ein Tippen auf eine Schaltfläche, auftritt. Die Listener werden in separaten Klassen definiert und implementieren alle das Interface \emph{View.OnClickListener}. Durch das Implementieren dieses Interfaces kann innerhalb der Klasse in Zeile 4 eine \emph{onClick} Methode definiert werden. Sie wird ausgeführt, wenn auf die View, welchem der Listener zugeschrieben worden ist, geklickt wird. Eine solche View kann zum Beispiel ein Textfeld oder eine Schaltfläche sein. Ein Beispiel für einen solchen Listener findet sich auf Abbildung \ref{java:listener}.
+			
+			Die Listener Klasse in Abbildung \ref{java:listener} ist die Listenerklasse der Schaltfläche, die den Benutzer/die Benutzerin zu den Einstellungen der Applikation bringt. Dazu wird beim Klicken auf die Schaltfläche eine neuer sogenannter \emph{Intent} gestartet. Der Intent selber wird in Zeile 5 instantiiert und beschreibt einen Wechsel von der momentanen Mainpage Activity zur SettingsOverview Activity. Dem Intent werden in Zeile 6 die nötigen Extras mitgegeben, die für den Start der Activity benötigt werden. In Zeile 7 wird dann der Intent ausgeführt.
+\begin{figure}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+class onSettingsListener implements View.OnClickListener  {
+
+	@Override
+	public void onClick(View view) {
+		Intent settings_intent = new Intent(mainpage_activity.this, settingsOverview.class);
+		settings_intent.putExtra("clientInfo", extrasBundle.getString("clientInfo"));
+		startActivity(settings_intent);
+	}
+}
+		\end{minted}
+		\caption{onSettingsListener Klasse der Mainpage Activity}\label{java:listener}
+	\end{center}
+
+\end{figure}
 			%Alle Module des Clients
+			
+			\subsubsection{Auflistung der offenen Chats}
+			Damit auf der Mainpage Activity im Bottomsheet die offenen Chats eines Benutzers/einer Benutzerin aufgelistet und geöffnet werden können, werden eine Reihe von Methoden und Klassen verwendet. Dazu gehört eine Firebase Adapter Klasse, die OpenChat Klasse, eine ViewHolder Klasse und eine onStart Methode. 
+			
+			\paragraph{Die OpenChat Klasse}
+			Die OpenChat Klasse ist der Datencontainer einzelner Elemente der Auflistung. Sie hat die Aufgabe, die für die Auflistung und das Öffnen des Chats benötigten Variablen und Werte zu speichern und wiedergeben zu können. Ihr Aufbau ist vergleichbar mit der clientInfo Klasse.  Der Konstruktor der Klasse ist in Abbildung \ref{java:OpenChat} dargestellt. Wichtig ist, dass die Namen der einzelnen Variablen in Zeile 1 genau mit den Namen der einzelnen Verzeichnisse in der Firebase Datenbank übereinstimmen. Dies ist eine Notwendigkeit, da die Klasse von der Firebase API als ein Model für die Firebase Datenbank verwendet wird und Firebase selber die OpenChat Klasse mithilfe der in der Datenbank gespeicherten initialisiert.
+			
+\begin{figure}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+public OpenChat(String subject, String receiverName, String latestMessage, String chatPath, String receiverRef, String senderRef, int receiverID) {
+	this.subject = subject;
+	this.receiverName = receiverName;
+	this.receiverID = receiverID;
+	this.latestMessage = latestMessage;
+	this.chatPath = chatPath;
+	this.senderRef = senderRef;
+	this.receiverRef = receiverRef;
+}					
+		\end{minted}
+	\caption{Der Konstruktor der OpenChat Klasse}\label{java:OpenChat}
+	\end{center}
+
+\end{figure}	
+			\paragraph{Die ViewHolder Klasse}
+			Die \emph{OpenChatViewHolder} Klasse ist ein abgeleitet Klasse der Klasse \emph{RecyclerView.ViewHolder}. Sie besitzt einen Konstruktor und eine setChat Funktion. Ihre Aufgabe ist es, das Layout der einzelnen offenen Chats zu konfigurieren. Sie selber nimmt jeweils bei der Instanziierung eine Referenz zu einer View entgegen, die in der Liste erscheinen soll. Wird dann anschliessend die setChat Methode aufgerufen, setzt der ViewHolder die ihm mitgegebenen Variablen in die vom Konstruktor referenzierte View ein. Im Falle des in Abbildung \ref{java:viewholder} dargestellten ViewHolders sind das der Name des Empfängers und die zuletzt empfangene Nachricht.
+\begin{figure}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+public static class OpenChatViewHolder extends RecyclerView.ViewHolder {
+		
+	View view;
+		
+	public OpenChatViewHolder(View itemView) {
+		super(itemView);
+		view = itemView;
+	}
+		
+	public void setChat(String receiverName, String latestMessage) {
+		TextView cName_tv = (TextView) view.findViewById(R.id.openchat_name_textview);
+		cName_tv.setText(receiverName);
+		TextView cLatest_tv = (TextView) view.findViewById(R.id.openchat_latest_textview);
+		cLatest_tv.setText(latestMessage);
+	}
+}
+		\end{minted}
+		\caption{OpenChatViewHolder Klasse der Mainpage Activity}\label{java:viewholder}
+	\end{center}
+\end{figure}			
+			
+			\paragraph{Die Firebase Adapter Klasse} 		
+			Die Firebase Adapter Klasse ist das Herzstück der Auflistung. Sie ist von der \emph{FirebaseRecyclerAdapter} abgeleitet und ist sozusagen die Schnittstelle der Firebase Datenbank und der Auflistung im Bottomsheet des Clients. Beim Initialisieren der Klasse werden alle dazu benötigten Objekte entgegengenommen. Eine Abbildung des Konstruktors findet sich in Abbildung \ref{java:firebaseAdapterKonst}. Zu den für die Initialisierung benötigen Objekten gehört zum einen die OpenChat Klasse. Sie wird in der Liste als Model für die Daten auf der Firebase Datenbank verwendet. Ebenfalls referenziert wird die ViewHolder Klasse und das für für die einzelnen Items zu verwendende Layout. Das Layout ist im XML Format verfasst und wird innerhalb der Liste für jeden offenen Chat einzeln generiert und ein ViewHolder dafür instantiiert, der das Layout an das Model anpasst. Die vier letzten übergebenen Werte sind zum einen eine Referenz zu der zu verwendenden Datenbank, der Kontext, um einen neuen Chat öffnen zu können, der volle Name des Benutzers/der Benutzerin und der JSON String mit den Client Informationen. Sie werden dann in den Zeilen 4 bis 5 den entsprechenden Variablen in der Klasse zugewiesen. In Zeile 6 wird dann der von der Firebase API bereitgestellte eigentliche FirebaseRecylclerAdapter aufgerufen, der dann auch die einzelnen Elemente in die Liste einfüllt.
+\begin{figure}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+public BottomsheetFirebaseAdapter(Class<OpenChat> modelClass, int modelLayout, Class<mainpage_activity.OpenChatViewHolder> viewHolderClass, Query ref, Context context, String clientName, String clientInfo) {
+	
+	this.mContext = context;
+	this.clientName = clientName;
+	this.clientInfo = clientInfo;
+	super(modelClass, modelLayout, viewHolderClass, ref);
+}
+		\end{minted}
+		\caption{Konstruktor der Firebase Adapter Klasse}\label{java:firebaseAdapterKonst}
+	\end{center}
+
+\end{figure}
+
+			Die zweite Methode in der Firebase Adapter Klasse ist die \emph{populateViewHolder} Methode. Sie ist in Abbildung \ref{java:FirebaseAdapterPop} dargestellt und wird jedes Mal nachdem ein neuer Eintrag in die Liste aufgenommen worden ist aufgerufen. Sie hat die Aufgabe, die setChat Funktion der ViewHolder Klasse des Elements aufzurufen und dem Element einen Listener zuzuschreiben, der bei einem Klick auf das Element den dazugehörigen Chat öffnet. Die setChat Funktion wird in Zeile 4 aufgerufen, der Listenner wird dem Objekt dann in Zeile 5 zugewiesen. Der Listener wird dann in den folgenden Zeilen 6 bis 13 definiert.
+			
+\begin{figure}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+@Override
+protected void populateViewHolder (mainpage_activity.OpenChatViewHolder viewHolder, final OpenChat model, int position) {
+	
+	viewHolder.setChat(model.getReceiverName(), model.getLatestMessage());
+	viewHolder.view.setOnClickListener(new View.OnClickListener() {
+		
+		@Override
+		public void onClick(View view) {
+		
+		[...]
+		
+		}
+	});
+}
+		\end{minted}
+		\caption{populateViewHolder Methode der Firebase Adapter Klasse}\label{java:FirebaseAdapterPop}
+	\end{center}
+
+\end{figure}
+
+			\paragraph{Die onStart Methode}
+			Die onStart Methode ist das letzte Puzzle Teil für die Darstellung der offenen Chats. Sie wir jeweils beim starten der Activity ausgeführt und hat die Aufgabe, den Firebase Adapter zu initialisieren und der RecyclerView im Bottomsheet zuzuweisen. Sie ist in Abbildung \ref{java:onStart} abgebildet. Dabei werden in den Zeilen 6 bis 12 alle mitzugebenden Objekte aufgeführt. Die meisten davon sind bereits schon in der onCreate Methode definiert worden. Zuletzt wird dann in Zeile 15 der Firebase Adapter dem RecyclerView im Bottomsheet zugewiesen.
+\begin{figure}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+    @Override
+protected void onStart() {
+	super.onStart();
+
+	FirebaseRecyclerAdapter FCBA = new BottomsheetFirebaseAdapter(
+		OpenChat.class,
+		R.layout.openchat,
+		OpenChatViewHolder.class,
+		databaseReference,
+		mainpage_activity.this,
+		String.format("%s %s",clientInfo.getFirstname(), clientInfo.getName()),
+		extrasBundle.getString("clientInfo")
+	);
+
+	recView.setAdapter(FCBA);
+}
+		\end{minted}
+		\caption{Konstruktor der Firebase Adapter Klasse}\label{java:onStart}
+	\end{center}
+
+\end{figure}			
+			
 			\subsection{Module}
 			
 				%TODO LOGIN BILD
