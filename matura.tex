@@ -34,17 +34,21 @@
 \usepackage{hyperref}
 
 \begin{document}
-	\maketitle
+	\maketitle	
+	%VORWORT
+	\section*{Vorwort}
+	Diese Arbeit befasst sich mit der Entwicklung einer Applikation für Mobiltelefone. Die Applikation soll die Vermittlung Nachhilfe unter Schülerinnen und Schüler einer Schule vereinfachen. Dabei ist anzumerken, dass die vollständige Entwicklung einer vollständig markttauglichen Applikation den Rahmen dieser Arbeit sprengen würde. Das Ziel ist vielmehr das legen eines Grundsteins, aus welchem theoretisch ein solches Produkt entstehen könnte.
+	\subsubsection*{Zu mir}
+	Ich möchte and dieser Stelle die Gelegenheit ergreifen, ein paar Worte zu mir, dem Autor und Entwickler dieser Arbeit, zu verlieren.
+	
+	Zum Zeitpunkt, an welchem ich begonnen habe, diese Applikation zu entwickeln habe ich zuvor noch nie eine Applikation für Mobiltelefone entwickelt. Bis zu diesem Zeitpunkt hin habe ich mich hauptsächlich auf die Entwicklung kleiner Programme für Computer beschränkt. Das dazu nötige Wissen habe ich mir grösstenteils selber angeeignet. So kommt es auch, das ich vor diesem Projekt mich noch nie gross mit Datenbanken oder Webdevelopement befasst habe. Ich habe mir dieses Projekt als eine Herausforderung genommen, um etwas neues zu lernen und mich als Entwickler zu verbessern. Dieser Lernprozess hat definitiv stattgefunden. Jedoch sollte man sich als Leser/Leserin diese Tatsache immer im Kopf behalten, wenn man sich teile dieser Arbeit ansieht. Oftmals sind Dinge in der Applikation nicht optimal gelöst, teilweise sind gleiche Probleme an verschiedenen Orten verschieden gelöst und weichen oft von anerkannten Praktiken etwas ab.
+	\subsubsection*{Motivation}
+	Die Motivation, genau eine solche Applikation zu entwickeln kommt hauptsächlich aus zwei Quellen. Zum einen war es der Wille, neue Teilgebiete des Programmierens kennenzulernen und zu verstehen, weshalb die Wahl dann sehr schnell auf eine Applikation für Mobiltelefone viel. Immerhin sind Mobiltelefone in der heutigen Welt kaum mehr wegzudenken und die Fähigkeit, Programme für sie zu entwickeln mich schon länger fasziniert hat. Die zweite Motiviation kam dann von einer Idee von Herrn Bättig, der während der einführenden Präsentation in die Maturarbeit mehr im Witz eine Applikation zur Vermittlung für Nachhilfe erwähnte. Zuerst war ich skeptisch doch schnell stellte ich im Gespräch mit anderen fest, dass eine gut Entwickelte Applikation in diesem Bereich durchaus Verwendung und Beliebtheit finden könnte.
+	\subsubsection*{Danksagungen}
+	Ich möchte mich hier bei den Personen bedanken, die mich während dieser Arbeit unterstützt haben. Zuerst einmal möchte ich meinem Onkel Peter Arrenbrecht für den Hinweis auf die Firebase API danken, welche mir komplett neue Möglichkeiten geöffnet hat. Weiter möchte ich ein Dankeschön an meine betreuende Lehrperson Andreas Umbach richten, der mir nicht nur einen Platz auf der Datenbank des Ergänzungsfaches zur Verfügung gestellt hat, sondern mir auch immer bei Allfälligen Fragen und Unklarheiten nach seinem Vermögen weitergeholfen hat. Als letztes gilt noch ein gigantisches Dankeschön an meinen Vater, der mich während dieser ganzen Arbeit als Ratgeber und Korrekturleser immer unterstützt hat und immer ein offenes Ohr für meine momentanen Probleme gezeigt hat.
+
 	\tableofcontents
 	
-	
-	%VORWORT
-	\chapter{Vorwort}
-	DummyText...
-		\section{Motivation}
-		DummyText...
-		\section{Danksagungen}
-		DummyText...
 	
 	%Einleitung
 	\chapter{Einleitung}
@@ -722,7 +726,7 @@ public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
 	childCount = layoutManager.getChildCount();
 
 	for(loop = 0; loop < childCount; loop++) {
-		searchresult_recycleradapter.ViewHolder holder = (searchresult_recycleradapter.ViewHolder) recyclerView.findViewHolderForAdapterPosition(firstVisibleItemPosition + loop);
+		searchresult_recycleradapter.ViewHolder holder = (searchresult_recycleradapter.ViewHolder) recyclerView.findViewHolderForAdapterPosition( firstVisibleItemPosition + loop);
 		if(holder.getInfo().getTempProfilePicturePath() == null && !isLoading) {
 			if(totalItemCount - firstVisibleItemPosition - 1 >= heapsize) {
 				int amount = heapsize;
@@ -792,32 +796,42 @@ public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
 				
 				%Die Presenter der Chat Activity beinhaltet fünf Komponenten: die onCreate Methode, die hier alle wichtigen Variablen instantiiert, der onStart Methode für das zuweisen des Firebase Adapters, einer Viewholderklasse für den Adapter, einem Listener für den Sendeknopf und zu Schluss noch der Methode für den Pfeil zurück. Die Methode für den Pfeil fällt hier etwas komplexer aus, da ein Chat sowohl von der Mainpage, wie auch von einem Benutzerprofil geöffnet werden kann. Also muss hier zuerst unterschieden werden, von wo ein Benutzer/eine Benutzerin überhaupt in den Chat gekommen ist. Je nach dem wird anschliessen dann die passende Activity gestartet. Der Listener des Sendeknopfes hat die Aufgabe, einen neuen Eintrag für die gesendete Nachricht im Firebase Datanbanksystem zu erstellen. Dafür \emph{pusht} er einen neuen Eintrag in das Verzeichnis des Chats. Dieser Eintrag beinhaltet Sendername, Sendedatum und Zeit sowie die gesendete Nachricht.
 		
-		\chapter{Reflexion und Kritik}
+		\chapter{Verbesserungspotenzial, Kritik und Fazit}
 		
-		\chapter{Kritik und Verbesserungspotenzial}
-		Das Ziel der Arbeit war, eine funktionsfähige Applikation zu entwickeln, die die Vermittlung von Nachhilfe vereinfachen sollte. Dieses Ziel ist erreicht worden. Jedoch fehlt es der Applikation noch an einer Reihe  essentieller Features, bevor sie öffentlich angeboten werden kann.
+		\section{Verbesserungspotenzial}
+		In dem Stand, in welchem sich die entwickelte Applikation zur Zeit befindet, ist noch lange nicht an eine mögliche Veröffentlichung zu denken. Mögliche Mängel und nötige nächste Schritte sollen in diesem Kapitel etwas genauer diskutiert und betrachtet werden.
 		
 		%\subsection{Passwortsicherheit}
 		%Die Applikation ist in Sachen Sicherheit noch unvollständig. Ein Beispiel dafür ist die Handhabung der Passwörter innerhalb der Applikation. Die Passwörter werden unverschlüsselt zwischen Server und Client hin und her geschickt und ebenfalls unverschlüsselt in der Datenbank gespeichert. Generell sollten Passwörter nie in ihrer reinen Form irgendwo gespeichert oder verschickt werden. Ein Lösungsansatz für das sichere Speichern von Passwörtern wäre das \emph{Hashen} und \emph{Salzen} der Passwörter. Hashen ist ein mathematisches Verfahren, das im Grunde genommen die Bits einer Eingabe vermischt und zu einem Ergebnis bringt, welches nicht mehr in seine Ursprungsform zurückgerechnet werden kann. Der grosse Vorteil dabei ist, dass jede Eingabe einen absolut einzigartigen Hash bekommt. Es kann keine Kollisionen geben, ausser die Eingabe ist gleich, jedoch dazu etwas später mehr. Weiter sind alle Hashes unabhängig von der Länge der Eingabe immer gleich lang. Es kann also nicht einmal die Passwortlänge aus einem Hash herausgelesen werden. Das Hashen der Passwörter wäre also eine schon deutlich sicherer Methode, um die Passwörter auf dem Server mit ruhigem Gewissen zu speichern. Somit würde beim Login jeweils das vom Benutzer/der Benutzerin eingegeben Passwort ebenfalls gehasht werden und anschliessend mit dem auf dem Datenbank gespeicherten Hash verglichen werden. Da es ja keine Kollisionen geben kann, wäre dies eine durchaus sichere Variante. Doch, um zu vermeiden, dass zwei Benutzer innerhalb einer Tabelle den gleichen Hash aufweisen, da sie zufällig das gleiche Passwort haben, gibt es ein zweites Verfahren: das Salzen von Hasheingaben. Salzen ist ein Verfahren, bei welchem jeweils vor oder nach der eigentlich zu hashenden Eingabe noch eine Reihe an zufällig generierter Werte angehängt wird. Diese Werte sind dann das \emph{Salz} des Hashes, da sie den Hash komplett verändern. Die Idee ist, dass jeweils jeder Benutzer sein eigenes zufällig generiertes Salz zu seinem Passwort bekommt, bevor es gehasht und gespeichert wird. Das Salz wird ebenfalls in der Datenbank gespeichert und muss dabei nicht einmal verschlüsselt werden. Es kann direkt neben dem gehashten Passwort sein.
 		
 		%Dieses Verfahren des Hashen und Salzen von Passwörtern ist eine sehr weit verbreitete Methode und wird als Sicher betrachtet, solange es richtig gemacht wird. Mögliche Fehlerquellen dabei ist das benutzen des gleichen Salzes für mehrere Benutzer oder das generieren von zu kurzen Salzen, was ebenfalls zu Überschneidungen gleicher Salze führen kann. Im allgemeinen gelten Salze mit einer Länge von über 16 Bytes als sicher. \cite{defuse} \cite{security}
 		
-		\section{Firebase Zugriffsrechte}
+		\subsection*{Firebase Zugriffsrechte}
 		Die Firebase Datenbank hat momentan noch keine aktivierte Zugriffsüberwachung aktiviert. So ist es theoretisch jedem möglich, auf die Datenbank zuzugreifen und Daten auszulesen oder zu modifizieren. Firebase bietet für die Lösung dieses Problems diverse Möglichkeiten um den Zugriff von Benutzern/Benutzerinnen und deren Zugriffsrechte zu kontrollieren. Weiter kann dabei sogar noch in Betracht gezogen werden, den Benutzern/Benutzerinnen die Möglichkeit zu bieten, sich via Google Login in der Applikation zu Registrieren. Dies ist ebenfalls ein Feature, das Firebase Entwicklern zur Verfügung stellt. Es würde den Nutzern/Nutzerinnen die Registrierung weitgehend ersparen, da viele Android Nutzer bereits einen Google Account besitzen.
 		
-		\section{IOS Unterstützung}
+		\subsection*{IOS Unterstützung}
 		Nebst des weitverbreiteten Android Betriebssystem ist ebenfalls das von Apple Produkten verwendete Betriebssystem IOS besonders in Ländern wie der Schweiz von bedeutender Beliebtheit. Damit die Applikation also an Schulen gut angewendet werden kann und möglichst viele Leute erreicht werden können, wäre ein für IOS entwickelter Client von grossem Vorteil. Dieser Client müsste dann jedoch komplett neu in der Sprache Swift programmiert werden.
 		
-		\section{Datenschutz}
+		\subsection*{Datenschutz}
 		Damit eine Applikation heutzutage auf dem Markt angeboten werden darf, gelten eine Reihe von Gesetzen, die die Nutzer/Nutzerinnen einer Applikation schützen sollen.  Dieses Thema wurde mit der neuen DSGVO (Datenschutz Grundverordnung), welche in der EU seit 2018 gilt,  wieder neu Aufgefrischt und neue Regelungen eingeführt. Zwar gilt die DSGVO nicht für Schweizer und Schweizerinnen, jedoch für sämtliche EU-Bürger/EU-Bürgerinnen, deren Daten von der Applikation erfasst werden. Zudem kommt, dass sogar in der Schweiz in naher Zukunft Anpassungen im Datenschutz Gesetz (DSG) zu erwarten sind. Zu riskieren, die Applikation ohne Befolgung dieser Gesetzt zu veröffentlichen, wäre also nahezu halsbrecherisch. Damit die Applikation regelkonform wäre, fehlt es ihr jedoch noch an einer Reihe von Features wie die Funktion, einen Account vollständig löschen zu können. Vor einem rechtlich abgesicherten Release müssten also noch eine Reihe von Änderungen und Erweiterungen vorgenommen werden.
 		
-		\section{Design}
+		\subsection*{Design}
 		Design technisch ist die entwickelte Applikation in den Augen von mir, dem Entwickler, noch unzureichend. Das Userinterface ist das Verbindende Glied zwischen Funktion und Benutzer/Benutzerin. Wenn das Userinterface einer Applikation die Benutzer/die Benutzerinnen nicht anspricht, werden sie auch die Funktionen einer Applikation kaum benutzen. Deshalb sind gut durchdachte Userinterfaces heutzutage eine mindestens so wichtige Komponente einer Applikation wie ihre Funktionalität. Das Userinterface der entwickelten Applikation jedoch ist noch nicht auf dem Heute erwarteten Stand. Die Farben sind schlecht auf einander abgestimmt, gewisse Funktionen sind etwas schlecht zu erreichen, gewisse Screens wirken überfüllt und gewisse Icons sind eher unpassend. Ein visuelles Overhaul der Arbeit wäre in meinen Augen dringend nötig, bevor man sie ausserhalb von Testzwecken veröffentlicht.
 		
-		\section{Betatesting und Kompatibilität}
+		\subsection*{Betatesting und Kompatibilität}
 		Die Applikation ist für einen Release noch unzureichend Getestet. Dazu gehören sowohl Tests bezüglich ihrer Verwendung auf verschiedenen Geräten und Android Versionen wie auch Tests bezüglich ihrer Anwendbarkeit, wozu auch Betatest mit einer Gruppe von ausgewählten Benutzern gehörte. Besonders Betatests können durch Feedback von Benutzern einer Applikation extrem helfen, da dann oft Fehler und Mängel entdeckt werden, die den Entwicklern/Entwicklerinnen ansonsten entgangen wären.
 		
+		\subsection*{Sourcecode}
+		Momentan ist der Sourcecode zum Teil sehr unordentlich und unorganisiert. Dies kann einen Code für seine Wartung sehr aufwändig und unpraktisch machen. Deshalb würde es sich lohnen, den Code umzustrukturieren und zu vereinheitlichen. Damit würde der Code für seine Entwickler durchsichtiger, übersichtlicher und einfacher zu verstehen sein. Dinge sollten in einem Projekt konstant gleich gemacht werden um so eine Ordnung und Systematik für das Projekt zu schaffen.
+		
+		
+		\section{Kritik}
+		\section{Fazit}
+		Das Ziel dieser Arbeit war es, eine Applikation zu entwickeln, die in ihren Grundelementen die Vermittlung von Nachhilfe unter Schülerinnen und Schülern vereinfachen soll. Dieses Ziel zu einem grossen Teil erreicht werden. Die Applikation verfügt über alle dazu nötigen Feature und bildet ein solides Fundament für die Entwicklung einer markttauglichen Version.
+		
+		Zudem habe ich als Entwickler während dieser Arbeit mir sehr viel neues Wissen aneignen können. Ich habe viel gelernt über die Planung und Umsetzung von grösseren Programmierprojekten. Zudem kommt das ganze technische neue Wissen, welches nötig gewesen ist, um dieses Projekt zu realisieren.
 \newpage
+\raggedright
 \bibliography{literatur}	
 	
 \end{document}
