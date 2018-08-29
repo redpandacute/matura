@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+
+\bibitem{android:APILevel}
+{Android Developers}.
+\newblock \emph{<uses-sdk> (What is API Level?)}.
+\newblock
+  \url{https://www.datenschutz-notizen.de/die-schweiz-und-die-datenschutzgrundverordnung-0020134/},
+  2018.
+\newblock Abgerufen am: 27.08.2018.
+
+\bibitem{mvp}
+U.~Author.
+\newblock \emph{Presentation Patterns : MVC, MVP, PM, MVVM}.
+\newblock
+  \url{https://manojjaggavarapu.wordpress.com/2012/05/02/presentation-patterns-mvc-mvp-pm-mvvm/},
+  2012.
+\newblock Abgerufen am: 10.05.18.
+
+\bibitem{fachadmin.de:ServerClient}
+{fachadmin.de}.
+\newblock \emph{Server-Client Prinzip}.
+\newblock
+  \url{https://www.fachadmin.de/index.php?title=Client-Server_Prinzip&oldid=3425},
+  2011.
+\newblock Abgerufen am: 01.05.18.
+
+\end{thebibliography}

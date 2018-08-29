@@ -1,0 +1,52 @@
+\documentclass[4paper,11pt]{report}
+\author{Florian~Hirtz}
+\title{Studnetz, eine Mobilapplikation zur Vermittlung von Nachhilfeunterricht}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[export]{adjustbox}[2011/08/13]
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{subfiles}
+\usepackage{hyperref}
+
+\newenvironment{code}{\captionsetup{type=figure}}{}
+
+\graphicspath{{images/}{../images/}}
+
+%minimale page header & footer
+\pagestyle{fancy}
+\setlength{\headheight}{14pt} 
+\fancyhf{}
+\fancyhead[C]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+
+%Depth of sections
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\bibliographystyle{abbrv}
+
+\begin{document}
+	\maketitle
+	\subfile{chapters/vorwort.tex}
+	\tableofcontents
+	%Corrected
+	\subfile{chapters/Einleitung.tex}
+	%Corrected
+	\subfile{chapters/Konzeptionelle_Grundlagen.tex}
+	%Rewriten, not yet Corrected
+	\subfile{chapters/Die_entwickelte_Applikation}
+	%Uncorrected
+	%TODO: Schema von Client und Server für Studnetz
+	\subfile{chapters/Die_Server}
+	
+	
+	\newpage
+	\raggedright
+	\bibliography{literatur}
+	
+	
+\end{document}

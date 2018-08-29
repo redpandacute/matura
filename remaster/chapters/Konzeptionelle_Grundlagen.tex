@@ -1,0 +1,25 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\chapter{Konzeptionelle Grundlagen} \label{konzepte}
+Im folgenden Kapitel werden die für diese Arbeit wichtigen Grundkonzepte etwas genauer beschrieben.
+
+\section{Client-Server Prinzip} \label{ClientServerPrinzip}
+Das \emph{Client-Server Prinzip} ist ein weit verbreitetes Konzept, um die Aufgaben innerhalb eines Netzwerkes effizient aufzuteilen. Dabei werden die Aufgaben auf zwei im Netzwerk agierende Programme aufgeteilt. Diese Programme werden im Allgemeinen als Client und Server bezeichnet.
+	
+Der \emph{Server} hat die Aufgabe, verschiedenste Dienste zur Verfügung zu stellen, welche auf Anfrage ausgeführt werden können. Ein solcher Dienst kann zum Beispiel das Versenden einer Nachricht oder das Aufrufen einer Webseite sein. Der Server selbst ist meist passiv, was soviel bedeute wie, dass der Server einzig auf Anfragen reagiert und nicht selber Anfragen stellt. Ein Server sollte immer in der Lage sein, Anfragen entgegenzunehmen und zu verarbeiten.
+	
+Der \emph{Client} selber ist die aktive Komponente des Systems und ist meist die Komponente, mit welcher ein Benutzer/eine Benutzerin direkt interagiert. Der Client ist in der Lage, Anfragen an den Server zu stellen und von dessen Diensten Gebrauch zu machen. Grundsätzlich gibt es in einem solchen Netzwerk nur einen Server, jedoch kann es durchaus mehrere Clients geben. Ein guter Server sollte also auch darauf vorbereitet sein, mehrere Anfragen von verschiedenen Clients parallel zu bearbeiten. \cite{fachadmin.de:ServerClient}
+	
+%TODO BILD VON SCHEMA SERVER-CLIENT
+	
+\section{Das Modell-View-Presenter Konzept (Passive View)} \label{mvp}
+Das \emph{Modell-View-Presenter} (MVP) Konzept wie auch auch das sehr ähnliche \emph{Modell-View-Controller} (MVC) Konzept, sind beide für das Entwickeln von Software entworfen worden. Ihre Idee ist es, die Aufgabenbereiche innerhalb einer Applikation strikt voneinander zu trennen. Dabei wird zwischen drei Typen von Aufgabenbereichen unterschieden:
+\begin{itemize}
+	\item Die \emph{View} ist die sichtbare Benutzeroberfläche. Sie hat die Aufgabe, dem Benutzer ein bedienbares Interface zu bieten und soll auf Anfrage den Status seiner einzelnen Komponenten weitergeben. Sie kennt das Model nicht.
+	\item Das \emph{Model} ist der Datenspeicher einer Applikation, der gebraucht wird um die View korrekt darzustellen. Es soll auf Anfrage hin Daten ausgeben können. In diesem Falle kennt das Model weder die View noch den Presenter. Je nach Auslegung des Konzepts hat das Model jedoch auch die Aufgabe, falls sich Datensätze ändern, den Presenter davon zu unterrichten. Das Model kennt in diesem Falle zwar das Model, jedoch die View nicht.
+	\item Der \emph{Presenter} oder \emph{Controller} ist sozusagen der Mittelmann der beiden anderen Komponenten. Er ist in der Lage Daten aus dem Model anzufordern und kontrolliert anschliessend was mit diesen Daten geschieht. Er hat ebenfalls die Möglichkeit, die angezeigte View zu ändern und deren Status abzufragen. Der Presenter ist in der Lage, sowohl die View als auch das Model zu manipulieren.
+\end{itemize}
+Wichtig bei dem MVP Konzept mit einem passiven View ist es, dass nur der Presenter die Möglichkeit hat, auf die beiden anderen Komponenten zuzugreifen. Der View und das Model sollen unter keinen Umständen direkt miteinander kommunizieren. Sämtlicher benötigter Informationsaustausch soll stets vom Presenter kontrolliert werden.\cite{mvp} Ein grosser Vorteil einer nach diesen Regeln entwickelter Applikation ist, dass die einzelnen Komponenten weitgehend unabhängig von einander sind. Somit kann zum Beispiel der View komplett neu gestaltet werden, ohne dass der Presenter oder das Modell geändert werden müssen, damit die Applikation weiterhin funktioniert.
+	
+\end{document}
