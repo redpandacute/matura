@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{INSERT} \PYG{k}{INTO} \PYG{n}{user\PYGZus{}archive}\PYG{p}{(}\PYG{n}{user\PYGZus{}username}\PYG{p}{,} \PYG{n}{user\PYGZus{}name}\PYG{p}{,} \PYG{p}{[...])} \PYG{k}{VALUES} \PYG{p}{(}\PYG{o}{?}\PYG{p}{,} \PYG{o}{?}\PYG{p}{,} \PYG{p}{[...])}
+\end{Verbatim}

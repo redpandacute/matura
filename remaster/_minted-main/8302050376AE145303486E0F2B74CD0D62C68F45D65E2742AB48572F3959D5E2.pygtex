@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT} \PYG{n}{user\PYGZus{}archive}\PYG{p}{.}\PYG{o}{*}\PYG{p}{,} \PYG{n}{user\PYGZus{}subjects}\PYG{p}{.}\PYG{o}{*} \PYG{k}{FROM} \PYG{n}{user\PYGZus{}archive} \PYG{k}{INNER} \PYG{k}{JOIN} \PYG{n}{user\PYGZus{}subjects} \PYG{k}{ON} \PYG{n}{user\PYGZus{}archive}\PYG{p}{.}\PYG{n}{user\PYGZus{}id}\PYG{o}{=}\PYG{n}{user\PYGZus{}subjects}\PYG{p}{.}\PYG{n}{user\PYGZus{}id} \PYG{k}{WHERE} \PYG{n}{user\PYGZus{}archive}\PYG{p}{.}\PYG{n}{user\PYGZus{}username} \PYG{k}{LIKE} \PYG{o}{?} \PYG{k}{OR} \PYG{p}{[...]} \PYG{k}{AND} \PYG{n}{user\PYGZus{}archive}\PYG{p}{.}\PYG{n}{user\PYGZus{}school} \PYG{o}{=} \PYG{o}{?} \PYG{k}{AND} \PYG{p}{[...]}
+\end{Verbatim}
