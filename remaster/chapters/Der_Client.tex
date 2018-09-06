@@ -7,20 +7,142 @@
 	\section{Android}
 	Der Client wurde für das Betriebssystem \emph{Android} entwickelt. Es wird geschätzt, dass zwischen 85 und 86 Prozent aller heute verwendeten Mobiltelefone eine Version des Betriebssystems Android installiert haben. Dies macht Android zum mit Abstand meist verwendeten Betriebssystem für Mobiltelefone weltweit. Die Entwicklung der Studnetz Applikation für Android Geräte macht also nur Sinn, da somit eine grosse Menge an Benutzern/Benutzerinnen erreicht werden kann. \cite{android}
 	
-	Android basiert auf einem stark modifizierten Linux Kernel. Programme werden darauf in einer sogenannten \emph{Android Runtime} Umgebung ausgeführt. Diese Umgebung ist in der Lage, Bytecodes im \emph{Dex-Format} (Dalvik Executable-Format) auszuführen. Die Bytecodes werden dabei aus von der Programmiersprache \emph{Java} erstellten Bytecodes generiert. Die meisten Applikationen für Android wurden deshalb lange in der Programmiersprache Java programmiert, bis vor wenigen Jahren langsam ein Umschwung zur neueren Programmiersprache \emph{Kotlin} wahrnehmbar wird. Kotlin benutzt für die Ausführung das gleiche Bytecode-Format wie Java, bietet jedoch für die Entwicklung, besonders in den Bereichen Syntax, Vorteile gegenüber Java. \cite{androidJava}
+	Android basiert auf einem stark modifizierten Linux Kernel. Programme werden darauf in einer sogenannten \emph{Android Runtime} Umgebung ausgeführt. Diese Umgebung ist in der Lage, Bytecodes \cite{bytecode} im \emph{Dex-Format} (Dalvik Executable-Format) auszuführen. Diese Dex-Formate werden dabei meist aus für die \emph{Java Virtual Machine} (JVM) kompilierten Bytecodes übersetzt. Die meisten Applikationen für Android wurden deshalb lange in der Programmiersprache Java programmiert, erst vor wenigen Jahren begann dann ein langsamer ein Umschwung zur neueren Programmiersprache \emph{Kotlin}, die jedoch essentiell auch in Bytecodes für die JVM Kompiliert wird. Kotlin gewinnt hauptsächlich wegen seiner vorteilhaften Syntax an immer grösseren Beliebtheit, wobei insbesondere in der Entwicklung von Applikationen immer mehr auf Kotlin anstelle von Java gesetzt wird. \cite{androidJava}
 	
 	\subsection{Java}
-	Für die Entwicklung der Studnetz Applikation wurde die Programmiersprache Java gewählt, da sie sehr gut dokumentiert ist und ich, als Entwickler, bereits vor dieser Arbeit Erfahrungen mit Java gesammelt hatte. Java ist eine Sprache der 3. Generation und gehört zu den objektorientierten Programmiersprachen. Sie wurde erstmals 1995 von Sun Microsystems veröffentlicht und ist seit 2010 in Besitz von Oracle. Java zeichnet sich besonders durch seine plattformunabhängigkeit aus und eignet sich daher gut für kleinere Applikationen, die auf vielen verschiedenen Geräten funktionieren sollen. Java wird innerhalb des Clients hauptsächlich für die logischen Abläufe hinter der Benutzeroberfläche verwendet. 
+	Für die Entwicklung der Studnetz Applikation wurde die Programmiersprache Java gewählt, da sie sehr gut dokumentiert ist und ich, als Entwickler, bereits vor dieser Arbeit Erfahrungen mit Java gesammelt hatte. Java ist eine Sprache der 3. Generation und gehört zu den objektorientierten Programmiersprachen. Sie wurde erstmals 1995 von Sun Microsystems veröffentlicht und ist seit 2010 in Besitz von Oracle. Java zeichnet sich besonders durch seine plattformunabhängigkeit aus und eignet sich daher gut für kleinere Applikationen, die auf vielen verschiedenen Geräten funktionieren sollen.
+	
+	In der entwickelten Applikation wird die Sprache Java hauptsächlich für die logischen Prozesse verwendet, die hinter der optischen Benutzeroberfläche ablaufen.
 	
 	\subsection{XML}
+	Für das Layout der Benutzeroberfläche des Clients wird für gewöhnlich nicht Java verwendet. Stattdessen weicht man auf die Auszeichnungssprache \emph{XML} aus. XML steht für \emph{Extensible Markup Language} und kann bis zu einem gewissen Grad mit HTML (\emph{Hypertext Markup Language}) verglichen werden, unterscheiden sich jedoch in einem zentralen Punkt. HTML wurde entwickelt, um zu bestimmen wie Informationen dargestellt werden. XML auf der anderen Seite setzt den Fokus auf die Informationen als solche selber, und weniger auf die Darstellung. Es ist jedoch trozdem möglich, auch XML für die Definition von Darstellungen zu verwenden, wie es beispielsweise bei Android Applikationen üblich ist. Zudem kommt das XML deutlich flexibler als HTML ist, da Entwickler/Entwicklerinnen mehr Möglichkeiten haben, eigene, neue Darstellungsformen zu definieren.
+	
+	Bei der Verwendung von XML in Android Applikationen wird XML verwendet, um zum einen die Layouts der darzustellenden Screen zu definieren, aber auch um statische Informationen wie beispielsweise zu verwendende Strings und Integer. Somit können in einer Applikation auch relativ einfach verschiedene Sprachpackete entwickelt werden, da dafür lediglich alle definierten Strings, welche sich alle in einer Datei befinden, übersetzt werden müssen. Alle XML-Dateien zusammen bilden die \emph{Resources} einer Android Applikation. Auf diese Resources sind für die Java Klassen zugänglich und können manipuliert werden. Diese ermöglicht eine direkte Verknüpfung von Java mit dem Layout und ermöglicht die Entwicklung dynamischer Screens und Darstellungen. \cite{xml} \cite{xmlW3}
+	
 	\subsection{Android Studio}
+	Die Entwicklung der Studnetz Applikation fand hauptsächlich innerhalb der Programmierumgebung \emph{Android Studio} statt. Android Studio ist eine von Google entwickelte Programmierumgebung (IDE) für die Entwicklung von Applikationen für Android Mobilgeräte und unterstützt alle dafür erforderlichen Sprachen. Die Umgebung bietet unzählige an hilfreichen Werkzeugen für die Entwicklung von Applikationen. Dazu gehört beispielsweise ein Visueller Layout Editor, wo die Layouts sehr intuitiv via 'Drag and Drop' gestaltet werden können, wobei der dazu gehörige XML-Code im Hintergrund automatisch generiert wird. Zudem ist es möglich, entwickelte Applikationen sehr einfach auf lokalen Emulatoren zu testen, wobei in der Konsole von Android Studio dann allfällige Fehlermeldungen angezeigt werden. All dies und noch vieles mehr macht Android Studio zu einer sehr starken Programmierumgebung, die allen, von Amateur bis hin zu Profi, etwas bietet. Das Herunterladen und die komplette Benutzung von Android Studio ist kostenlos. Die Wahl für die Entwicklungsumgebung für die in dieser Arbeit entwickelten Applikation war also sehr schnell gefällt, da es kaum vergleichbare Alternativen zu Android Studio gibt, zumindest was die Entwicklung von Android Applikationen anbelangt.
 	
+	\section{Architektur des entwickelten Clients}
+	Im folgenden Abschnitt der Arbeit wird auf den entwickelten Client auf einer technischeren Ebene eingegangen. Es ist an dieser Stelle anzumerken, dass für diesen Abschnitt gewisse Grundkenntnisse des objektorientierten Programmierens und der Programmiersprache Java vorausgesetzt werden, da das Erläutern der absoluten Grundlagen von dem eigentlich entwickelten Client zu sehr ablenken würde. Weiter ist noch anzufügen, dass die ab hier verwendeten Zeilenangaben innerhalb der Code Beispiele sich jeweils ausschliesslich auf die abgebildeten Ausschnitte des Codes beziehen und nicht die eigentlichen Zeilen im Sourcecode repräsentieren. Ebenfalls sind teilweise stellen aus dem abgebildeten Sourcecode ausgeschnitten worden. Diese Stellen sind dann durch das Symbol \emph{[...]} in der Abbildung gekennzeichnet.
 	
-	\section{Architektur des Clients}
+	%Eine schematische Übersicht des den gesamten Clients ist in Abbildung \ref{clientOverview} dargestellt. Dort sind die einzelnen Activities und Fragments dargestellt und wie sie untereinander verknüpft sind.
+	
 	\subsection{Klassenübersicht}
-	\subsubsection{Activities}
+	Dummytext
+	
+	\subsubsection{Activities} \label{activities}
+	Der Begriff \emph{Activities} ist Android spezifisch und beschreibt einen einzelnen Screen innerhalb einer Applikation. Innerhalb der Studnetz-Applikation werden sechs solche Activities verwendet. Zu jeder Activity gehört jeweils ein XML-Layout und eine Java-Klasse. Das XML-Layout bildet dabei die View-Komponenten, während die Java-Klasse die Presenter-Komponente bildet (siehe Kapitel \ref{mvp}). Auf die Struktur einer solchen XML-Layout-Datei soll jetzt hier jedoch nicht weiter eingegangen werden, können jedoch mitsamt Screenshots aus der Applikation im Anhang nachgeschlagen werden. Stattdessen wird der Fokus auf die Java-Klasse gelegt. Ein beispielhaftes Grundgerüst einer solchen Activity findet sich in Abbildung \ref{activityStructure}.
+	
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+public class ActivityName extends AppCompatActivity {
+			
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.ActivityLayoutName);
+		
+		[...]	
+	}
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
+		
+		[...]
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		
+		[...]
+		
+		return super.onOptionsItemSelected(item);
+	}
+}	
+		\end{minted}
+	\end{center}
+	\caption{Grundgerüst einer Activity} \label{activityStructure}
+\end{code}
+
+	Alle dargestellten Funktionen sind theoretisch optional und müssen nicht zwangsweise in einer Activity vorkommen, werden jedoch in der Studnetz-Applikation so gut wie immer benutzt.
+
+	\paragraph{Die onCreate-Methode}
+	Die \emph{onCreate}-Methode in den Zeilen drei bis acht ist die Kernfunktion einer jeden Activity. Sie ist die erste Funktion die in einem Lebenszyklus einer Activty ausgeführt wird und definiert das zu verwendende XML-Layout (Zeile 7). Anschliessend folgen meist die Instantiierungen der einzelnen, für die Activity relevanten Objekte. Dazu gehören zum einen rein Java seitige Objekte wie zum Beispiel ein Objekt der Klasse \emph{UserModel} (siehe Kapitel \ref{models}) aber es werden auch bestimmten Komponenten der View wie Beispielsweise Schaltflächen Java-Objekte der passenden Klasse zugewiesen. Diese Objekte erlauben es, die dazugehörige View zu manipulieren und ihnen neue Eigenschaften zuzusprechen.
+
+	\paragraph{Die onStart-Methode}
+	Die \emph{onStart}-Methode in Zeile 12 bis 15 ist die zweite Funktion, die beim im Lebenszyklus einer Activity ausgeführt wird. Zum Zeitpunkt bei welcher sie ausgeführt wird, ist der Screen für den Benutzer/die Benutzerin bereits Sichtbar. In ihr werden meist diese Prozesse ausgeführt, die ansonsten zu grösseren Verzögerungen beim Laden einer Activity führen würden. Ein Beispiel hierfür wäre das Laden eines Profilbildes oder andere mit dem Server verknüpfte Prozesse.
+	
+	\paragraph{die onOptionsItemSelected-Methode}
+	Die \emph{onOptionsItemSelecten}-Methode in den Zeilen von 19 bis 24 wird dann ausgeführt, wenn eine Schaltfläche in der Toolbar eines Screens betätigt wurde. In ihr wird dann jeweils definiert, was bei der Betätigung einer Schaltfläche geschehen soll. Dies kann zum Beispiel ein Wechsel zu einer neunen Activity sein oder das ändern zu einem anderen Fragment.
+	
 	\subsubsection{Fragments}
+	\emph{Fragments} sind ebenfalls Android spezifische Elemente und sind mit Activities vergleichbar. Gleich wie Activities bestehen sie sowohl aus eine Java-Presenter wie einer XML-View. Der grosse Unterschied ist jedoch, das Fragments im Gegensatz zu Activities keine eigenständige Screens sind, sondern jeweils innerhalb einer Acitvity eingebettet werden. Sie besitzen dann dort einen vorgegebenen Rahmen in welchem ihr Layout dann angezeigt wird. Die zum Layout gehörenden Methoden finden sich dann in der dazugehörigen Java-Klasse. Eine Abbildung eines Grundgerüstes eines solchen Fragments findet sich in Abbildung \ref{fragmentStructure}.
+	
+	\begin{code}
+		\begin{center}
+			\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+public class FragmentName extends Fragment {
+			
+	@Override
+	public void onAttach(Context context) {
+		super.onAttach(context);
+		this.mActivity = (ParentActivityName) context;
+		
+		[...]
+	}
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	
+		View view = inflater.inflate(R.layout.FragmentLayoutName, container, false);
+
+		[...]
+
+		return view;
+	}
+			
+	@Override
+	public void onStart() {
+		super.onStart();
+	
+	}
+			
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+			
+		[...]
+			
+		return super.onOptionsItemSelected(item);
+	}
+}	
+			\end{minted}
+		\end{center}
+		\caption{Grundgerüst eines Fragments} \label{fragmentStructure}
+	\end{code}
+
+	\paragraph{Die onAttach-Methode}
+	Die \emph{onAttach}-Methode (Zeile 3 bis 10) ist die erste Funktion im Lebenszyklus eines Fragments. In der entwickelten Applikation wir sie hauptsächlich verwendet, um dem Fragment eine Referenz zur momentanen Applikationsumgebung (\emph{Context}) zu geben, in welcher sich die Parent-Activity befindet (Zeile 6). Dieses Objekt wird für diverse Prozesse benötigt, die irgendwie auf Ressourcen der Applikation zugreifen müssen und es gibt in der Androidentwicklung nur wenige Prozesse, in welchen der Kontext nicht irgendwann benötigt wird. \cite{context}
+	
+	\paragraph{Die onCreateView-Methode}
+	Die \emph{onCreateView}-Methode in den Zeilen 13 bis 20 ist nach der onAttach- und der onCreate-Methode die dritte Methode im Lebenszyklus eines Fragments. Die onCreate-Methode wird in den Fragments der Studnetz eher weniger verwendet, weshalb sie hier nicht selber aufgeführt ist. Stattdessen übernimmt die onCreateView-Methode die Aufgabe des Definieren der View (Layout) und der wichtigen Objekte. Dabei wird zuerst in Zeile 15 ein neues Layout der Klasse \emph{View} instantiiert. Über dieses Objekt kann dann auf die einzelnen View-Komponenten des Layouts zugegriffen werden. Schlussendlich wird die fertig konfigurierte View in Zeile 19 zurückgegeben, wo sie dann für das Fragment als Layout verwendet wird.
+	
+	\paragraph{Die onStart-Methode}
+	Die \emph{onStart}-Methode eines Fragments ist direkt vergleichbar mit der onStart-Methode einer Activity. Gleich wie in einer Activity wird die onStart-Methode ausgeführt, wenn das Layout des Fragments bereits sichtbar ist. Auch sie wird meist für vom Server abhängige Prozesse verwendet, bei welchen mit Verzögerungen zu rechnen ist.
+	
+	\paragraph{Die onOptionItemSelected-Methode}
+	Auch hier bei der \emph{onOptionItemSelected}-Methode kann auf die äquivalente Methode der Activites in Kapitel \ref{activities} verwiesen werden, da auch hier die Hauptaufgabe der Methode das definieren der Aktionen in der Toolbar ist.
+	
 	\subsubsection{Models}
+	Der Begriff \emph{Models} beschreibt eine Reihe von Klassen, die hauptsächlich für das strukturierte Speichern von Informationen innerhalb des Clients verwendet werden und bilden somit die Model-Komponenten des Systems (siehe Kapitel \ref{mvp}). Die Models der Studnetz Applikation können generell vom Aufbau her in in vier Teile abschnitte unterteilt werden
+	
+	\begin{itemize}
+		\item Die \emph{Felder} eines Models: Die Felder, auch \emph{Member Variables} genannt, sind die Datencontainer eines Models. Sie werden meist als erstes innerhalb der Klasse definiert. \cite{memberVariables}
+		\item Die \emph{Konstruktoren}: Die Konstruktoren befinden sich meist an zweiter Stelle. Über sie wird das Model initialisiert. Dabei kann es durchaus mehrere verschiedene Konstruktoren innerhalb eines Models geben. Ihnen werden meist über die Parameter meist schon alle Daten mitgegeben, die für die Felder benötigt werden.
+		\item  Die \emph{Getter}- und die \emph{Setter}-Methoden: Die Getter- und die Setter-Methoden finden sich als letztes in einem Model und sind die Methoden, die anderen Klassen den Zugriff auf die Felder des Models erlauben. Dabei können über die Setter-Methoden , auch \emph{Mutator Methods} genannt, die Felder nachträglich verändert werden, während über die Getter-Methoden, auch \emph{Accessor Methods} genannt, der Inhalt eines bestimmten Feldes abgerufen werden kann. \cite{accessorsAndMutators}
+	\end{itemize}
+	
 	\subsubsection{Requests}
 	\subsubsection{Adapter und ViewHolder}
 	\subsubsection{Utility-Klassen}
