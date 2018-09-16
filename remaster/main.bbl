@@ -1,12 +1,33 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{PHP:function}
+{Alpen-Adria-Gymnasiums Völkermarkt}.
+\newblock \emph{Wie funktioniert PHP?}
+\newblock
+  \url{http://www.gym1.at/schulinformatik/aus-fortbildung/fachdidaktik/vo-01/php/wie_funktioniert_php.htm}.
+\newblock Abgerufen am: 03.05.18.
+
+\bibitem{cache}
+{Android Developers}.
+\newblock \emph{Data and file storage overview}.
+\newblock \url{https://developer.android.com/guide/topics/data/data-storage},
+  2018.
+\newblock Abgerufen am: 15.09.2018.
 
 \bibitem{android:APILevel}
 {Android Developers}.
-\newblock \emph{<uses-sdk> (What is API Level?)}.
+\newblock \emph{uses-sdk (What is API Level?)}.
 \newblock
-  \url{https://www.datenschutz-notizen.de/die-schweiz-und-die-datenschutzgrundverordnung-0020134/},
+  \url{https://developer.android.com/guide/topics/manifest/uses-sdk-element},
   2018.
 \newblock Abgerufen am: 27.08.2018.
+
+\bibitem{context}
+{Android Studio}.
+\newblock \emph{Context}.
+\newblock
+  \url{https://developer.android.com/reference/android/content/Context}, 2018.
+\newblock Abgerufen am: 04.09.2018.
 
 \bibitem{mvp}
 U.~Author.
@@ -16,6 +37,37 @@ U.~Author.
   2012.
 \newblock Abgerufen am: 10.05.18.
 
+\bibitem{android}
+J.~Callaham.
+\newblock \emph{The history of Android OS: its name, origin and more}.
+\newblock
+  \url{https://www.androidauthority.com/history-android-os-name-789433/}, 2018.
+\newblock Abgerufen am: 07.05.18.
+
+\bibitem{security}
+P.~Ducklin.
+\newblock \emph{Serious Security: How to store your users' password safely}.
+\newblock
+  \url{https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/},
+  2013.
+\newblock Abgerufen am: 12.05.18.
+
+\bibitem{xml}
+{Epicodus}.
+\newblock \emph{Introduction to XML and Android Layouts}.
+\newblock
+  \url{https://www.learnhowtoprogram.com/android/introduction-to-android/introduction-to-xml-and-android-layouts},
+  2018.
+\newblock Abgerufen am: 03.09.2018.
+
+\bibitem{base64}
+{Erutuon}.
+\newblock \emph{Base64 encoding and decoding}.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding},
+  2018.
+\newblock Abgerufen am: 01.09.2018.
+
 \bibitem{fachadmin.de:ServerClient}
 {fachadmin.de}.
 \newblock \emph{Server-Client Prinzip}.
@@ -23,5 +75,116 @@ U.~Author.
   \url{https://www.fachadmin.de/index.php?title=Client-Server_Prinzip&oldid=3425},
   2011.
 \newblock Abgerufen am: 01.05.18.
+
+\bibitem{FirebaseRTDB}
+{Firebase}.
+\newblock \emph{Firebase Realtime Database}.
+\newblock \url{https://firebase.google.com/docs/database/}, 2018.
+\newblock Abgerufen am: 05.05.18.
+
+\bibitem{firebaseStructure}
+{Firebase}.
+\newblock \emph{Structure Your Database}.
+\newblock
+  \url{https://firebase.google.com/docs/database/android/structure-data}, 2018.
+\newblock Abgerufen am: 31.08.2018.
+
+\bibitem{GPL}
+{Free Software Foundation}.
+\newblock \emph{GNU General Public License, Version 3, 29 June 2007}.
+\newblock \url{https://www.gnu.org/licenses/gpl-3.0.de.html}, 2007.
+\newblock Abgerufen am: 28.08.2018.
+
+\bibitem{JSON}
+{json.org}.
+\newblock \emph{Introducing JSON}.
+\newblock \url{https://www.json.org/json-de.html}.
+\newblock Abgerufen am: 03.05.18.
+
+\bibitem{IT-Handbuch}
+S.~Kersken.
+\newblock {\em IT-Handbuch für Fachinformatiker}, volume 8., aktualisierte
+  Auflage.
+\newblock Rheinwerk Verlag GmbH, 2017.
+
+\bibitem{proprietaereLizenz}
+T.~Kreutzer.
+\newblock \emph{Proprietäre Softwarelizenzen: Standard für kommerzielle
+  Programme}.
+\newblock
+  \url{https://irights.info/artikel/standard-fr-kommerzielle-programme/5028},
+  2005.
+\newblock Abgerufen am: 28.08.2018.
+
+\bibitem{accessorsAndMutators}
+P.~Leahy.
+\newblock \emph{Accessors and Mutators}.
+\newblock \url{https://www.thoughtco.com/accessors-and-mutators-2034335}, 2018.
+\newblock Abgerufen am: 06.09.2018.
+
+\bibitem{memberVariables}
+{Oracle}.
+\newblock \emph{Declaring Member Variables}.
+\newblock
+  \url{https://docs.oracle.com/javase/tutorial/java/javaOO/variables.html},
+  2018.
+\newblock Abgerufen am: 06.09.2018.
+
+\bibitem{androidJava}
+T.~Patrick.
+\newblock \emph{The Relationship Between Android and Java}.
+\newblock \url{https://theiconic.tech/android-java-fdbd55aadc51}, 2018.
+\newblock Abgerufen am: 02.09.2018.
+
+\bibitem{PHP}
+php.net.
+\newblock \emph{What is PHP?}
+\newblock \url{http://php.net/manual/de/intro-whatis.php}.
+\newblock Abgerufen am: 03.05.18.
+
+\bibitem{Firebase}
+R.~S.
+\newblock \emph{Introduction to Firebase}.
+\newblock \url{https://hackernoon.com/introduction-to-firebase-218a23186cd7}.
+\newblock Abgerufen am: 05.05.18.
+
+\bibitem{defuse}
+D.~Security.
+\newblock \emph{Salted Password Hashing - Doing it Right}.
+\newblock \url{https://crackstation.net/hashing-security.htm}.
+\newblock Abgerufen am: 12.05.18.
+
+\bibitem{bytecode}
+{Tech Terms}.
+\newblock \emph{Bytecode}.
+\newblock \url{https://techterms.com/definition/bytecode}, 2018.
+\newblock Abgerufen am: 03.09.2018.
+
+\bibitem{tecmint.com}
+{tecmint.com}.
+\newblock \emph{MySQL and MariaDB}.
+\newblock
+  \url{https://www.tecmint.com/the-story-behind-acquisition-of-mysql-and-the-rise-of-mariadb/},
+  2017.
+\newblock Abgerufen am: 03.05.18.
+
+\bibitem{preparedstatement}
+{W3Schools}.
+\newblock \emph{PHP Prepared Statements}.
+\newblock
+  \url{https://www.w3schools.com/php/php_mysql_prepared_statements.asp}.
+\newblock Abgerufen am: 26.05.18.
+
+\bibitem{xmlW3}
+{W3Schools}.
+\newblock \emph{Introduction to XML}.
+\newblock \url{https://www.w3schools.com/xml/xml_whatis.asp}, 2018.
+\newblock Abgerufen am: 03.09.2018.
+
+\bibitem{RealtimeDatabase}
+W.~Wingerath.
+\newblock \emph{Real-Time Databases Explained}.
+\newblock \url{https://www.youtube.com/watch?v=HiQgQ88AdYo}.
+\newblock Abgerufen am: 05.05.18.
 
 \end{thebibliography}

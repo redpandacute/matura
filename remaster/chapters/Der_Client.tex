@@ -4,7 +4,9 @@
 	\chapter{Der Client}
 	Der Client ist das Herzstück der entwickelten Anwendung. Er ist der Teil der Anwendung, welcher von den Endbenutzern/Endbenutzerinnen heruntergeladen und benutzt wird. Er ist das verbindende Glied zwischen den gespeicherten Informationen auf dem Server und den Benutzern/Benutzerinnen. Im folgenden Kapitel wird genauer auf die Funktionsweise des Clients eingegangen und seine Interaktionen mit dem Server beschrieben.
 	
-	\section{Android}
+	\section{Betriebssystem und Programmiersprache}
+	
+	\subsection{Android}
 	Der Client wurde für das Betriebssystem \emph{Android} entwickelt. Es wird geschätzt, dass zwischen 85 und 86 Prozent aller heute verwendeten Mobiltelefone eine Version des Betriebssystems Android installiert haben. Dies macht Android zum mit Abstand meist verwendeten Betriebssystem für Mobiltelefone weltweit. Die Entwicklung der Studnetz Applikation für Android Geräte macht also nur Sinn, da somit eine grosse Menge an Benutzern/Benutzerinnen erreicht werden kann. \cite{android}
 	
 	Android basiert auf einem stark modifizierten Linux Kernel. Programme werden darauf in einer sogenannten \emph{Android Runtime} Umgebung ausgeführt. Diese Umgebung ist in der Lage, Bytecodes \cite{bytecode} im \emph{Dex-Format} (Dalvik Executable-Format) auszuführen. Diese Dex-Formate werden dabei meist aus für die \emph{Java Virtual Machine} (JVM) kompilierten Bytecodes übersetzt. Die meisten Applikationen für Android wurden deshalb lange in der Programmiersprache Java programmiert, erst vor wenigen Jahren begann dann ein langsamer ein Umschwung zur neueren Programmiersprache \emph{Kotlin}, die jedoch essentiell auch in Bytecodes für die JVM Kompiliert wird. Kotlin gewinnt hauptsächlich wegen seiner vorteilhaften Syntax an immer grösseren Beliebtheit, wobei insbesondere in der Entwicklung von Applikationen immer mehr auf Kotlin anstelle von Java gesetzt wird. \cite{androidJava}
@@ -22,15 +24,12 @@
 	\subsection{Android Studio}
 	Die Entwicklung der Studnetz Applikation fand hauptsächlich innerhalb der Programmierumgebung \emph{Android Studio} statt. Android Studio ist eine von Google entwickelte Programmierumgebung (IDE) für die Entwicklung von Applikationen für Android Mobilgeräte und unterstützt alle dafür erforderlichen Sprachen. Die Umgebung bietet unzählige an hilfreichen Werkzeugen für die Entwicklung von Applikationen. Dazu gehört beispielsweise ein Visueller Layout Editor, wo die Layouts sehr intuitiv via 'Drag and Drop' gestaltet werden können, wobei der dazu gehörige XML-Code im Hintergrund automatisch generiert wird. Zudem ist es möglich, entwickelte Applikationen sehr einfach auf lokalen Emulatoren zu testen, wobei in der Konsole von Android Studio dann allfällige Fehlermeldungen angezeigt werden. All dies und noch vieles mehr macht Android Studio zu einer sehr starken Programmierumgebung, die allen, von Amateur bis hin zu Profi, etwas bietet. Das Herunterladen und die komplette Benutzung von Android Studio ist kostenlos. Die Wahl für die Entwicklungsumgebung für die in dieser Arbeit entwickelten Applikation war also sehr schnell gefällt, da es kaum vergleichbare Alternativen zu Android Studio gibt, zumindest was die Entwicklung von Android Applikationen anbelangt.
 	
-	\section{Architektur des entwickelten Clients}
-	Im folgenden Abschnitt der Arbeit wird auf den entwickelten Client auf einer technischeren Ebene eingegangen. Es ist an dieser Stelle anzumerken, dass für diesen Abschnitt gewisse Grundkenntnisse des objektorientierten Programmierens und der Programmiersprache Java vorausgesetzt werden, da das Erläutern der absoluten Grundlagen von dem eigentlich entwickelten Client zu sehr ablenken würde. Weiter ist noch anzufügen, dass die ab hier verwendeten Zeilenangaben innerhalb der Code Beispiele sich jeweils ausschliesslich auf die abgebildeten Ausschnitte des Codes beziehen und nicht die eigentlichen Zeilen im Sourcecode repräsentieren. Ebenfalls sind teilweise stellen aus dem abgebildeten Sourcecode ausgeschnitten worden. Diese Stellen sind dann durch das Symbol \emph{[...]} in der Abbildung gekennzeichnet.
+	\section{Klassenübersicht des entwickelten Clients}
+	Im folgenden Abschnitt der Arbeit wird auf den entwickelten Client auf einer technischeren Ebene eingegangen. Es ist an dieser Stelle anzumerken, dass für diesen Abschnitt gewisse Grundkenntnisse des objektorientierten Programmierens und der Programmiersprache Java vorausgesetzt werden, da das Erläutern der Grundlagen von dem eigentlich entwickelten Client zu sehr ablenken würde. Weiter ist noch anzufügen, dass die ab hier verwendeten Zeilenangaben innerhalb der Code Beispiele sich jeweils ausschliesslich auf die abgebildeten Ausschnitte des Codes beziehen und nicht die eigentlichen Zeilen im Sourcecode repräsentieren. Ebenfalls sind teilweise stellen aus dem abgebildeten Sourcecode ausgeschnitten worden. Diese Stellen sind dann durch das Symbol \emph{[...]} in der Abbildung gekennzeichnet.
 	
 	%Eine schematische Übersicht des den gesamten Clients ist in Abbildung \ref{clientOverview} dargestellt. Dort sind die einzelnen Activities und Fragments dargestellt und wie sie untereinander verknüpft sind.
 	
-	\subsection{Klassenübersicht}
-	Dummytext
-	
-	\subsubsection{Activities} \label{activities}
+	\subsection{Activities} \label{activities}
 	Der Begriff \emph{Activities} ist Android spezifisch und beschreibt einen einzelnen Screen innerhalb einer Applikation. Innerhalb der Studnetz-Applikation werden sechs solche Activities verwendet. Zu jeder Activity gehört jeweils ein XML-Layout und eine Java-Klasse. Das XML-Layout bildet dabei die View-Komponenten, während die Java-Klasse die Presenter-Komponente bildet (siehe Kapitel \ref{mvp}). Auf die Struktur einer solchen XML-Layout-Datei soll jetzt hier jedoch nicht weiter eingegangen werden, können jedoch mitsamt Screenshots aus der Applikation im Anhang nachgeschlagen werden. Stattdessen wird der Fokus auf die Java-Klasse gelegt. Ein beispielhaftes Grundgerüst einer solchen Activity findet sich in Abbildung \ref{activityStructure}.
 	
 \begin{code}
@@ -62,8 +61,10 @@ public class ActivityName extends AppCompatActivity {
 	}
 }	
 		\end{minted}
+		\caption{Grundgerüst einer Activity}
+		\label{activityStructure}
 	\end{center}
-	\caption{Grundgerüst einer Activity} \label{activityStructure}
+	
 \end{code}
 
 	Alle dargestellten Funktionen sind theoretisch optional und müssen nicht zwangsweise in einer Activity vorkommen, werden jedoch in der Studnetz-Applikation so gut wie immer benutzt.
@@ -74,10 +75,10 @@ public class ActivityName extends AppCompatActivity {
 	\paragraph{Die onStart-Methode}
 	Die \emph{onStart}-Methode in Zeile 12 bis 15 ist die zweite Funktion, die beim im Lebenszyklus einer Activity ausgeführt wird. Zum Zeitpunkt bei welcher sie ausgeführt wird, ist der Screen für den Benutzer/die Benutzerin bereits Sichtbar. In ihr werden meist diese Prozesse ausgeführt, die ansonsten zu grösseren Verzögerungen beim Laden einer Activity führen würden. Ein Beispiel hierfür wäre das Laden eines Profilbildes oder andere mit dem Server verknüpfte Prozesse.
 	
-	\paragraph{die onOptionsItemSelected-Methode}
-	Die \emph{onOptionsItemSelecten}-Methode in den Zeilen von 19 bis 24 wird dann ausgeführt, wenn eine Schaltfläche in der Toolbar eines Screens betätigt wurde. In ihr wird dann jeweils definiert, was bei der Betätigung einer Schaltfläche geschehen soll. Dies kann zum Beispiel ein Wechsel zu einer neunen Activity sein oder das ändern zu einem anderen Fragment.
+	\paragraph{Die onOptionsItemSelected-Methode}
+	Die \emph{onOptionsItemSelected}-Methode in den Zeilen von 19 bis 24 wird dann ausgeführt, wenn eine Schaltfläche in der Toolbar eines Screens betätigt wurde. In ihr wird dann jeweils definiert, was bei der Betätigung einer Schaltfläche geschehen soll. Dies kann zum Beispiel ein Wechsel zu einer neunen Activity sein oder das ändern zu einem anderen Fragment.
 	
-	\subsubsection{Fragments}
+	\subsection{Fragments}
 	\emph{Fragments} sind ebenfalls Android spezifische Elemente und sind mit Activities vergleichbar. Gleich wie Activities bestehen sie sowohl aus eine Java-Presenter wie einer XML-View. Der grosse Unterschied ist jedoch, das Fragments im Gegensatz zu Activities keine eigenständige Screens sind, sondern jeweils innerhalb einer Acitvity eingebettet werden. Sie besitzen dann dort einen vorgegebenen Rahmen in welchem ihr Layout dann angezeigt wird. Die zum Layout gehörenden Methoden finden sich dann in der dazugehörigen Java-Klasse. Eine Abbildung eines Grundgerüstes eines solchen Fragments findet sich in Abbildung \ref{fragmentStructure}.
 	
 	\begin{code}
@@ -118,8 +119,10 @@ public class FragmentName extends Fragment {
 	}
 }	
 			\end{minted}
+			\caption{Grundgerüst eines Fragments}
+			\label{fragmentStructure}
 		\end{center}
-		\caption{Grundgerüst eines Fragments} \label{fragmentStructure}
+		
 	\end{code}
 
 	\paragraph{Die onAttach-Methode}
@@ -134,23 +137,254 @@ public class FragmentName extends Fragment {
 	\paragraph{Die onOptionItemSelected-Methode}
 	Auch hier bei der \emph{onOptionItemSelected}-Methode kann auf die äquivalente Methode der Activites in Kapitel \ref{activities} verwiesen werden, da auch hier die Hauptaufgabe der Methode das definieren der Aktionen in der Toolbar ist.
 	
-	\subsubsection{Models}
-	Der Begriff \emph{Models} beschreibt eine Reihe von Klassen, die hauptsächlich für das strukturierte Speichern von Informationen innerhalb des Clients verwendet werden und bilden somit die Model-Komponenten des Systems (siehe Kapitel \ref{mvp}). Die Models der Studnetz Applikation können generell vom Aufbau her in in vier Teile abschnitte unterteilt werden
+	\subsection{Models} \label{models}
+	Der Begriff \emph{Models} beschreibt eine Reihe von Klassen, die hauptsächlich für das strukturierte Speichern von Informationen innerhalb des Clients verwendet werden und bilden somit die Model-Komponenten des Systems (siehe Kapitel \ref{mvp}). Die Models der Studnetz Applikation können generell vom Aufbau her in in vier Abschnitte unterteilt werden:
 	
 	\begin{itemize}
-		\item Die \emph{Felder} eines Models: Die Felder, auch \emph{Member Variables} genannt, sind die Datencontainer eines Models. Sie werden meist als erstes innerhalb der Klasse definiert. \cite{memberVariables}
+		\item Die \emph{Felder} eines Models: Die Felder, auch \emph{Member Variables} genannt, sind der Datenspeicher eines Models. Sie werden meist als erstes innerhalb der Klasse in Forme einer Reihe von Variablen definiert. \cite{memberVariables}
 		\item Die \emph{Konstruktoren}: Die Konstruktoren befinden sich meist an zweiter Stelle. Über sie wird das Model initialisiert. Dabei kann es durchaus mehrere verschiedene Konstruktoren innerhalb eines Models geben. Ihnen werden meist über die Parameter meist schon alle Daten mitgegeben, die für die Felder benötigt werden.
-		\item  Die \emph{Getter}- und die \emph{Setter}-Methoden: Die Getter- und die Setter-Methoden finden sich als letztes in einem Model und sind die Methoden, die anderen Klassen den Zugriff auf die Felder des Models erlauben. Dabei können über die Setter-Methoden , auch \emph{Mutator Methods} genannt, die Felder nachträglich verändert werden, während über die Getter-Methoden, auch \emph{Accessor Methods} genannt, der Inhalt eines bestimmten Feldes abgerufen werden kann. \cite{accessorsAndMutators}
+		\item  Die \emph{Getter}- und die \emph{Setter}-Methoden: Die Getter- und die Setter-Methoden finden sich als letztes in einem Model und sind die Methoden, die anderen Klassen den Zugriff auf die Felder des Models erlauben. Dabei können über die Setter-Methoden, auch \emph{Mutator Methods} genannt, die Felder nachträglich verändert werden, während über die Getter-Methoden, auch \emph{Accessor Methods} genannt, der Inhalt eines bestimmten Feldes abgerufen werden kann. \cite{accessorsAndMutators}
 	\end{itemize}
+
+	\subsubsection{UserModel}
+	Das UserModel-Model ist das Model in welchem die Informationen eines einzelnen Benutzerprofils gespeichert werden. Hierzu findet sich ein Feld für alle dafür Relevanten Werte. Bei der Initialisierung wird unterschieden, ob das Model das Model des Clientbenutzers/der Clientbenutzerin selber ist oder es sich um ein Fremdes Profil handelt. Entsprechend sind Informationen wie Passwort oder Email nicht immer innerhalb des Models gesetzt. Eine Abbildung eines Konstruktors des Models findet sich in Abbildung \ref{userModelConst}.
 	
-	\subsubsection{Requests}
-	\subsubsection{Adapter und ViewHolder}
-	\subsubsection{Utility-Klassen}
+	\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+		
 	
-	\subsection{Beispielhafte Erläuterung der \emph{MainActivity}}
-	\subsubsection{Aufbau der Activity}
-	\subsubsection{Aufbau der Fragments}
+public userInfo(int id, String username, String name, String firstname, [...], String temp_profilepicture_path, String JSON) {
+	this.id = id;
+	this.JSON = JSON;
+
+	this.username = username;
+	this.name = name;
+	this.firstname = firstname;
+	this.school = school;
+	this.grade = grade
+	this.description = description;
 	
+	this.french = french;
+	this.spanish = spanish;
+	this.english = english;
+	this.music = music;
+	this.chemistry = chemistry;
+	this.biology = biology;
+	this.maths = maths;
+	this.physics = physics;
+	this.german = german;
+	
+	this.passwordHash = passwordHash;
+	this.salt = salt;
+
+	this.temp_profilepicture_path = temp_profilepicture_path;
+}
+		\end{minted}
+		\caption{Konstruktor der UserModel-Klasse}
+		\label{userModelConst}
+	\end{center}
+	
+\end{code}
+	Das UserModel ist das wohl zentralste Model der entwickelten Applikation. Es wird in allen Activities und Fragements mit Ausnahme des Logins und der Registrierung verwendet. Da jedoch das UserModel-Objekt selber nicht zwischen den Acitivties weitergegeben werden kann, wird hierzu ein JSON-String verwendet, der im Konstruktor auf Zeile 3 gesetzt wird. Der dabei verwendete JSON-String ist der gleiche, wie der Webserver verwendet, wenn er Benutzerinformationen an den Client schickt.
+	
+	\subsubsection{ProfilePictureModel}
+	Für das Darstellen und Speichern von Profilbild auf dem Client wird das ProfilePictureModel-Model verwendet. Das Model besitzt Felder für die drei verschiedenen Formen in welchen ein Profilbild innerhalb der Applikation auftreten kann.
+	
+	\begin{itemize}
+		\item Das \emph{Bitmap}-Format: Das Bitmap-Format ist das Format, welches von Android für die Darstellung von Bildern verwendet wird. Es wird in der Applikation verwendet, um das anzuzeigende Bild der \emph{ImageViews} (XML-Objekt für das Darstellen von Bildern) zu definieren.
+		\item Das \emph{Base64}-Format: Base64 ist das Bild-Format welches für den Transfer einer Bilddatei zwischen Server und Client verwendet wird. Wie bereits in Kapitel \ref{MySQLStructure} erwähnt ist es ebenfalls das Format, in welchem die Bilder in der Datenbank gespeichert werden.
+		\item Die temporäre \emph{Cache}-Datei: Die temporäre Cache-Datei ist eine Datei im lokalen Cache-Speicher des Gerätes. Cache-Speicher wird verwendet um temporär benötigte Dateien zu speichern damit sie nicht jeweils immer wieder erneut geladen werden müssen. Jede Applikation auf einem Gerät besitzt dabei ihr eigenes Cache-Verzeichnis. Innerhalb der entwickelten Applikation werden jeweils für geladene Profilbilder Cache-Dateien erstellt. Ab dann werden die Bilder jeweils nur noch über den Pfad zur Cache-Datei referenziert. Dies macht einen einfachen Transfer der Bilder von Activity zu Activity möglich. \cite{cache}
+	\end{itemize}
+
+	Das ProfilePictureModel-Model kann dabei über alle drei der Formate initialisiert werden, weshalb sie jeweils einen Konstruktor für jedes Format besitzt. Anschliessend wird das gegebene Format jeweils in die anderen Formate übersetzt. Hierzu finden sich eine Reihe von Methoden in der ProfilePictureModel-Klasse, die dies ermöglichen. Hinzu kommt dann noch ein vierter Konstruktor, der das Objekt mithilfe einem Parameter der Klasse \emph{Uri} initialisiert wird. Uri (Uniform Resource Identifier) ist eine Form der Dateireferenzierung. Sie wird bei der Auswahl eines neuen Profilbildes verwendet und kann dann ebenfalls in die anderen Formate umgewandelt werden. Eine Abbildung der Felder und der Konstruktoren findet sich in Abbildung \ref{profilePictureModelConst}.
+	
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+public class ProfilePictureModel {
+
+	private static final int MAX_QUALITY = 100;
+
+	private boolean success = false;
+	private Context mContext;
+	private Bitmap imageBitmap;
+	private String BASE64, path;
+	private File tempFile;
+
+	public ProfilePictureModel(Context context, String BASE64) {
+		this.mContext = context;
+		this.BASE64 = BASE64;
+		this.imageBitmap = decodeBASE64(this.BASE64); //Methode für das Umwandeln von Base64 zu Bitmap
+		createTemp(this.imageBitmap, MAX_QUALITY); //Erstellen einer neuen Bild-Datei im Cache
+		this.success = true;
+	}
+
+	public ProfilePictureModel(Context context, Bitmap imageBitmap) {
+		[...]
+	}
+
+	public ProfilePictureModel(Context context, Uri imageUri, int quality) {
+		[...]
+	}
+
+	public ProfilePictureModel(Context context, File tempFile) {
+		[...]
+	}
+	
+	[...]
+}
+		\end{minted}
+		\caption{Felder und Konstruktoren der ProfilePictureModel-Klasse}
+		\label{profilePictureModelConst}
+	\end{center}
+	
+\end{code}
+
+	Eine weitere Aufgabe, die ebenfalls in die Hände des ProfilePictureModel-Models fällt, ist die Regulierung der Bildqualität und Auflösung. Dies ermöglicht, dass egal was für ein Bild ein Benutzer/Benutzer als Profilbild ausgewählt hat, alle Bilder schlussendlich ungefähr gleich gross in der Auflösung sind. Zudem werden die Bitmaps innerhalb der Applikation jeweils in einer Runden Form dargestellt. Diese wird ihnen auch innerhalb des ProfilePictureModel-Models gegeben, wobei hierzu jedoch auf ein bereits existierendes Github-Repository von Arthur Teplitzki zurückgegriffen wurde, welches verschiedene Tools für das zuschneiden von Bildern bietet. Dieses Repository wird noch etwas mehr in Kapitel \ref{imageCropping} thematisiert.
+	
+	\subsubsection{ChatModel}
+	Das \emph{ChatModel}-Model ist das simpelste Model der Studnetz Applikation und wird für die Chats verwendet. Im Model befinden sich Felder für die wichtigsten Kernangaben eines Chats wie die UserModel-Models von beiden Chatparteien, eine Firebase-Referenz zu den Firebase-Profilen beider Chatparteien sowie die Firebase-Referenz zum Chat selber. Eine Abbildung des einzigen Konstruktors sowie den Felder findet sich in Abbildung \ref{chatModelConst}.
+	
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+public class ChatModel {
+
+	private UserModel mMainprofileModel, mUserprofileModel;
+	private DatabaseReference mMainprofileRef, mUserprofileRef, mChatRef;
+
+	public ChatModel(UserModel mMainprofileModel, UserModel mUserprofileModel, DatabaseReference mMainprofileRef, DatabaseReference mUserprofileRef, DatabaseReference mChatRef) {
+		this.mMainprofileModel = mMainprofileModel;
+		this.mUserprofileModel = mUserprofileModel;
+		this.mMainprofileRef = mMainprofileRef;
+		this.mUserprofileRef = mUserprofileRef;
+		this.mChatRef = mChatRef;
+	}
+}
+
+		\end{minted}
+		\caption{Felder und Konstruktor der ChatModel-Klasse}
+		\label{chatModelConst}
+	\end{center}
+	
+\end{code}
+		
+	%\subsection{Requests}
+	\subsection{Auflistungen}
+	In der Studnetz Applikation wird an mehreren Orten eine Form einer Auflistung von Elementen benötigt. Dies ist beispielsweise bei der Anzeige der gefundenen Suchergebnissen der Fall oder wenn die offenen Chats aufgelistet werden. Für das darstellen einer solchen Auflistung werden gleich mehrere verschiedene Klassen benötigt.
+	
+	\subsubsection{XML-Layout eines Elementes}
+	Standardmässig verwenden Listen für die einzelnen Elemente ein extrem simples Layout für die einzelnen Elemente. Oft reicht dies jedoch nicht aus sondern die Elemente sollen angepasster an ihre spezifische Aufgabe sein. Hierzu wird ein XML-Layout definiert, welches jeweils für ein Element der Liste verwendet werden soll. Ein Beispiel eines solchen Elementes findet sich in Abbildung \ref{listElement}.
+
+	\subsubsection{Model eines Elements}
+	Um den verschiedenen Elementen der Auflistung Informationen zuzuschreiben zu können kommen Models zum Einsatz. Jedem Element wird ein Model zugeschrieben, welches die für das Element wichtigen Informationen beinhaltet. Die für die verwendeten Models wurden bereits alle in Kapitel \ref{models} thematisiert, weshalb hier nicht mehr näher darauf eingegangen wird.
+	
+	\subsubsection{ViewHolder}
+	Die ViewHolder-Klasse beschreibt jeweils ein einzelnes Element der Auflistung. Innerhalb eines ViewHolders sind Dinge wie das zu verwendende Layout wie auch das zum Element gehörende Model referenziert. Es ist teilweise umstritten, wie weit sich der Aufgabenbereich der ViewHolder-Klasse einer Liste streckt. In der entwickelten Applikation hat der ViewHolder jeweils neben den bereits erwähnten Aufgaben auch die Aufgabe, das XML-Layout des Elementes auf die Informationen des Models anzupassen. Hierzu findet sich meist eine \emph{validate}-Methode, welche diese Modifikation der View ermöglicht. Ein Beispiel für eine solche ViewHolder-Klasse findet sich in Abbildung \ref{viewHolder}.
+
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+class ResultViewHolder extends RecyclerView.ViewHolder{
+	
+	private UserModel model;
+	private View view;
+	
+	public ResultViewHolder(View view) {
+		super(view);
+		this.view = view;
+	}
+	
+	public void validate(UserModel model) {
+		this.model = model
+	
+		TextView name_tv = view.findViewById(R.id.result_name_textview);
+		TextView school_tv = view.findViewById(R.id.result_school_textview);
+		
+		[...]
+		
+		name_tv.setText(this.model.getFirstname() + " " + this.model.getName());
+		school_tv.setText(this.model.getSchool() + this.model.getStringGrade());
+	}
+	
+	[...]
+	
+}
+		\end{minted}
+		\caption{ViewHolder-Klasse für die Auflistung der Suchergebnisse}
+		\label{viewHolder}
+	\end{center}
+\end{code}
+
+	%Bei der Darstellung einer Auflistung werden jeweils immer so viele ViewHolder-Objekte initialisiert, wie auf dem Bildschirm maximal sichtbar sein können. Daraufhin wird die validate-Methode für jeden ViewHolder aufgerufen, wobei ihr jeweils das dem Element zugewiesene Model als Parameter überreicht wird (Zeile 11). Wenn nun die Liste durchgesehen wird, bleibt die Anzahl der geladenen ViewHolder konstant. Es werden lediglich die nicht mehr sichtbaren ViewHolder wiederverwertet für die nun neu sichtbaren Elemente, wobei die validate-Methode des ViewHolders erneut mit einem anderen Model aufgerufen wird. Dieser Prozess wird als \emph{recycling} bezeichnet.
+	
+	\subsubsection{Adapter}
+	Die Adapter-Klassen haben die Aufgabe, die Elemente und somit auch die ViewHolder-Objekte einer Liste zu verwalten. Sie bestimmen, welcher Datensatz welchem Element zukommt und welche View für ein Element verwendet werden soll. In der entwickelten Applikation werden hierzu für die Auflistung der Suchergebnisse und der offenen Chats eine Subklasse der \emph{RecyclerView.Adapter}-Klasse verwendet, während für die Chats selber eine Subklasse der \emph{FirebaseRecyclerAdapter}-Klasse verwendet wird. Grundsätzlich ist der Aufbau beider Adapterarten vergleichbar. Der grosse Unterschied ist jedoch, dass FirebaseRecyclerAdapter über eine Referenz mit einer Firebase Echtzeitdatenbank verknüpft sind. Der Datensatz der Auflistung wird dann jeweils in Echtzeit mit der Datenbank synchronisiert. Auf den FirebaseRecyclerAdapter soll jedoch hier nicht weiter eingegangen werden, sonder der Fokus wird stattdessen auf den normalen RecyclerAdapter gelegt. Ein Beispiel eines solchen Adapters findet sich in Abbildung \ref{chatOverviewAdapter}.
+	
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+class ChatoverviewAdapter extends RecyclerView.Adapter<OpenChatViewHolder>{
+
+	private ChatoverviewFragment mFragment;
+	private Map<Integer, OpenChatModel> mDataset;
+
+	public ChatoverviewAdapter(ChatoverviewFragment mFragment) {
+		this.mFragment = mFragment;
+		this.mDataset = mFragment.getDataset();
+	}
+
+	@Override
+	public OpenChatViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.openchat, parent, false);
+		OpenChatViewHolder viewHolder = new OpenChatViewHolder(view);
+		return viewHolder;
+	}
+
+	@Override
+	public void onBindViewHolder(OpenChatViewHolder holder, int position) {
+		OpenChatModel model = mDataset.get(mDataset.keySet().toArray()[position]);
+		holder.validate(model);
+		holder.getView().setOnClickListener(new OnOpenChatListener(mFragment, model));
+		holder.setProfilePicture(new ProfilePictureModel(mFragment.getActivity().getBaseContext(), new File(model.getUserModel().getTempProfilePicturePath())));
+	}
+
+	@Override
+	public int getItemCount() {
+		return mDataset.size();
+	}
+}
+		\end{minted}
+		\caption{RecyclerAdapter-Klasse für die Auflistung der offenen Chats}
+		\label{chatOverviewAdapter}
+	\end{center}
+\end{code}
+
+	Typisch für einen Adapter ist ein Feld für den darzustellenden Datensatz, welcher sich hier auf Zeile 4 in Forme einer Map mit einem Integer als Key und einem OpenChatModel-Model als Wert findet. 
+	
+	Das OpenChatModel-Model ist wiederum ein sehr simples Model, welches nur für diese Auflistung verwendet wird. Es beinhaltet Felder für die benötigten Firebase-Referenzen und das Profil des Chatpartners in Forme eines UserModel-Models. Zudem kommt noch einen String für die zuletzt im Chat geschickte Nachricht.
+	
+	Der Datensatz des Adapters wird jeweils bereits bei der Initialisierung des Adapters über die Parameter des Konstruktors auf Zeile 6 referenziert. Hier ist es wichtig zu unterscheiden, dass es sich um eine Referenz und nicht um einen Klon des Datensatzes handelt. Dies bedeutet, dass wenn sich der Datensatz ändern sollte, kann die Liste über eine notifyDatasetChanged-Methode Aktualisiert werden, ohne das der Datensatz dabei erneut übergeben werden muss.
+	
+	Auf Zeilen 12 bis 21 finden sich dann die beiden Kernmethoden eines RecyclerAdapters.
+	
+	\paragraph{Die onCreateViewHolder-Methode}
+	
+	\paragraph{Die onBindViewHolder-Methode}
+	
+	
+	%Ein solcher RecyclerAdapter besteht in der Regel aus einem Konstruktor (Zeile 8), über welchen das Datenset des Adapter bestimmt (Zeilen 12-16), und drei wichtigen Funktionen: der \emph{getItemCount} Funktion (Zeile 42), die die Menge an gespeicherten Elementen zurückgibt, der \emph{onCreateViewHolder} Funktion (Zeile 20), die einen neuen ViewHolder mit einem bestimmten Layout instantiiert und der \emph{onBindViewHolder} Funktion (Zeile 28), die einem ViewHolder einen Datensatz zuweist (Zeile 29), die View des ViewHolders entsprechend konfiguriert (Zeile 30-34) und der View eine onClickListener zuweist, die das Profil des dargestellten Benutzers/der dargestellten Benutzerin öffnet (Zeile 38). Im falle des Adapters der Suchergebnisse findet sich hier noch eine weitere Methode mit dem Namen \emph{refresh} (Zeile 46), die für das nachträgliche Einfügen der Profilbilder eine wichtige Rolle spielt, jedoch dazu mehr in Kapitel \ref{profilePictures}.
+	
+	
+	
+	\subsection{Utility-Klassen}
+	
+	
+	%\subsection{Beispielhafte Erläuterung der \emph{MainActivity}}
+	%\subsubsection{Aufbau der Activity}
+	%\subsubsection{Aufbau der Fragments}
+	\subsection{Image Cropping} \label{imageCropping}
 	\subsection{Interaktion mit dem Webserver (MySQL Datenbank)}
 	\subsection{Interaktion mit der Firebase Echtzeitdatenbank}
 	
