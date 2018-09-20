@@ -37,12 +37,20 @@
 \BOOKMARK [3][-]{subsubsection.5.2.3.1}{UserModel}{subsection.5.2.3}% 37
 \BOOKMARK [3][-]{subsubsection.5.2.3.2}{ProfilePictureModel}{subsection.5.2.3}% 38
 \BOOKMARK [3][-]{subsubsection.5.2.3.3}{ChatModel}{subsection.5.2.3}% 39
-\BOOKMARK [2][-]{subsection.5.2.4}{Auflistungen}{section.5.2}% 40
+\BOOKMARK [2][-]{subsection.5.2.4}{Auflistungen mithilfe von RecyclerViews}{section.5.2}% 40
 \BOOKMARK [3][-]{subsubsection.5.2.4.1}{XML-Layout eines Elementes}{subsection.5.2.4}% 41
 \BOOKMARK [3][-]{subsubsection.5.2.4.2}{Model eines Elements}{subsection.5.2.4}% 42
 \BOOKMARK [3][-]{subsubsection.5.2.4.3}{ViewHolder}{subsection.5.2.4}% 43
 \BOOKMARK [3][-]{subsubsection.5.2.4.4}{Adapter}{subsection.5.2.4}% 44
 \BOOKMARK [2][-]{subsection.5.2.5}{Utility-Klassen}{section.5.2}% 45
-\BOOKMARK [2][-]{subsection.5.2.6}{Image Cropping}{section.5.2}% 46
-\BOOKMARK [2][-]{subsection.5.2.7}{Interaktion mit dem Webserver \(MySQL Datenbank\)}{section.5.2}% 47
-\BOOKMARK [2][-]{subsection.5.2.8}{Interaktion mit der Firebase Echtzeitdatenbank}{section.5.2}% 48
+\BOOKMARK [3][-]{subsubsection.5.2.5.1}{Die JSONtoInfo-Klasse}{subsection.5.2.5}% 46
+\BOOKMARK [3][-]{subsubsection.5.2.5.2}{Die TempFileGenerator-Klasse}{subsection.5.2.5}% 47
+\BOOKMARK [3][-]{subsubsection.5.2.5.3}{Die ProfilePictureLoader-Klasse}{subsection.5.2.5}% 48
+\BOOKMARK [3][-]{subsubsection.5.2.5.4}{Die MyReader-Klasse und die SchoolMapper-Klasse}{subsection.5.2.5}% 49
+\BOOKMARK [2][-]{subsection.5.2.6}{Profilbilder und Image Cropping}{section.5.2}% 50
+\BOOKMARK [2][-]{subsection.5.2.7}{Interaktion mit dem Webserver \(MySQL Datenbank\)}{section.5.2}% 51
+\BOOKMARK [3][-]{subsubsection.5.2.7.1}{Formulieren einer Anfrage}{subsection.5.2.7}% 52
+\BOOKMARK [3][-]{subsubsection.5.2.7.2}{Das Verarbeitung einer Antwort}{subsection.5.2.7}% 53
+\BOOKMARK [2][-]{subsection.5.2.8}{Interaktion mit der Firebase Echtzeitdatenbank}{section.5.2}% 54
+\BOOKMARK [3][-]{subsubsection.5.2.8.1}{Verbindung \(Wird erweitert sobald Sicherheit gekl\344rt ist!\)}{subsection.5.2.8}% 55
+\BOOKMARK [3][-]{subsubsection.5.2.8.2}{Zugriff vom Client auf die Echtzeitdatenbank}{subsection.5.2.8}% 56

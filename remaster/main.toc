@@ -47,14 +47,27 @@
 \contentsline {subsubsection}{\numberline {5.2.3.1}UserModel}{35}{subsubsection.5.2.3.1}
 \contentsline {subsubsection}{\numberline {5.2.3.2}ProfilePictureModel}{36}{subsubsection.5.2.3.2}
 \contentsline {subsubsection}{\numberline {5.2.3.3}ChatModel}{39}{subsubsection.5.2.3.3}
-\contentsline {subsection}{\numberline {5.2.4}Auflistungen}{39}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}Auflistungen mithilfe von RecyclerViews}{39}{subsection.5.2.4}
 \contentsline {subsubsection}{\numberline {5.2.4.1}XML-Layout eines Elementes}{40}{subsubsection.5.2.4.1}
 \contentsline {subsubsection}{\numberline {5.2.4.2}Model eines Elements}{40}{subsubsection.5.2.4.2}
 \contentsline {subsubsection}{\numberline {5.2.4.3}ViewHolder}{40}{subsubsection.5.2.4.3}
 \contentsline {subsubsection}{\numberline {5.2.4.4}Adapter}{41}{subsubsection.5.2.4.4}
 \contentsline {paragraph}{Die onCreateViewHolder-Methode}{43}{section*.34}
 \contentsline {paragraph}{Die onBindViewHolder-Methode}{43}{section*.35}
-\contentsline {subsection}{\numberline {5.2.5}Utility-Klassen}{43}{subsection.5.2.5}
-\contentsline {subsection}{\numberline {5.2.6}Image Cropping}{43}{subsection.5.2.6}
-\contentsline {subsection}{\numberline {5.2.7}Interaktion mit dem Webserver (MySQL Datenbank)}{43}{subsection.5.2.7}
-\contentsline {subsection}{\numberline {5.2.8}Interaktion mit der Firebase Echtzeitdatenbank}{43}{subsection.5.2.8}
+\contentsline {subsection}{\numberline {5.2.5}Utility-Klassen}{44}{subsection.5.2.5}
+\contentsline {subsubsection}{\numberline {5.2.5.1}Die JSONtoInfo-Klasse}{44}{subsubsection.5.2.5.1}
+\contentsline {subsubsection}{\numberline {5.2.5.2}Die TempFileGenerator-Klasse}{44}{subsubsection.5.2.5.2}
+\contentsline {subsubsection}{\numberline {5.2.5.3}Die ProfilePictureLoader-Klasse}{45}{subsubsection.5.2.5.3}
+\contentsline {subsubsection}{\numberline {5.2.5.4}Die MyReader-Klasse und die SchoolMapper-Klasse}{45}{subsubsection.5.2.5.4}
+\contentsline {subsection}{\numberline {5.2.6}Profilbilder und \emph {Image Cropping}}{47}{subsection.5.2.6}
+\contentsline {subsection}{\numberline {5.2.7}Interaktion mit dem Webserver (MySQL Datenbank)}{48}{subsection.5.2.7}
+\contentsline {subsubsection}{\numberline {5.2.7.1}Formulieren einer Anfrage}{48}{subsubsection.5.2.7.1}
+\contentsline {paragraph}{Die Request-Klassen}{48}{section*.38}
+\contentsline {paragraph}{Das Stellen der Anfrage}{49}{section*.40}
+\contentsline {subsubsection}{\numberline {5.2.7.2}Das Verarbeitung einer Antwort}{50}{subsubsection.5.2.7.2}
+\contentsline {paragraph}{OnResponseListener-Klasse}{50}{section*.42}
+\contentsline {subsection}{\numberline {5.2.8}Interaktion mit der Firebase Echtzeitdatenbank}{51}{subsection.5.2.8}
+\contentsline {subsubsection}{\numberline {5.2.8.1}Verbindung (Wird erweitert sobald Sicherheit gekl\IeC {\"a}rt ist!)}{51}{subsubsection.5.2.8.1}
+\contentsline {subsubsection}{\numberline {5.2.8.2}Zugriff vom Client auf die Echtzeitdatenbank}{51}{subsubsection.5.2.8.2}
+\contentsline {paragraph}{Einf\IeC {\"u}gen neuer Werte in die Firebase Echtzeitdatenbank}{52}{section*.44}
+\contentsline {paragraph}{Auslesen von Werten aus der Firebase Echtzeitdatenbank}{52}{section*.46}

@@ -145,7 +145,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.3.3}ChatModel}{39}{subsubsection.5.2.3.3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Felder und Konstruktor der ChatModel-Klasse\relax }}{39}{figure.caption.31}}
 \newlabel{chatModelConst}{{5.5}{39}{Felder und Konstruktor der ChatModel-Klasse\relax }{figure.caption.31}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Auflistungen}{39}{subsection.5.2.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Auflistungen mithilfe von RecyclerViews}{39}{subsection.5.2.4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4.1}XML-Layout eines Elementes}{40}{subsubsection.5.2.4.1}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4.2}Model eines Elements}{40}{subsubsection.5.2.4.2}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4.3}ViewHolder}{40}{subsubsection.5.2.4.3}}
@@ -156,19 +156,52 @@
 \newlabel{chatOverviewAdapter}{{5.7}{43}{RecyclerAdapter-Klasse für die Auflistung der offenen Chats\relax }{figure.caption.33}{}}
 \@writefile{toc}{\contentsline {paragraph}{Die onCreateViewHolder-Methode}{43}{section*.34}}
 \@writefile{toc}{\contentsline {paragraph}{Die onBindViewHolder-Methode}{43}{section*.35}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.5}Utility-Klassen}{43}{subsection.5.2.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.6}Image Cropping}{43}{subsection.5.2.6}}
-\newlabel{imageCropping}{{5.2.6}{43}{Image Cropping}{subsection.5.2.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.7}Interaktion mit dem Webserver (MySQL Datenbank)}{43}{subsection.5.2.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.8}Interaktion mit der Firebase Echtzeitdatenbank}{43}{subsection.5.2.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.5}Utility-Klassen}{44}{subsection.5.2.5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.5.1}Die JSONtoInfo-Klasse}{44}{subsubsection.5.2.5.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Instantiierung eines UserModel-Objektes aus den Extras\relax }}{44}{figure.caption.36}}
+\newlabel{JSONtoInfoAnwendung}{{5.8}{44}{Instantiierung eines UserModel-Objektes aus den Extras\relax }{figure.caption.36}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.5.2}Die TempFileGenerator-Klasse}{44}{subsubsection.5.2.5.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.5.3}Die ProfilePictureLoader-Klasse}{45}{subsubsection.5.2.5.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.5.4}Die MyReader-Klasse und die SchoolMapper-Klasse}{45}{subsubsection.5.2.5.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Instantiierung eines UserModel-Objektes aus den Extras\relax }}{46}{figure.caption.37}}
+\newlabel{schoolMapper}{{5.9}{46}{Instantiierung eines UserModel-Objektes aus den Extras\relax }{figure.caption.37}{}}
+\citation{EasyImage}
+\citation{Cropper}
+\citation{edmodo}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.6}Profilbilder und \emph  {Image Cropping}}{47}{subsection.5.2.6}}
+\newlabel{imageCropping}{{5.2.6}{47}{Profilbilder und \emph {Image Cropping}}{subsection.5.2.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.7}Interaktion mit dem Webserver (MySQL Datenbank)}{48}{subsection.5.2.7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.7.1}Formulieren einer Anfrage}{48}{subsubsection.5.2.7.1}}
+\@writefile{toc}{\contentsline {paragraph}{Die Request-Klassen}{48}{section*.38}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Request-Klasse f\IeC {\"u}r die Anfrage nach einem Profilbild eines Benutzers\relax }}{49}{figure.caption.39}}
+\newlabel{requestKlasse}{{5.10}{49}{Request-Klasse für die Anfrage nach einem Profilbild eines Benutzers\relax }{figure.caption.39}{}}
+\@writefile{toc}{\contentsline {paragraph}{Das Stellen der Anfrage}{49}{section*.40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Request-Klasse f\IeC {\"u}r die Anfrage nach einem Profilbild eines Benutzers\relax }}{50}{figure.caption.41}}
+\newlabel{requestQueue}{{5.11}{50}{Request-Klasse für die Anfrage nach einem Profilbild eines Benutzers\relax }{figure.caption.41}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.7.2}Das Verarbeitung einer Antwort}{50}{subsubsection.5.2.7.2}}
+\newlabel{responseListener}{{5.2.7.2}{50}{Das Verarbeitung einer Antwort}{subsubsection.5.2.7.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{OnResponseListener-Klasse}{50}{section*.42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces OnBigPictureResponseListener-Klasse\relax }}{51}{figure.caption.43}}
+\newlabel{OnResponseListener}{{5.12}{51}{OnBigPictureResponseListener-Klasse\relax }{figure.caption.43}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.8}Interaktion mit der Firebase Echtzeitdatenbank}{51}{subsection.5.2.8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.8.1}Verbindung (Wird erweitert sobald Sicherheit gekl\IeC {\"a}rt ist!)}{51}{subsubsection.5.2.8.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.8.2}Zugriff vom Client auf die Echtzeitdatenbank}{51}{subsubsection.5.2.8.2}}
+\@writefile{toc}{\contentsline {paragraph}{Einf\IeC {\"u}gen neuer Werte in die Firebase Echtzeitdatenbank}{52}{section*.44}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Einf\IeC {\"u}gen von neuen Werten in die Firebase Echtzeitdatenbank\relax }}{52}{figure.caption.45}}
+\newlabel{FirebaseWrite}{{5.13}{52}{Einfügen von neuen Werten in die Firebase Echtzeitdatenbank\relax }{figure.caption.45}{}}
+\@writefile{toc}{\contentsline {paragraph}{Auslesen von Werten aus der Firebase Echtzeitdatenbank}{52}{section*.46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces ValueEventListener-Klasse f\IeC {\"u}r das Auslesen von Daten aus der Firebase Echtzeitdatenbank\relax }}{53}{figure.caption.47}}
+\newlabel{FirebaseRead}{{5.14}{53}{ValueEventListener-Klasse für das Auslesen von Daten aus der Firebase Echtzeitdatenbank\relax }{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Zuweisung eines ValueEventListners zu einer Referenz\relax }}{53}{figure.caption.48}}
+\newlabel{implementFirebaseRead}{{5.15}{53}{Zuweisung eines ValueEventListners zu einer Referenz\relax }{figure.caption.48}{}}
 \bibdata{literatur}
 \bibcite{PHP:function}{1}
 \bibcite{cache}{2}
 \bibcite{android:APILevel}{3}
 \bibcite{context}{4}
-\bibcite{mvp}{5}
-\bibcite{android}{6}
-\bibcite{security}{7}
+\bibcite{android}{5}
+\bibcite{security}{6}
+\bibcite{edmodo}{7}
 \bibcite{xml}{8}
 \bibcite{base64}{9}
 \bibcite{fachadmin.de:ServerClient}{10}
@@ -178,17 +211,20 @@
 \bibcite{JSON}{14}
 \bibcite{IT-Handbuch}{15}
 \bibcite{proprietaereLizenz}{16}
-\bibcite{accessorsAndMutators}{17}
-\bibcite{memberVariables}{18}
-\bibcite{androidJava}{19}
-\bibcite{PHP}{20}
-\bibcite{Firebase}{21}
-\bibcite{defuse}{22}
-\bibcite{bytecode}{23}
-\bibcite{tecmint.com}{24}
-\bibcite{preparedstatement}{25}
-\bibcite{xmlW3}{26}
-\bibcite{RealtimeDatabase}{27}
+\bibcite{EasyImage}{17}
+\bibcite{accessorsAndMutators}{18}
+\bibcite{memberVariables}{19}
+\bibcite{androidJava}{20}
+\bibcite{PHP}{21}
+\bibcite{Firebase}{22}
+\bibcite{defuse}{23}
+\bibcite{bytecode}{24}
+\bibcite{tecmint.com}{25}
+\bibcite{Cropper}{26}
+\bibcite{mvp}{27}
+\bibcite{preparedstatement}{28}
+\bibcite{xmlW3}{29}
+\bibcite{RealtimeDatabase}{30}
 \gdef\minted@oldcachelist{,
   default-pyg-prefix.pygstyle,
   default.pygstyle,
@@ -202,4 +238,12 @@
   4DDBB8B81592556741762958A4BC730FD608EDF161EBA6DF84B22E33737860F1.pygtex,
   C1CBE8F57F1D5C927316D09338D79287D608EDF161EBA6DF84B22E33737860F1.pygtex,
   620ABDFBE6F39C109B3C7C5C3A13897BD608EDF161EBA6DF84B22E33737860F1.pygtex,
-  4C6C2D4B7B3C985F9E10584B5F4E292ED608EDF161EBA6DF84B22E33737860F1.pygtex}
+  4C6C2D4B7B3C985F9E10584B5F4E292ED608EDF161EBA6DF84B22E33737860F1.pygtex,
+  1D0D6E261D515F4E9E5C8B405A6C0CD2D608EDF161EBA6DF84B22E33737860F1.pygtex,
+  F5177FDEC75558759D08E8918E547835D608EDF161EBA6DF84B22E33737860F1.pygtex,
+  D18599BE73EA88BAFCB83753C53ADF2CD608EDF161EBA6DF84B22E33737860F1.pygtex,
+  B734EBF31A4A0AC0F44E9E712ADB973CD608EDF161EBA6DF84B22E33737860F1.pygtex,
+  7A6476B5345F4BD9C8290166E6E30926D608EDF161EBA6DF84B22E33737860F1.pygtex,
+  AE57AB78AE80B5E6D771ED849EEC7BC5D608EDF161EBA6DF84B22E33737860F1.pygtex,
+  ADAF193AB76D2745464D18CF4864476DD608EDF161EBA6DF84B22E33737860F1.pygtex,
+  F7FEA57C9E2AFA0FA42550BD46A618ABD608EDF161EBA6DF84B22E33737860F1.pygtex}

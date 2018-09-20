@@ -29,14 +29,6 @@
   \url{https://developer.android.com/reference/android/content/Context}, 2018.
 \newblock Abgerufen am: 04.09.2018.
 
-\bibitem{mvp}
-U.~Author.
-\newblock \emph{Presentation Patterns : MVC, MVP, PM, MVVM}.
-\newblock
-  \url{https://manojjaggavarapu.wordpress.com/2012/05/02/presentation-patterns-mvc-mvp-pm-mvvm/},
-  2012.
-\newblock Abgerufen am: 10.05.18.
-
 \bibitem{android}
 J.~Callaham.
 \newblock \emph{The history of Android OS: its name, origin and more}.
@@ -51,6 +43,12 @@ P.~Ducklin.
   \url{https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/},
   2013.
 \newblock Abgerufen am: 12.05.18.
+
+\bibitem{edmodo}
+{Edmodo Inc.}
+\newblock \emph{Cropper}.
+\newblock \url{https://github.com/edmodo/cropper}, 2013.
+\newblock Abgerufen am: 31.07.18.
 
 \bibitem{xml}
 {Epicodus}.
@@ -116,6 +114,12 @@ T.~Kreutzer.
   2005.
 \newblock Abgerufen am: 28.08.2018.
 
+\bibitem{EasyImage}
+J.~Kwiecień.
+\newblock \emph{EasyImage}.
+\newblock \url{https://github.com/jkwiecien/EasyImage}, 2015.
+\newblock Abgerufen am: 31.07.18.
+
 \bibitem{accessorsAndMutators}
 P.~Leahy.
 \newblock \emph{Accessors and Mutators}.
@@ -167,6 +171,20 @@ D.~Security.
   \url{https://www.tecmint.com/the-story-behind-acquisition-of-mysql-and-the-rise-of-mariadb/},
   2017.
 \newblock Abgerufen am: 03.05.18.
+
+\bibitem{Cropper}
+A.~Teplitzki.
+\newblock \emph{Android Image Cropper}.
+\newblock \url{https://github.com/ArthurHub/Android-Image-Cropper}, 2016.
+\newblock Abgerufen am: 31.07.18.
+
+\bibitem{mvp}
+{Unbekannter Author}.
+\newblock \emph{Presentation Patterns : MVC, MVP, PM, MVVM}.
+\newblock
+  \url{https://manojjaggavarapu.wordpress.com/2012/05/02/presentation-patterns-mvc-mvp-pm-mvvm/},
+  2012.
+\newblock Abgerufen am: 10.05.18.
 
 \bibitem{preparedstatement}
 {W3Schools}.

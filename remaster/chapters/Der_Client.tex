@@ -271,7 +271,7 @@ public class ChatModel {
 \end{code}
 		
 	%\subsection{Requests}
-	\subsection{Auflistungen}
+	\subsection{Auflistungen mithilfe von RecyclerViews}
 	In der Studnetz Applikation wird an mehreren Orten eine Form einer Auflistung von Elementen benötigt. Dies ist beispielsweise bei der Anzeige der gefundenen Suchergebnissen der Fall oder wenn die offenen Chats aufgelistet werden. Für das darstellen einer solchen Auflistung werden gleich mehrere verschiedene Klassen benötigt.
 	
 	\subsubsection{XML-Layout eines Elementes}
@@ -367,25 +367,252 @@ class ChatoverviewAdapter extends RecyclerView.Adapter<OpenChatViewHolder>{
 	
 	Der Datensatz des Adapters wird jeweils bereits bei der Initialisierung des Adapters über die Parameter des Konstruktors auf Zeile 6 referenziert. Hier ist es wichtig zu unterscheiden, dass es sich um eine Referenz und nicht um einen Klon des Datensatzes handelt. Dies bedeutet, dass wenn sich der Datensatz ändern sollte, kann die Liste über eine notifyDatasetChanged-Methode Aktualisiert werden, ohne das der Datensatz dabei erneut übergeben werden muss.
 	
-	Auf Zeilen 12 bis 21 finden sich dann die beiden Kernmethoden eines RecyclerAdapters.
+	In den Zeilen 12 bis 24 finden sich dann die beiden Kernmethoden eines RecyclerAdapters.
 	
 	\paragraph{Die onCreateViewHolder-Methode}
+	Die \emph{onCreateViewHolder}-Methode wird hat die Aufgabe, das Layout eines einzelnen Elements zu laden (Zeile 13) und dann ein neues ViewHolder-Objekt zu instantiieren (Zeile 14). Diese Methode wird jeweils so oft aufgerufen, wie Elemente auf dem Bildschirm des Gerätes maximal sichtbar sein können und geschieht deshalb gleich beim Start der Auflistung. Zu diesem Zeitpunkt unterscheiden sich die verschiedenen Elemente jedoch noch nicht und sehen alle gleich aus. Die Methode wird nach dem Start der Auflistung meist nicht mehr aufgerufen, selbst wenn die Liste durchgesehen wird und neue Elemente sichtbar werden müssen.
 	
 	\paragraph{Die onBindViewHolder-Methode}
+	Die \emph{onBindViewHolder}-Methode wird jeweils für jeden ViewHolder der sichtbaren Elemente aufgerufen. Dabei wird den einzelnen ViewHolder-Objekten ihr Model über die validate-Methode zugewiesen (Zeile 21). Das zugewiesene Model wird dabei über die Position des Elementes innerhalb der RecyclerView bestimmt (Zeile 20). Im falle der ChatoverviewAdapter-Klasse findet sich hier noch eine weiter Methode der ViewHolder-Klasse, die das definieren eines zu verwendenden Profilbildes ermöglicht (Zeile 22).
 	
+	Die onBindViewHolder-Methode wird nach dem Start der View immer dann aufgerufen, wenn ein Element vom Bildschirm verschwindet und ein neues erscheinen muss. Es wird dann der ViewHolder des verschwundenen Elements genommen und sein Model wird über die validate-Methode durch ein neues Model ersetzt. Somit kann erreicht werden, dass mit einer nur geringen Anzahl an auf einmal geladener Layouts trotzdem beliebig grosse Datensätze effizient dargestellt werden können. Dieser Prozess der Wiederverwertung von nicht mehr sichtbarer Elemente wird als \emph{recycling} bezeichnet, was auch den Namen der beiden Superklassen RecyclerView.ViewHolder und RecyclerView.Adapter erklärt.
 	
 	%Ein solcher RecyclerAdapter besteht in der Regel aus einem Konstruktor (Zeile 8), über welchen das Datenset des Adapter bestimmt (Zeilen 12-16), und drei wichtigen Funktionen: der \emph{getItemCount} Funktion (Zeile 42), die die Menge an gespeicherten Elementen zurückgibt, der \emph{onCreateViewHolder} Funktion (Zeile 20), die einen neuen ViewHolder mit einem bestimmten Layout instantiiert und der \emph{onBindViewHolder} Funktion (Zeile 28), die einem ViewHolder einen Datensatz zuweist (Zeile 29), die View des ViewHolders entsprechend konfiguriert (Zeile 30-34) und der View eine onClickListener zuweist, die das Profil des dargestellten Benutzers/der dargestellten Benutzerin öffnet (Zeile 38). Im falle des Adapters der Suchergebnisse findet sich hier noch eine weitere Methode mit dem Namen \emph{refresh} (Zeile 46), die für das nachträgliche Einfügen der Profilbilder eine wichtige Rolle spielt, jedoch dazu mehr in Kapitel \ref{profilePictures}.
 	
-	
-	
 	\subsection{Utility-Klassen}
+	\subsubsection{Die JSONtoInfo-Klasse}
+	Die \emph{JSONtoInfo}-Klasse ist eine in der Applikation sehr oft verwendete Klasse. Sie ist in der Lage über eine \emph{createNewItem}-Methode aus einem JSON-Objekt, wie es vom Server erhalten wird, ein UserModel-Model zu instantiieren. Diese Datenkonversion ist von grossem Vorteil, da UserModel-Objekte nicht zwischen Activities weitergegeben werden können, jedoch der String eines JSON-Objektes schon. Somit wird zu beginn einer Activity jeweils aus den Extras der String des JSON-Objektes entzogen, dieser zu einem JSON-Objekt gemacht und dieses wiederum zu einem UserModel-Objekt Konvertiert. Ein Beispiel für eine solche Anwendung wird in Abbildung \ref{JSONtoInfoAnwendung} dargestellt.
 	
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+mainprofileModel = new JSONtoInfo(getBaseContext()).createNewItem(new JSONObject(extras.getString("clientInfo")));			
+		\end{minted}
+		\caption{Instantiierung eines UserModel-Objektes aus den Extras}
+		\label{JSONtoInfoAnwendung}
+	\end{center}
+\end{code}
 	
+	\subsubsection{Die TempFileGenerator-Klasse}
+	Die \emph{TempFileGenerator}-Klasse wird verwendet um aus einem Base64 String eines Bildes eine entsprechende Datei um Cache zu erstellen. Hierzu wird die \emph{getTempFilePath}-Methode verwendet. Sollte der Base64 String jedoch dem Wert "0" entsprechen oder nicht gesetzt sein (null), wird ein vordefiniertes Platzhalter Bild anstelle einer Datei im Cache verwendet. Der Pfad zur Bilddatei wird dann jeweils über den Rückgabewert zurückgegeben.
+	
+	\subsubsection{Die ProfilePictureLoader-Klasse}
+	Die \emph{ProfilePictureLoader}-Klasse wird verwendet, um gleich mehrere Profilbilder auf einmal zu Laden. Dies wird jeweils bei der Darstellung von Auflistungen benötigt, wo gleichzeitig mehrere Profile mit einem Profilbild sichtbar werden. Dabei werden jeweils beim Start der Auflistungen die Profilbilder der ersten 20 Datensatzeinträge mithilfe der ProfilePictureLoader-Klasse geladen. Dann werden jeweils immer wenn noch ungeladene Profile sichtbar werden über die ProfilePictureLoader-Klasse die nächsten 20 Profilbilder geladen, bis schlussendlich, wenn alle Ergebnisse durchgesehen worden sind, alle Profilbilder geladen sind.
+	
+	\subsubsection{Die MyReader-Klasse und die SchoolMapper-Klasse}
+	Diese beide Klassen sind für die Auflistung der Schulen und der dazugehörigen Schulstufen verantwortlich. Dabei werden jeweils die von der Applikation unterstützten Schulen im einen Spinner angezeigt und wenn eine Auswahl getroffen wurde, werden die Schulstufen der ausgewählten Schule im zweiten Spinner angezeigt. Die unterstützten Schulen sind dabei in einem Textdokument gespeichert und mit einer Zahl versehen, die die Schulstufen der Schule bestimmt. Es ist dann die MyReader-Klasse, die dieses Dokument zu lesen vermag und anschliessend die gelesenen Zeile als Liste zurückgibt. Es ist dann die SchoolMapper-Klasse, welche das Handling der beiden Spinner übernimmt. Eine Abbildung der SchoolMapper-Klasse findet sich in Abbildung \ref{schoolMapper}.
+	
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+public class SchoolMapper {
+
+	private Spinner schoolSpinner, gradeSpinner;
+	Map<String, Integer> mMap;
+	private Context mContext;
+
+	public SchoolMapper(Context mContext, Spinner schoolSpinner, Spinner gradeSpinner) {
+		this.mContext = mContext;
+		this.schoolSpinner = schoolSpinner;
+		this.gradeSpinner = gradeSpinner;
+	}
+
+	public Map<String, Integer> map(List<String> mData) {
+		Map<String, Integer> mOut = new LinkedHashMap<>();
+
+		for(int n = 0; n < mData.size(); n++) {
+			String[] tempData = mData.get(n).split(":"); //Schulen sind jeweils durch ein ":" von ihrerer Schulstufe getrennt, zum Beispiel: "Kantonsschule Ausserschwyz:6"
+			mOut.put(tempData[0], Integer.parseInt(tempData[1]));
+		}
+		
+		return mOut;
+	}
+
+	public void startDisplay(String path){
+
+		MyReader mReader = new MyReader(mContext);
+
+		mMap = map(mReader.read(path));
+	
+		String[] keySet = mMap.keySet().toArray(new String[mMap.size()]);
+
+		ArrayList<String> mSchools = new ArrayList<>();
+
+		for(int n = 0; n < mMap.size(); n++) {
+			mSchools.add(keySet[n]);
+		}
+
+		ArrayAdapter<String> schoolAdapter = new ArrayAdapter<String>([...], mSchools);
+		schoolAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+		schoolSpinner.setAdapter(schoolAdapter);
+		schoolSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { [...] }
+	}
+}	
+		\end{minted}
+		\caption{Instantiierung eines UserModel-Objektes aus den Extras}
+		\label{schoolMapper}
+	\end{center}
+\end{code}
+
+	Beim Initialisieren der Klasse werden dabei die Referenzen zu den beiden Spinnern über die Parameter des Konstruktors der Klasse überreicht (Zeile 7). Wenn dann die \emph{startDisplay}-Methode (Zeile 25) aufgerufen wird, werden die beiden Spinner konfiguriert. 
+	
+	Hierzu wird zuerst über die \emph{map}-Methode (Zeile 13) das Textdokument mithilfe der MyReader-Klasse gelesen und die gelesenen Schulen (Zeile 29) gemeinsam mit der zugehörigen Schulstufenanzahl in eine \emph{LinkedHashMap} gespeichert (Zeile 14). Eine LinkedHashMap ist fast identisch zu einer normalen HashMap, wo auch jeweils einen Key gemeinsam mit einem Wert gespeichert werden. Der einzige Unterschied findet sich hier, dass sich die Reihenfolge, in welcher die Elemente in die HashMap eingefügt worden sind, gespeichert wird. Diese HashMap kann dann als Datensatz für den Schulspinner verwendet werden (Zeile 39).
+
+	In den Schulspinner wird ein Listener implementiert, welcher jeweils bei der Auswahl einer Schule dann auch den Stufenspinner der ausgewählten Schule entsprechend konfiguriert (Zeile 43).
+
 	%\subsection{Beispielhafte Erläuterung der \emph{MainActivity}}
 	%\subsubsection{Aufbau der Activity}
 	%\subsubsection{Aufbau der Fragments}
-	\subsection{Image Cropping} \label{imageCropping}
+	\subsection{Profilbilder und \emph{Image Cropping}} \label{imageCropping}
+	Kein Profil ist heutzutage ein richtiges Profil ohne ein passendes Profilbild. Ein Profilbild hilft den Benutzern/Benutzerinnen zum einen sich von einer möglichst guten Seite zu zeigen und um schnell einen ersten Eindruck von anderen Benutzern/Benutzerinnen zu bekommen. Auch in der entwickelten Applikation ist es möglich, sich ein Profilbild zu bestimmen. Dabei ist es Benutzern/Benutzerinnen möglich, vom Speicher des Gerätes ein Bild auszuwählen und es auf das gewünschte Format zuzuschneiden oder direkt mit der Kamera ein neues Bild aufzunehmen. Für die Implementierung dieser Features wurde jedoch auf zwei öffentliche Github Repositories zurückgegriffen, da die eigene Programmierung dieser Funktionen wahrscheinlich den Rahmen dieser Arbeit gesprengt hätte. Die Lizenzen für beide Repositories finden sich im Anhang.
+	
+	Das erste Repository läuft unter dem Namen \emph{EasyImage} und ermöglicht ein einfaches Zugreifen und Auslesen von Bildern aus der Galerie, wie auch direkt von der Kamera \cite{EasyImage}. Jedoch wären die Bilder an diesem Punkt einfach in der Grösse und Form, wie sie auf dem Gerät gerade gespeichert sind. Dies ist für ein Profilbild höchst ungeeignet. Hier kommt das zweite Repository ins Spiel. Dieses trägt den Namen \emph{Android Image Cropper} und basiert auf dem 2013 erschienenen \emph{Cropper} von Edmodo Inc. \cite{Cropper} \cite{edmodo}. Dieses Repository bring eine Reihe an Funktionen für das Zuschneiden und Anpassen von Bildern mit sich. Dieser Prozess des Zuschneidens wird auch \emph{Cropping} genannt, was auch den Namen des Repositories erklärt. Wählt nun also ein Benutzer/eine Benutzerin ein Bild aus, wird dieser Cropper gestartet, ein Screenshot davon findet sich in Abbildung \ref{cropperImage}. Der Benutzer/Die Benutzerin kann daraufhin den Bereich des Bildes Auswählen, welcher er/sie als Profilbild verwenden möchte. Ist dies getan, kann die Auswahl bestätigt werden und das Bild wird daraufhin zugeschnitten. Dabei wird auch noch gleich die Qualität und Grösse des Bildes auf ein einheitliches Mass gestellt. So ist jedes Bild in der Datenbank ungefähr ähnlich gross. Zudem wird jedes Profilbild gleich noch in einer zweiten, deutlich kleineren Version gespeichert. Dieses wird dann für die Suchergebnisse und die Aufgelisteten Chats verwendet, wo teilweise gleich 20 Bilder gleichzeitig geladen werden müssen. Um dabei Leistung zu sparen gibt es also von jedem Profilbild eine Version, die zwar sehr klein in Grösse und niedrig in Qualität ist, jedoch für die kleinen Icons bei der Suche komplett ausreicht. Beide Bilder werden in der Datenbank in der user\_profilepictures Tabelle gespeichert (siehe auch Kapitel \ref{MySQLStructure}).
+	
 	\subsection{Interaktion mit dem Webserver (MySQL Datenbank)}
+	Für Interaktionen mit dem Webserver, auf welchem sich auch die MySQL Datenbank befindet, wird auf die \emph{Volley}-Bibliothek zurückgegriffen. Die Volley-Bibliothek bietet diverse Tools für das effiziente Arbeiten mit Netzwerken und eignet sich daher gut für das Kontrollieren der Kommunikation mit dem Webserver auf Seiten des Clients. Die Kommunikation mit dem Webserver läuft dabei hauptsächlich in Zwei stufen ab: der Formulierung einer Anfrage und der Verarbeitung der Antwort.
+	
+	\subsubsection{Formulieren einer Anfrage}
+	
+	\paragraph{Die Request-Klassen}
+	Eine \emph{Request}-Klasse definiert die Webadresse, an welche eine Anfrage gerichtet wird, sowie die dabei mitzugebenden Werte. Man kann sich sie also als ein adressiertes Postpaket vorstellen, welches dann verschickt werden kann. Sie ist eine Subklasse der StringRequest-Klasse aus der Volley Library. Für jede Art der Anfrage muss jeweils eine eigene Request-Klasse erstellt werden, sie sind jedoch vom Aufbau her alle identisch. Ein Beispiel für eine solche Klasse findet sich in Abbildung \ref{requestKlasse}.
+	
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+public class BigProfilePictureRequest extends StringRequest {
+
+	private static final String URL = "http:// [...] /profilepicture_big_php.php";
+	private Map<String, String> params;
+
+	public BigProfilePictureRequest(int id, Response.Listener<String> listener) {
+		super(Method.POST, URL, listener, null);
+		params = new HashMap<>();
+		params.put("user_id", id + "");
+	}
+
+	[...]
+	
+}
+		\end{minted}
+		\caption{Request-Klasse für die Anfrage nach einem Profilbild eines Benutzers}
+		\label{requestKlasse}
+	\end{center}
+\end{code}
+
+	Die Webadresse, an welche die Anfrage gehen soll, wird dabei in einem der beiden Felder definiert (Zeile 3). Dabei wird genau angegeben, welches PHP-Skript aufgerufen werden soll. Das zweite Feld ist eine HashMap (Zeile 4). Die HashMap ist der Datencontainer für die zu übermittelnden Werte. Dabei sind im Falle des Beispiels der Key sowie der Wert der HashMap Strings. Die HashMap kann nachdem sie erfolgreich an den Server übermittelt worden ist dann verwendet werden, um die mitgegebenen Werte über die Keys wieder auszulesen.
+	
+	Der Konstruktor benötigt im Falle des Beispiels nur zwei Parameter: eine user\_id und ein Objekt der Klasse \emph{Response.Listener<String>} (Zeile 6). Daraufhin wird die Superklasse aufgerufen und die Anfragemethode, die URL, der ResponseListener (siehe Kapitel \ref{responseListener}) und ErrorListener als Parameter referenziert (Zeile 7). In der entwickelten Applikation wird immer die \emph{POST}-Methode für die Kommunikation zwischen Webserver und Client verwendet. Dann wird die user\_id als Wert in die HashMap eingefügt (Zeile 9).
+	
+	\paragraph{Das Stellen der Anfrage}
+	Nachdem erfolgreich ein Objekt einer Request-Klasse instantiiert worden ist, kann die Request-Klasse über die eine sogenannte \emph{RequestQueue} aus der Volley Library als Anfrage an den Webserver gesendet werden. Ein Beispiel findet sich in Abbildung \ref{requestQueue}
+	
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+BigProfilePictureRequest request = new BigProfilePictureRequest(mUserModel.getId(), new OnBigPictureResponseListener(this)); 		 //Instantiieren der Request-Klasse
+RequestQueue queue = Volley.newRequestQueue(mActivity); //Instantiieren einer neuen RequestQueue
+queue.add(request); //Das Stellen der Request-Klasse als Anfrage an den Server
+		\end{minted}
+		\caption{Request-Klasse für die Anfrage nach einem Profilbild eines Benutzers}
+		\label{requestQueue}
+	\end{center}
+\end{code}	
+	
+	\subsubsection{Das Verarbeitung einer Antwort} \label{responseListener}
+	\paragraph{OnResponseListener-Klasse} Die \emph{OnResponseListener}-Klasse ist einer Subklasse der Response.Listener<String>-Klasse der Volley-Bibliothek.Diese Listener-Klasse wird aufgerufen, wenn eine Antwort vom Server auf eine Anfrage empfangen wird. Die Antwort wird dabei in Forme eines Strings übermittelt, der dann in ein JSON-Objekt umgewandelt werden kann. Ein Beispiel einer solchen Klasse findet sich in Abbildung \ref{OnResponseListener}.
+	
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+class OnBigPictureResponseListener implements Response.Listener<String> {
+
+	private OpenprofileFragment mFragment;
+	private MainActivity mActivity;
+
+	[...] //Konstruktor
+
+	@Override
+	public void onResponse(String response) {
+		
+		[...]
+
+		JSONObject jsn = new JSONObject(response);
+		boolean success = jsn.getBoolean("success");
+
+		if (success) {
+			[...]
+		}
+		[...]
+	}
+}
+		\end{minted}
+		\caption{OnBigPictureResponseListener-Klasse}
+		\label{OnResponseListener}
+	\end{center}
+\end{code}		
+	
+	Bei einer empfangenen Antwort wird immer als erstes überprüft, ob die Aufgabe des PHP-Skriptes erfolgreich ausgeführt worden ist (Zeile 14 und 16). Je nachdem wird dann die Antwort weiter verarbeitet (Zeile 17) oder der Fehlschlag dem Benutzer/der Benutzerin mitgeteilt, sofern dies nötig ist (Zeile 19).
+	
 	\subsection{Interaktion mit der Firebase Echtzeitdatenbank}
+	Die Interaktionen vom Client mit der Firebase Echtzeitdatenbank unterscheidet sich sehr stark von der Interaktion mit dem Webserver. Anders als bei einem herkömmlichen Webserver ist das implementieren von serverseitiger Datenverarbeitung in Forme von Skripten sehr aufwändig und Firebase bietet hierzu kaum Tools. Deshalb wird bei der Arbeit mit Firebase Echtzeitdatenbanken oft sehr viel der Datenverarbeitung auf Seiten des Client gemacht. Dies bringt eine Menge potentieller Risiken in Bereichen Sicherheit mit sich, die jedoch im Rahmen dieser Arbeit in Kauf genommen worden sind. 
+	
+	\subsubsection{Verbindung (Wird erweitert sobald Sicherheit geklärt ist!)}
+	Die Verbindung zum Server wird wie beim Webserver auch hier über eine Webadresse erstellt. Die Adresse wird dabei in einer separaten Datei definiert. Es ist auch in dieser Datei, wo die gesamten für die Authentifizierung benötigten Werte gespeichert sind. Die Authentifizierung wird dabei von Freibase selber geregelte und läuft über ein Google Konto.
+	
+	\subsubsection{Zugriff vom Client auf die Echtzeitdatenbank}
+	Innerhalb des Clients wird über sogenannte \emph{Referenzen} auf den Server zugegriffen. Diese Referenzen sind im wesentlichen die Webadressen der verschiedenen JSON-Objekte. Über sie können neue Werte in die Datenbank eingefügt werden oder ausgelesen werden. Dieser Vorgang soll anhand zweier Beispiele demonstriert werden.
+	
+	\paragraph{Einfügen neuer Werte in die Firebase Echtzeitdatenbank}
+	Für das Einfügen neuer Werte in die Echtzeitdatenbank ist eher simpel. Ein Beispiel hierfür findet sich in Abbildung \ref{FirebaseWrite} wo ein Ausschnitt des Einfügens einer neuen Nachricht in einem Chat dargestellt ist.
+
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+final DatabaseReference newPost = mChatModel.getChatRef().child("Messages").push();
+newPost.child("messageUser").setValue(messageUser);
+		\end{minted}
+		\caption{Einfügen von neuen Werten in die Firebase Echtzeitdatenbank}
+		\label{FirebaseWrite}
+	\end{center}
+\end{code}
+	
+	Hierzu wird zuerst die zu verwendende Referenz definiert (Zeile 1). Über die \emph{getChatRef}-Methode des ChatModel-Models kann die Referenz zum Chat selber geholt werden. Über die \emph{child}-Methode wird dann zu einem JSON-Objekt einer Stufe niedriger navigiert mit dem Namen \emph{Messages}. Die \emph{push}-Methode bewirkt dann, dass ein neues JSON-Objekt mit einem zufällig generierten Namen erstellt wird. Diese nun konfigurierte Referenz kann nun verwendet werden, um neue Werte in die Datenbank einzufügen. Hierzu wird zuerst über die child-Methode ein neues JSON-Objekt erstellt, wo dann der einzufügende Wert über die \emph{setValue}-Methode eingefügt werden kann (Zeile 2). Ein visualisierte Darstellung über diesen Vorgang findet sich in Abbildung \ref{FirebaseWriteVisualized}.
+	
+	\paragraph{Auslesen von Werten aus der Firebase Echtzeitdatenbank}
+	Das auslesen aus einer Firebase Echtzeitdatenbank ist im Gegensatz zum Einfügen neuer Werte deutlich komplexer. Jedoch bietet Firebase für häufige Verwendungen wie zum Beispiel das Darstellen von Listen schon bestehende Interfaces und Klassen die diese Aufgabe weitgehend übernehmen. In Abbildung \ref{FirebaseRead} wird jedoch ein Code Ausschnitt dargestellt, der das Auslesen von Daten weitgehend selber bestimmt. Hierzu wird eine Klasse verwendet in welche das \emph{ValueEventListener}-Interface implementiert wird. Diese Klasse wird für die Darstellung der offenen Chats benötigt, wo eine genauere Kontrolle über diesen Ladevorgang erforderlich ist.
+	
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+class ChatsValueEventListener implements ValueEventListener {
+	
+	[...] //Konstruktor
+	
+	@Override
+	public void onDataChange(DataSnapshot dataSnapshot) {
+		[...]
+	}
+
+	[...]
+}
+		\end{minted}
+		\caption{ValueEventListener-Klasse für das Auslesen von Daten aus der Firebase Echtzeitdatenbank}
+		\label{FirebaseRead}
+	\end{center}
+\end{code}
+
+\begin{code}
+	\begin{center}
+		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
+[Firebase Reference].addValueEventListener(new ChatsValueEventListener(this));
+		\end{minted}
+		\caption{Zuweisung eines ValueEventListeners zu einer Referenz}
+		\label{implementFirebaseRead}
+	\end{center}
+\end{code}
+	
+	Eine Klasse mit einem Implementierten ValueEventListener-Interface kann jeweils einer oder mehren Referenzen zugewiesen werden (siehe Abbildung \ref{implementFirebaseRead}). Hierzu wird innerhalb der Klasse jeweils bei der Zuweisung zu einer neuen Referenz und anschliessend immer wenn sich der Datensatz einer Referenz ändert die \emph{onDataChange}-Methode aufgerufen (Abbildung \ref{FirebaseRead}, Zeile 6). Diese bekommt über ihre Parameter einen sogenanntes \emph{DataSnapshot}-Objekt der Referenz. Ein solches DataSnapshot-Objekt ist eine Momentaufnahme aller im JSON-Objekt einer Referenz gespeicherten Werte. Diese Werte können dann innerhalb der onDataChange-Methode ausgelesen und weiter verarbeitete werden.
+	
+	Der grosse Vorteil dieser Art des Auslesens ist es, dass die Daten auf dem Client immer mit den Daten in der Firebase Echtzeitdatenbank synchronisiert werden.
 	
 \end{document}
