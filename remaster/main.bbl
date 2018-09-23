@@ -29,6 +29,12 @@
   \url{https://developer.android.com/reference/android/content/Context}, 2018.
 \newblock Abgerufen am: 04.09.2018.
 
+\bibitem{bcrypt}
+D.~Boswell.
+\newblock \emph{Storing User Passwords Securely: hashing, salting, and Bcrypt}.
+\newblock \url{http://dustwell.com/how-to-handle-passwords-bcrypt.html}, 2012.
+\newblock Abgerufen am: 23.09.2018.
+
 \bibitem{android}
 J.~Callaham.
 \newblock \emph{The history of Android OS: its name, origin and more}.
@@ -92,6 +98,13 @@ P.~Ducklin.
 \newblock \emph{GNU General Public License, Version 3, 29 June 2007}.
 \newblock \url{https://www.gnu.org/licenses/gpl-3.0.de.html}, 2007.
 \newblock Abgerufen am: 28.08.2018.
+
+\bibitem{benchmark}
+J.~M. Gosney.
+\newblock \emph{8x Nvidia GTX 1080 Hashcat Benchmarks}.
+\newblock
+  \url{https://gist.github.com/epixoip/a83d38f412b4737e99bbef804a270c40}, 2016.
+\newblock Abgerufen am: 23.09.2018.
 
 \bibitem{JSON}
 {json.org}.
@@ -198,6 +211,14 @@ A.~Teplitzki.
 \newblock \emph{Introduction to XML}.
 \newblock \url{https://www.w3schools.com/xml/xml_whatis.asp}, 2018.
 \newblock Abgerufen am: 03.09.2018.
+
+\bibitem{dsgvoschweiz}
+D.~Windelband.
+\newblock \emph{Die Schweiz und die Datenschutzgrundverordnung}.
+\newblock
+  \url{https://www.datenschutz-notizen.de/die-schweiz-und-die-datenschutzgrundverordnung-0020134/},
+  2018.
+\newblock Abgerufen am: 01.08.18.
 
 \bibitem{RealtimeDatabase}
 W.~Wingerath.

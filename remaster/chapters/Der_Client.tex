@@ -146,7 +146,7 @@ public class FragmentName extends Fragment {
 		\item  Die \emph{Getter}- und die \emph{Setter}-Methoden: Die Getter- und die Setter-Methoden finden sich als letztes in einem Model und sind die Methoden, die anderen Klassen den Zugriff auf die Felder des Models erlauben. Dabei können über die Setter-Methoden, auch \emph{Mutator Methods} genannt, die Felder nachträglich verändert werden, während über die Getter-Methoden, auch \emph{Accessor Methods} genannt, der Inhalt eines bestimmten Feldes abgerufen werden kann. \cite{accessorsAndMutators}
 	\end{itemize}
 
-	\subsubsection{UserModel}
+	\subsubsection{Das UserModel}
 	Das UserModel-Model ist das Model in welchem die Informationen eines einzelnen Benutzerprofils gespeichert werden. Hierzu findet sich ein Feld für alle dafür Relevanten Werte. Bei der Initialisierung wird unterschieden, ob das Model das Model des Clientbenutzers/der Clientbenutzerin selber ist oder es sich um ein Fremdes Profil handelt. Entsprechend sind Informationen wie Passwort oder Email nicht immer innerhalb des Models gesetzt. Eine Abbildung eines Konstruktors des Models findet sich in Abbildung \ref{userModelConst}.
 	
 	\begin{code}
@@ -188,7 +188,7 @@ public userInfo(int id, String username, String name, String firstname, [...], S
 \end{code}
 	Das UserModel ist das wohl zentralste Model der entwickelten Applikation. Es wird in allen Activities und Fragements mit Ausnahme des Logins und der Registrierung verwendet. Da jedoch das UserModel-Objekt selber nicht zwischen den Acitivties weitergegeben werden kann, wird hierzu ein JSON-String verwendet, der im Konstruktor auf Zeile 3 gesetzt wird. Der dabei verwendete JSON-String ist der gleiche, wie der Webserver verwendet, wenn er Benutzerinformationen an den Client schickt.
 	
-	\subsubsection{ProfilePictureModel}
+	\subsubsection{Das ProfilePictureModel}
 	Für das Darstellen und Speichern von Profilbild auf dem Client wird das ProfilePictureModel-Model verwendet. Das Model besitzt Felder für die drei verschiedenen Formen in welchen ein Profilbild innerhalb der Applikation auftreten kann.
 	
 	\begin{itemize}
@@ -243,7 +243,7 @@ public class ProfilePictureModel {
 
 	Eine weitere Aufgabe, die ebenfalls in die Hände des ProfilePictureModel-Models fällt, ist die Regulierung der Bildqualität und Auflösung. Dies ermöglicht, dass egal was für ein Bild ein Benutzer/Benutzer als Profilbild ausgewählt hat, alle Bilder schlussendlich ungefähr gleich gross in der Auflösung sind. Zudem werden die Bitmaps innerhalb der Applikation jeweils in einer Runden Form dargestellt. Diese wird ihnen auch innerhalb des ProfilePictureModel-Models gegeben, wobei hierzu jedoch auf ein bereits existierendes Github-Repository von Arthur Teplitzki zurückgegriffen wurde, welches verschiedene Tools für das zuschneiden von Bildern bietet. Dieses Repository wird noch etwas mehr in Kapitel \ref{imageCropping} thematisiert.
 	
-	\subsubsection{ChatModel}
+	\subsubsection{Das ChatModel}
 	Das \emph{ChatModel}-Model ist das simpelste Model der Studnetz Applikation und wird für die Chats verwendet. Im Model befinden sich Felder für die wichtigsten Kernangaben eines Chats wie die UserModel-Models von beiden Chatparteien, eine Firebase-Referenz zu den Firebase-Profilen beider Chatparteien sowie die Firebase-Referenz zum Chat selber. Eine Abbildung des einzigen Konstruktors sowie den Felder findet sich in Abbildung \ref{chatModelConst}.
 	
 \begin{code}
@@ -274,14 +274,14 @@ public class ChatModel {
 	\subsection{Auflistungen mithilfe von RecyclerViews}
 	In der Studnetz Applikation wird an mehreren Orten eine Form einer Auflistung von Elementen benötigt. Dies ist beispielsweise bei der Anzeige der gefundenen Suchergebnissen der Fall oder wenn die offenen Chats aufgelistet werden. Für das darstellen einer solchen Auflistung werden gleich mehrere verschiedene Klassen benötigt.
 	
-	\subsubsection{XML-Layout eines Elementes}
+	\subsubsection{Das XML-Layout eines Elementes}
 	Standardmässig verwenden Listen für die einzelnen Elemente ein extrem simples Layout für die einzelnen Elemente. Oft reicht dies jedoch nicht aus sondern die Elemente sollen angepasster an ihre spezifische Aufgabe sein. Hierzu wird ein XML-Layout definiert, welches jeweils für ein Element der Liste verwendet werden soll. Ein Beispiel eines solchen Elementes findet sich in Abbildung \ref{listElement}.
 
-	\subsubsection{Model eines Elements}
+	\subsubsection{Das Model eines Elements}
 	Um den verschiedenen Elementen der Auflistung Informationen zuzuschreiben zu können kommen Models zum Einsatz. Jedem Element wird ein Model zugeschrieben, welches die für das Element wichtigen Informationen beinhaltet. Die für die verwendeten Models wurden bereits alle in Kapitel \ref{models} thematisiert, weshalb hier nicht mehr näher darauf eingegangen wird.
 	
-	\subsubsection{ViewHolder}
-	Die ViewHolder-Klasse beschreibt jeweils ein einzelnes Element der Auflistung. Innerhalb eines ViewHolders sind Dinge wie das zu verwendende Layout wie auch das zum Element gehörende Model referenziert. Es ist teilweise umstritten, wie weit sich der Aufgabenbereich der ViewHolder-Klasse einer Liste streckt. In der entwickelten Applikation hat der ViewHolder jeweils neben den bereits erwähnten Aufgaben auch die Aufgabe, das XML-Layout des Elementes auf die Informationen des Models anzupassen. Hierzu findet sich meist eine \emph{validate}-Methode, welche diese Modifikation der View ermöglicht. Ein Beispiel für eine solche ViewHolder-Klasse findet sich in Abbildung \ref{viewHolder}.
+	\subsubsection{Die ViewHolder-Klassen}
+	ViewHolder-Klassen beschreibt jeweils ein einzelnes Element der Auflistung. Innerhalb eines ViewHolders sind Dinge wie das zu verwendende Layout wie auch das zum Element gehörende Model referenziert. Es ist teilweise umstritten, wie weit sich der Aufgabenbereich der ViewHolder-Klasse einer Liste streckt. In der entwickelten Applikation hat der ViewHolder jeweils neben den bereits erwähnten Aufgaben auch die Aufgabe, das XML-Layout des Elementes auf die Informationen des Models anzupassen. Hierzu findet sich meist eine \emph{validate}-Methode, welche diese Modifikation der View ermöglicht. Ein Beispiel für eine solche ViewHolder-Klasse findet sich in Abbildung \ref{viewHolder}.
 
 \begin{code}
 	\begin{center}
@@ -319,8 +319,8 @@ class ResultViewHolder extends RecyclerView.ViewHolder{
 
 	%Bei der Darstellung einer Auflistung werden jeweils immer so viele ViewHolder-Objekte initialisiert, wie auf dem Bildschirm maximal sichtbar sein können. Daraufhin wird die validate-Methode für jeden ViewHolder aufgerufen, wobei ihr jeweils das dem Element zugewiesene Model als Parameter überreicht wird (Zeile 11). Wenn nun die Liste durchgesehen wird, bleibt die Anzahl der geladenen ViewHolder konstant. Es werden lediglich die nicht mehr sichtbaren ViewHolder wiederverwertet für die nun neu sichtbaren Elemente, wobei die validate-Methode des ViewHolders erneut mit einem anderen Model aufgerufen wird. Dieser Prozess wird als \emph{recycling} bezeichnet.
 	
-	\subsubsection{Adapter}
-	Die Adapter-Klassen haben die Aufgabe, die Elemente und somit auch die ViewHolder-Objekte einer Liste zu verwalten. Sie bestimmen, welcher Datensatz welchem Element zukommt und welche View für ein Element verwendet werden soll. In der entwickelten Applikation werden hierzu für die Auflistung der Suchergebnisse und der offenen Chats eine Subklasse der \emph{RecyclerView.Adapter}-Klasse verwendet, während für die Chats selber eine Subklasse der \emph{FirebaseRecyclerAdapter}-Klasse verwendet wird. Grundsätzlich ist der Aufbau beider Adapterarten vergleichbar. Der grosse Unterschied ist jedoch, dass FirebaseRecyclerAdapter über eine Referenz mit einer Firebase Echtzeitdatenbank verknüpft sind. Der Datensatz der Auflistung wird dann jeweils in Echtzeit mit der Datenbank synchronisiert. Auf den FirebaseRecyclerAdapter soll jedoch hier nicht weiter eingegangen werden, sonder der Fokus wird stattdessen auf den normalen RecyclerAdapter gelegt. Ein Beispiel eines solchen Adapters findet sich in Abbildung \ref{chatOverviewAdapter}.
+	\subsubsection{Die Adapter-Klassen}
+	Adapter-Klassen haben die Aufgabe, die Elemente und somit auch die ViewHolder-Objekte einer Liste zu verwalten. Sie bestimmen, welcher Datensatz welchem Element zukommt und welche View für ein Element verwendet werden soll. In der entwickelten Applikation werden hierzu für die Auflistung der Suchergebnisse und der offenen Chats eine Subklasse der \emph{RecyclerView.Adapter}-Klasse verwendet, während für die Chats selber eine Subklasse der \emph{FirebaseRecyclerAdapter}-Klasse verwendet wird. Grundsätzlich ist der Aufbau beider Adapterarten vergleichbar. Der grosse Unterschied ist jedoch, dass FirebaseRecyclerAdapter über eine Referenz mit einer Firebase Echtzeitdatenbank verknüpft sind. Der Datensatz der Auflistung wird dann jeweils in Echtzeit mit der Datenbank synchronisiert. Auf den FirebaseRecyclerAdapter soll jedoch hier nicht weiter eingegangen werden, sonder der Fokus wird stattdessen auf den normalen RecyclerAdapter gelegt. Ein Beispiel eines solchen Adapters findet sich in Abbildung \ref{chatOverviewAdapter}.
 	
 \begin{code}
 	\begin{center}
