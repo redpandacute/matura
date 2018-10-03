@@ -14,8 +14,7 @@
 \usepackage{hyperref}
 
 \newenvironment{code}{\captionsetup{type=figure}}{}
-
-\graphicspath{{images/}{../images/}}
+\newenvironment{image}{\captionsetup{type=figure}}{}
 
 %minimale page header & footer
 \pagestyle{fancy}
@@ -29,10 +28,17 @@
 \setcounter{tocdepth}{3}
 \bibliographystyle{abbrv}
 
+\graphicspath{./images/}
+
 \begin{document}
-	\maketitle
-	\subfile{chapters/vorwort.tex}
+	\maketitle	
 	\tableofcontents
+	
+	\newpage
+	\subfile{chapters/abstract.tex}
+	\addcontentsline{toc}{chapter}{Abstract}
+	\subfile{chapters/vorwort.tex}
+	\addcontentsline{toc}{chapter}{Vorwort}
 	%Corrected
 	\subfile{chapters/Einleitung.tex}
 	%Corrected
