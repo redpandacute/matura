@@ -7,7 +7,6 @@
 	\section{Betriebssystem und Programmiersprache}
 	
 	\subsection{Android}
-	
 	Der Client wurde für das Betriebssystem \emph{Android} entwickelt. Es wird ge"-schätzt, dass zwischen 85 und 86 Prozent aller heute verwendeten Mobiltelefone eine Version des Betriebssystems Android installiert haben. Dies macht Android zum mit Abstand meist verwendeten Betriebssystem für Mobiltelefone weltweit. Der Entscheid, die Studnetz-Applikation für Android Geräte zu entwickeln ist dadurch begründet, dass so die grosse Mehrheit der potentiellen Kunden/Kundinnen erreicht werden kann. \cite{android} %Die Entwicklung der Studnetz Applikation für Android Geräte macht also nur Sinn, da somit eine grosse Menge an Benutzern/Benutzerinnen erreicht werden kann. 
 	
 	Android basiert auf einem stark modifizierten Linux Kernel. Programme werden darauf in einer sogenannten \emph{Android Runtime} Umgebung ausgeführt. Diese Umgebung ist in der Lage, Bytecodes im \emph{Dex-Format} (Dalvik Executable-Format) auszuführen. Diese Dex-Formate werden dabei meist aus für die \emph{Java Virtual Machine} (JVM) kompilierten Bytecodes übersetzt. Die meisten Applikationen für Android wurden deshalb lange in der Programmiersprache Java programmiert, erst vor wenigen Jahren begann ein langsamer ein Umschwung zur neueren Programmiersprache \emph{Kotlin}, die jedoch auch in Bytecodes für die JVM kompiliert wird. Kotlin gewinnt hauptsächlich wegen seiner konzeptionell schönen Syntax an immer grösserer Beliebtheit, wobei insbesondere in der Entwicklung von Applikationen immer mehr auf Kotlin anstelle von Java gesetzt wird. \cite{androidJava}
@@ -20,7 +19,7 @@
 	In der entwickelten Applikation wird die Sprache Java hauptsächlich für die logischen Prozesse verwendet, die hinter der optischen Benutzeroberfläche ablaufen.
 	
 	\subsection{XML}
-	Für das Layout der Benutzeroberfläche des Clients wird für gewöhnlich nicht Java verwendet. Stattdessen weicht man auf die Auszeichnungssprache \emph{XML} aus. XML steht für \emph{Extensible Markup Language} und kann bis zu einem gewissen Grad mit HTML (\emph{Hypertext Markup Language}) verglichen werden, unterscheiden sich jedoch in einem zentralen Punkt. HTML wurde entwickelt, um zu bestimmen wie Informationen dargestellt werden. XML auf der anderen Seite setzt den Fokus auf die Informationen als solche selber, und weniger auf die Darstellung. Es ist jedoch trozdem möglich, auch XML für die Definition von Darstellungen zu verwenden, wie es beispielsweise bei Android Applikationen üblich ist. Weiter ist XML deutlich flexibler als HTML, da Entwickler/Entwicklerinnen mehr Möglichkeiten haben, eigene, neue Darstellungsformen zu definieren.
+	Für das Layout der Benutzeroberfläche des Clients wird für gewöhnlich nicht Java verwendet. Stattdessen weicht man auf die Auszeichnungssprache \emph{XML} aus. XML steht für \emph{Extensible Markup Language} und kann bis zu einem gewissen Grad mit HTML (\emph{Hypertext Markup Language}) verglichen werden, unterscheiden sich jedoch in einem zentralen Punkt. HTML wurde entwickelt, um zu bestimmen wie Informationen dargestellt werden. XML auf der anderen Seite setzt den Fokus auf die Informationen als solche selber, und weniger auf die Darstellung. Es ist jedoch trotzdem möglich, auch XML für die Definition von Darstellungen zu verwenden, wie es beispielsweise bei Android Applikationen üblich ist. Weiter ist XML deutlich flexibler als HTML, da Entwickler/Entwicklerinnen mehr Möglichkeiten haben, eigene, neue Darstellungsformen zu definieren.
 	
 	Bei der Verwendung von XML in Android Applikationen wird XML verwendet, um zum einen die Layouts der darzustellenden Screen zu definieren, aber auch um statische Informationen wie beispielsweise zu verwendende Strings und Integer zu beschreiben. Somit können in einer Applikation auch relativ einfach verschiedene Sprachpakete integriert werden, da dafür lediglich alle definierten Strings, welche sich in einer Datei befinden, übersetzt werden müssen. Alle XML-Dateien zusammen bilden die \emph{Resources} einer Android Applikation. Diese Resources sind für die Java Klassen zugänglich und können durch diese manipuliert werden. Dies ermöglicht eine direkte Verknüpfung von Java mit dem Layout und ermöglicht die Entwicklung dynamischer Screens und Darstellungen. \cite{xml} \cite{xmlW3}
 	
@@ -284,7 +283,7 @@ public class ChatModel {
 	
 	\begin{figure}
 		\centering
-		\includegraphics[width=\textwidth, height=\linewidth/2]{./images/lena.jpg}
+		\includegraphics[width=\linewidth]{./images/Listelement.png}
 		\caption{Einzelnes Element wie es bei der Auflistung der Suchergebnisse verwendet wird}
 		\label{listElement}
 	\end{figure}
@@ -484,8 +483,9 @@ public class SchoolMapper {
 	
 	\begin{figure}
 		\centering
-		\includegraphics[width=\textwidth]{./images/lena.jpg}
-		\caption{Screenshot des Croppers beim zuschneiden}
+		\includegraphics[width=0.7\textwidth]{./images/cropper.png}
+		\caption{Screenshot des Croppers beim Zuschneiden}
+		\label{cropperImage}
 	\end{figure}
 	
 	\subsection{Interaktion mit dem Webserver (MySQL Datenbank)}
@@ -576,8 +576,8 @@ class OnBigPictureResponseListener implements Response.Listener<String> {
 	\subsection{Interaktion mit der Firebase Echtzeitdatenbank}
 	Die Interaktionen vom Client mit der Firebase Echtzeitdatenbank unterscheidet sich stark von der Interaktion mit dem Webserver. Anders als bei einem herkömmlichen Webserver ist das Implementieren von serverseitiger Datenverarbeitung in Form von Skripten sehr aufwändig und Firebase bietet hierzu kaum Tools. Deshalb wird bei der Arbeit mit Firebase Echtzeitdatenbanken oft sehr viel der Datenverarbeitung auf Seiten des Client gemacht. Dies bringt eine Menge potentieller Risiken in Bereichen Sicherheit mit sich, die jedoch im Rahmen dieser Arbeit in Kauf genommen worden sind. 
 	
-	\subsubsection{Verbindung (Wird erweitert sobald Sicherheit geklärt ist!)}
-	Die Verbindung zum Server wird wie beim Webserver auch hier über eine Webadresse erstellt. Die Adresse wird dabei in einer separaten Datei definiert. Es ist auch in dieser Datei, wo die gesamten für die Authentifizierung benötigten Werte gespeichert sind. Die Authentifizierung wird dabei von Freibase selber geregelte und läuft über ein Google Konto.
+	\subsubsection{Verbindung}
+	Die Verbindung zum Server wird wie beim Webserver über eine Webadresse erstellt. Die Adresse wird dabei in einer separaten Datei definiert. Es ist auch in dieser Datei, wo die gesamten für die Authentifizierung benötigten Werte gespeichert sind. Die Authentifizierung wird dabei von Freibase selber geregelte und läuft über ein Google Konto.
 	
 	\subsubsection{Zugriff vom Client auf die Echtzeitdatenbank}
 	Innerhalb des Clients wird über sogenannte \emph{Referenzen} auf den Server zugegriffen. Diese Referenzen sind im wesentlichen die Webadressen der verschiedenen JSON-Objekte. Über sie können neue Werte in die Datenbank eingefügt werden oder ausgelesen werden. Dieser Vorgang soll anhand zweier Beispiele demonstriert werden.
@@ -637,5 +637,13 @@ class ChatsValueEventListener implements ValueEventListener {
 	
 	
 	\section{Herunterladen des Projektes und der Applikation} \label{github}
+	Das gesamte in dieser Arbeit beschriebene Projekt befindet sich auf GitHub. Es kann über die Webadresse https://github.com/florianmatura/Studnetz Aufgerufen werden. Dort finden sich drei Verzeichnisse.
 	
+	\begin{itemize}
+		\item Das \emph{AndroidStudioProject}-Verzeichnis enthält das Projekt für Android Studio. Das heruntergeladene Verzeichnis kann als Android Studio Projekt importiert werden (\emph{File} -\textgreater \emph{New Project} -\textgreater \emph{Import Project}). Gradle sollte dann automatisch mit dem Build des Projektes beginnen. Ansonsten kann der Build auch über \emph{Build} -\textgreater \emph{Rebuild Project manuell} ausgeführt werden.
+		\item Das \emph{release}-Verzeichnis beinhaltet die Applikation selber. Die \emph{Studnetz.apk} Datei kann auf Geräte mit einem installierten Android Betriebssystem mit einer Version $\ge4.2$ geladen und dann ausgeführt werden.
+		\item Das \emph{PHP\_Files}-Verzeichnis beinhaltet alle Dateien, welche auf dem Webserver verwendet werden, sowie eine Text-Datei für die in der MySQL-Datenbank benötigen SQL-Tabellenstrukturen.
+	\end{itemize}
+
+	Das Projekt ist bereits Verbunden mit einem Firebase-Server. Dieser läuft über ein Google Konto mit der Email hirtzflorianmatura@gmail.com. Sollte das Bedürfnis bestehen, Einsicht in diesen Server zu erlangen oder es sind anderweitige Probleme bezüglich der Einsicht in das Projekt aufgetreten, kann man mich gerne über dieselbe Email kontaktieren.
 \end{document}
