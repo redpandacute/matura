@@ -2,16 +2,16 @@
 
 \begin{document}
 	\chapter{Der Client}
-	Der Client ist das Herzstück der entwickelten Anwendung. Er ist der Teil der Anwendung, welcher von den Endbenutzern/Endbenutzerinnen heruntergeladen und benutzt wird. Er ist das verbindende Glied zwischen den gespeicherten Informationen auf dem Server und den Benutzern/Benutzerinnen. Im folgenden Kapitel wird genauer auf die Funktionsweise des Clients eingegangen und seine Interaktionen mit dem Server beschrieben.
+	Der Client ist das Herzstück der entwickelten Anwendung. Er ist der Teil der Anwendung, welcher von den Endbenutzern/Endbenutzerinnen heruntergeladen und benutzt wird. Er ist das verbindende Glied zwischen den gespeicherten Informationen auf dem Server und den Benutzern/Benutzerinnen. Im folgenden Kapitel wird auf die Funktionsweise des Clients eingegangen und seine Interaktionen mit dem Server beschrieben.
 	
 	\section{Betriebssystem und Programmiersprache}
 	
 	\subsection{Android}
 	Der Client wurde für das Betriebssystem \emph{Android} entwickelt. Es wird ge"-schätzt, dass zwischen 85 und 86 Prozent aller heute verwendeten Mobiltelefone eine Version des Betriebssystems Android installiert haben. Dies macht Android zum mit Abstand meist verwendeten Betriebssystem für Mobiltelefone weltweit. Der Entscheid, die Studnetz-Applikation für Android Geräte zu entwickeln ist dadurch begründet, dass so die grosse Mehrheit der potentiellen Kunden/Kundinnen erreicht werden kann. \cite{android} %Die Entwicklung der Studnetz Applikation für Android Geräte macht also nur Sinn, da somit eine grosse Menge an Benutzern/Benutzerinnen erreicht werden kann. 
 	
-	Android basiert auf einem stark modifizierten Linux Kernel. Programme werden darauf in einer sogenannten \emph{Android Runtime} Umgebung ausgeführt. Diese Umgebung ist in der Lage, Bytecodes im \emph{Dex-Format} (Dalvik Executable-Format) auszuführen. Diese Dex-Formate werden dabei meist aus für die \emph{Java Virtual Machine} (JVM) kompilierten Bytecodes übersetzt. Die meisten Applikationen für Android wurden deshalb lange in der Programmiersprache Java programmiert, erst vor wenigen Jahren begann ein langsamer ein Umschwung zur neueren Programmiersprache \emph{Kotlin}, die jedoch auch in Bytecodes für die JVM kompiliert wird. Kotlin gewinnt hauptsächlich wegen seiner konzeptionell schönen Syntax an immer grösserer Beliebtheit, wobei insbesondere in der Entwicklung von Applikationen immer mehr auf Kotlin anstelle von Java gesetzt wird. \cite{androidJava}
+	Android basiert auf einem stark modifizierten Linux Kernel. Programme werden darauf in einer sogenannten \emph{Android Runtime} Umgebung ausgeführt. Diese Umgebung ist in der Lage, Bytecodes im \emph{Dex-Format} (Dalvik Executable-Format) auszuführen. Diese Dex-Formate werden dabei meist aus für die \emph{Java Virtual Machine} (JVM) kompilierten Bytecodes übersetzt. Die meisten Applikationen für Android wurden deshalb lange in der Programmiersprache Java programmiert, erst vor wenigen Jahren begann ein langsamer ein Umschwung zur neueren Programmiersprache \emph{Kotlin}, die jedoch auch in Bytecodes für die JVM kompiliert wird. Kotlin gewinnt haupt"-sächlich wegen seiner konzeptionell schönen Syntax an immer grösserer Beliebtheit, wobei insbesondere in der Entwicklung von Applikationen immer mehr auf Kotlin anstelle von Java gesetzt wird. \cite{androidJava}
 	
-	Die Studnetz-Applikation ist dennoch in Java programmiert worden, da ich als Entwickler mit dieser Sprache bereits vor dieser Arbeit schon gearbeitet habe und die Entwicklung von Mobilapplikationen mit Java Online sehr gut Dokumentiert ist. %\cite{bytecode}
+	%Die Studnetz-Applikation ist dennoch in Java programmiert worden, da ich als Entwickler mit dieser Sprache bereits vor dieser Arbeit schon gearbeitet habe und die Entwicklung von Mobilapplikationen mit Java Online sehr gut Dokumentiert ist. %\cite{bytecode}
 	
 	\subsection{Java}
 	Für die Entwicklung der Studnetz Applikation wurde die Programmiersprache Java gewählt, da sie sehr gut dokumentiert ist und ich, als Entwickler, bereits vor dieser Arbeit Erfahrungen mit Java gesammelt hatte. Java ist eine Sprache der 3. Generation und gehört zu den objektorientierten Programmiersprachen. Sie wurde erstmals 1995 von Sun Microsystems veröffentlicht und ist seit 2010 in Besitz von Oracle. Java zeichnet sich besonders durch seine Plattformunabhängigkeit aus und eignet sich daher gut für kleinere Applikationen, die auf vielen verschiedenen Geräten funktionieren sollen.
@@ -21,7 +21,7 @@
 	\subsection{XML}
 	Für das Layout der Benutzeroberfläche des Clients wird für gewöhnlich nicht Java verwendet. Stattdessen weicht man auf die Auszeichnungssprache \emph{XML} aus. XML steht für \emph{Extensible Markup Language} und kann bis zu einem gewissen Grad mit HTML (\emph{Hypertext Markup Language}) verglichen werden, unterscheiden sich jedoch in einem zentralen Punkt. HTML wurde entwickelt, um zu bestimmen wie Informationen dargestellt werden. XML auf der anderen Seite setzt den Fokus auf die Informationen als solche selber, und weniger auf die Darstellung. Es ist jedoch trotzdem möglich, auch XML für die Definition von Darstellungen zu verwenden, wie es beispielsweise bei Android Applikationen üblich ist. Weiter ist XML deutlich flexibler als HTML, da Entwickler/Entwicklerinnen mehr Möglichkeiten haben, eigene, neue Darstellungsformen zu definieren.
 	
-	Bei der Verwendung von XML in Android Applikationen wird XML verwendet, um zum einen die Layouts der darzustellenden Screen zu definieren, aber auch um statische Informationen wie beispielsweise zu verwendende Strings und Integer zu beschreiben. Somit können in einer Applikation auch relativ einfach verschiedene Sprachpakete integriert werden, da dafür lediglich alle definierten Strings, welche sich in einer Datei befinden, übersetzt werden müssen. Alle XML-Dateien zusammen bilden die \emph{Resources} einer Android Applikation. Diese Resources sind für die Java Klassen zugänglich und können durch diese manipuliert werden. Dies ermöglicht eine direkte Verknüpfung von Java mit dem Layout und ermöglicht die Entwicklung dynamischer Screens und Darstellungen. \cite{xml} \cite{xmlW3}
+	Bei der Verwendung von XML in Android Applikationen wird XML verwendet, um zum einen die Layouts der darzustellenden Screen zu definieren, aber auch um statische Informationen wie beispielsweise zu verwendende Strings und Zahlen zu beschreiben. Somit können in einer Applikation auch relativ einfach verschiedene Sprachpakete integriert werden, da dafür lediglich alle definierten Strings, welche sich in einer Datei befinden, übersetzt werden müssen. Alle XML-Dateien zusammen bilden die \emph{Resources} einer Android Applikation. Diese Resources sind für die Java Klassen zugänglich und können durch diese manipuliert werden. Dies ermöglicht eine direkte Verknüpfung von Java mit dem Layout und ermöglicht die Entwicklung dynamischer Screens und Darstellungen. \cite{xml} \cite{xmlW3}
 	
 	\subsection{Android Studio}
 	Die Entwicklung der Studnetz Applikation fand hauptsächlich innerhalb der Programmierumgebung \emph{Android Studio} statt. Android Studio ist eine von Google entwickelte Programmierumgebung (IDE) für die Entwicklung von Applikationen für Android Mobilgeräte und unterstützt alle dafür erforderlichen Sprachen. Die Umgebung bietet verschiedenste hilfreiche Werkzeuge für die Entwicklung von Applikationen zu. Dazu gehört beispielsweise ein Visueller Layout Editor, wo die Layouts sehr intuitiv via 'Drag and Drop' gestaltet werden können, wobei der dazu gehörige XML-Code im Hintergrund automatisch generiert wird. Zudem ist es möglich, entwickelte Applikationen sehr einfach auf lokalen Emulatoren zu testen, wobei in der Konsole von Android Studio dann allfällige Fehlermeldungen angezeigt werden. All dies und noch vieles mehr macht Android Studio zu einer sehr starken Programmierumgebung. Das Herunterladen und die Benutzung von Android Studio ist kostenlos. Die Wahl auf die Entwicklungsumgebung für die in dieser Arbeit entwickelten Applikation war sehr schnell gefällt, da es kaum vergleichbare Alternativen zu Android Studio gibt, zumindest was die Entwicklung von Android Applikationen anbelangt.
@@ -58,7 +58,6 @@ public class ActivityName extends AppCompatActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
 		[...]
-		
 		return super.onOptionsItemSelected(item);
 	}
 }	
@@ -79,7 +78,7 @@ public class ActivityName extends AppCompatActivity {
 	
 	\paragraph{Die onOptionsItemSelected-Methode} 
 	\sloppy
-	Die \emph{onOptionsItemSelected}-Me"-tho"-de in den Zeilen von 19 bis 24 wird dann ausgeführt, wenn eine Schaltfläche in der Toolbar eines Screens betätigt wurde. In ihr wird dann jeweils definiert, was bei der Betätigung einer Schaltfläche geschehen soll. Dies kann zum Beispiel ein Wechsel zu einer neuen Activity sein oder das Ändern zu einem anderen Fragment.
+	Die \emph{onOptionsItemSelected}-Me"-tho"-de in den Zeilen von 19 bis 23 wird dann ausgeführt, wenn eine Schaltfläche in der Toolbar eines Screens betätigt wurde. In ihr wird dann jeweils definiert, was bei der Betätigung einer Schaltfläche geschehen soll. Dies kann zum Beispiel ein Wechsel zu einer neuen Activity sein oder das Ändern zu einem anderen Fragment.
 	\fussy
 	
 	\subsection{Fragments}
@@ -104,21 +103,19 @@ public class FragmentName extends Fragment {
 		View view = inflater.inflate(R.layout.FragmentLayoutName, container, false);
 
 		[...]
-
+		
 		return view;
 	}
 			
 	@Override
 	public void onStart() {
 		super.onStart();
-	
 	}
 			
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 			
 		[...]
-			
 		return super.onOptionsItemSelected(item);
 	}
 }	
@@ -130,7 +127,7 @@ public class FragmentName extends Fragment {
 	\end{code}
 
 	\paragraph{Die onAttach-Methode}
-	Die \emph{onAttach}-Methode (Zeile 3 bis 10) ist die erste Funktion im Lebenszyklus eines Fragments. In der entwickelten Applikation wird sie verwendet, um dem Fragment eine Referenz zur momentanen Applikationsumgebung (\emph{Context}) zu geben, in welcher sich die Parent-Activity befindet (Zeile 6). Dieses Objekt wird für diverse Prozesse benötigt, die auf Ressourcen der Applikation zugreifen müssen oder anderweitig mit dem Gerät interagieren.\cite{context}
+	Die \emph{onAttach}-Methode (Zeile 3 bis 10) ist die erste Funktion im Lebenszyklus eines Fragments. In der entwickelten Applikation wird sie verwendet, um dem Fragment eine Referenz zur momentanen Applikationsumgebung (\emph{Context}) zu geben, in welcher sich die Parent-Activity befindet (Zeile 6). Dieses Objekt wird für diverse Prozesse benötigt, die auf Ressourcen der Applikation zugreifen müssen oder anderweitig mit dem Gerät interagieren. \cite{context}
 	
 	\paragraph{Die onCreateView-Methode}
 	Die \emph{onCreateView}-Methode in den Zeilen 13 bis 20 ist nach der onAttach- und der onCreate-Methode die dritte Methode im Lebenszyklus eines Fragments. Die onCreate-Methode wird in den Fragments der Studnetz selten verwendet, weshalb sie hier nicht selber aufgeführt ist. Stattdessen übernimmt die onCreateView-Methode die Aufgabe des Definierens der View (Layout) und der wichtigen Objekte. Dabei wird zuerst in Zeile 15 ein neues Layout der Klasse \emph{View} instantiiert. Über dieses Objekt kann dann auf die einzelnen View-Komponenten des Layouts zugegriffen werden. Schlussendlich wird die fertig konfigurierte View in Zeile 19 zurückgegeben, wo sie dann für das Fragment als Layout verwendet wird.
@@ -147,7 +144,7 @@ public class FragmentName extends Fragment {
 	\begin{itemize}
 		\item Die \emph{Felder} eines Models: Die Felder, auch \emph{Member Variables} genannt, sind der Datenspeicher eines Models. Sie werden meist als erstes innerhalb der Klasse in Forme einer Reihe von Variablen definiert. \cite{memberVariables}
 		\item Die \emph{Konstruktoren}: Die Konstruktoren befinden sich meist an zweiter Stelle. Über sie wird das Model initialisiert. Dabei kann es durchaus mehrere verschiedene Konstruktoren innerhalb eines Models geben. Ihnen werden meist über die Parameter  Daten mitgegeben, die für die Felder benötigt werden.
-		\item  Die \emph{Getter}- und die \emph{Setter}-Methoden: Die Getter- und die Setter-Methoden finden sich als letzte in einem Model und sind die Methoden, die anderen Klassen den Zugriff auf die Felder des Models erlauben. Dabei können über die Setter-Methoden, auch \emph{Mutator Methods} genannt, die Felder nachträglich verändert werden, während über die Getter-Methoden, auch \emph{Accessor Methods} genannt, der Inhalt eines bestimmten Feldes abgerufen werden kann. \cite{accessorsAndMutators}
+		\item  Die \emph{Getter}- und die \emph{Setter}-Methoden: Die Getter- und die Setter-Methoden finden sich als Letzte in einem Model und sind die Methoden, die anderen Klassen den Zugriff auf die Felder des Models erlauben. Dabei können über die Setter-Methoden, auch \emph{Mutator Methods} genannt, die Felder nachträglich verändert werden, während über die Getter-Methoden, auch \emph{Accessor Methods} genannt, der Inhalt eines bestimmten Feldes abgerufen werden kann. \cite{accessorsAndMutators}
 	\end{itemize}
 
 	\subsubsection{Das UserModel}
@@ -201,7 +198,7 @@ public userInfo(int id, String username, String name, String firstname, [...], S
 		\item Die temporäre \emph{Cache}-Datei: Die temporäre Cache-Datei ist eine Datei im lokalen Cache-Speicher des Gerätes. Cache-Speicher wird verwendet um temporär benötigte Dateien zu speichern, damit sie nicht immer wieder erneut geladen werden müssen. Jede Applikation auf einem Gerät besitzt dabei ihr eigenes Cache-Verzeichnis. Innerhalb der entwickelten Applikation werden jeweils für geladene Profilbilder Cache-Dateien erstellt. Ab dann werden die Bilder jeweils nur noch über den Pfad zur Cache-Datei referenziert. Dies macht einen einfachen Transfer der Bilder von Activity zu Activity möglich. \cite{cache}
 	\end{itemize}
 
-	Das ProfilePictureModel-Model kann dabei über jedes der drei Formate initialisiert werden, weshalb es jeweils einen Konstruktor für jedes Format besitzt. Anschliessend wird das gegebene Format in die anderen Formate übersetzt. Hierzu finden sich eine Reihe von Methoden in der ProfilePictureModel-Klasse. Hinzu kommtein vierter Konstruktor, der das Objekt mithilfe einem Parameter der Klasse \emph{Uri} initialisiert. Uri (Uniform Resource Identifier) ist eine Form der Dateireferenzierung. Sie wird bei der Auswahl eines neuen Profilbildes verwendet und kann ebenfalls in die anderen Formate umgewandelt werden. Eine Abbildung der Felder und der Konstruktoren findet sich in Abbildung \ref{profilePictureModelConst}.
+	Das ProfilePictureModel-Model kann dabei über jedes der drei Formate initialisiert werden, weshalb es jeweils einen Konstruktor für jedes Format besitzt. Anschliessend wird das gegebene Format in die anderen Formate übersetzt. Hierzu finden sich eine Reihe von Methoden in der ProfilePicture"-Model-Klasse. Hinzu kommt ein vierter Konstruktor, der das Objekt mithilfe einem Parameter der Klasse \emph{Uri} initialisiert. Uri (Uniform Resource Identifier) ist eine Form der Dateireferenzierung. Sie wird bei der Auswahl eines neuen Profilbildes verwendet und kann ebenfalls in die anderen Formate umgewandelt werden. Eine Abbildung der Felder und der Konstruktoren findet sich in Abbildung \ref{profilePictureModelConst}.
 	
 \begin{code}
 	\begin{center}
@@ -245,7 +242,7 @@ public class ProfilePictureModel {
 	
 \end{code}
 
-	Eine weitere Aufgabe des ProfilePictureModel-Models ist die Regulierung der Bildqualität und Auflösung. Dies ermöglicht, dass egal was für ein Bild ein Benutzer/Benutzer als Profilbild ausgewählt hat, alle Bilddateien ungefähr gleich gross sind und der gleichen Auflösung entsprechen. Zudem werden die Bitmaps innerhalb der Applikation jeweils in einer runden Form dargestellt. Diese wird ihnen innerhalb des ProfilePictureModel-Models gegeben, wobei hierzu jedoch auf ein bereits existierendes Github-Repository von Arthur Teplitzki \cite{Cropper}zurückgegriffen wurde, welches verschiedene Tools für das Zuschneiden von Bildern bietet. Dieses Repository wird noch etwas mehr in Kapitel \ref{imageCropping} thematisiert.
+	Eine weitere Aufgabe des ProfilePictureModel-Models ist die Regulierung der Bildqualität und Auflösung. Dies ermöglicht, dass egal was für ein Bild ein Benutzer/Benutzer als Profilbild ausgewählt hat, alle Bilddateien ungefähr gleich gross sind und der gleichen Auflösung entsprechen. Zudem werden die Bitmaps innerhalb der Applikation jeweils in einer runden Form dargestellt. Diese wird ihnen innerhalb des ProfilePictureModel-Models gegeben, wobei hierzu jedoch auf ein bereits existierendes Github-Repository von Arthur Teplitzki \cite{Cropper} zurückgegriffen wurde, welches verschiedene Tools für das Zuschneiden von Bildern bietet. Dieses Repository wird in Kapitel \ref{imageCropping} im Detail thematisiert.
 	
 	\subsubsection{Das ChatModel}
 	Das \emph{ChatModel}-Model ist das simpelste Model der Studnetz Applikation und wird für die Chats verwendet. Im Model befinden sich Felder für die wichtigsten Kernangaben eines Chats wie die UserModel-Models von beiden Chatparteien, eine Firebase-Referenz zu den Firebase-Profilen beider Chatparteien sowie die Firebase-Referenz zum Chat selber. Eine Abbildung des einzigen Konstruktors sowie den Felder findet sich in Abbildung \ref{chatModelConst}.
@@ -292,7 +289,7 @@ public class ChatModel {
 	Um den verschiedenen Elementen der Auflistung Informationen zuzuschreiben zu können, kommen Models zum Einsatz. Jedem Element wird ein Model zugeschrieben, welches die für das Element wichtigen Informationen beinhaltet. Wie solche Models aufgebaut sind wurde bereits in Kapitel \ref{models} beschrieben, weshalb hier nicht näher darauf eingegangen wird.
 	
 	\subsubsection{Die ViewHolder-Klassen}
-	ViewHolder-Klassen beschreibt jeweils ein einzelnes Element der Auflistung. Innerhalb eines ViewHolders sind Dinge wie das zu verwendende Layout wie auch das zum Element gehörende Model referenziert. Es ist teilweise umstritten, wie weit der Aufgabenbereich der ViewHolder-Klasse einer Liste gehen soll. In der entwickelten Applikation hat der ViewHolder jeweils neben den bereits erwähnten Aufgaben auch die Aufgabe, das XML-Layout des Elementes auf die Informationen des Models anzupassen. Hierzu findet sich meist eine \emph{validate}-Methode, welche diese Modifikation der View ermöglicht. Ein Beispiel für eine solche ViewHolder-Klasse findet sich in Abbildung \ref{viewHolder}.
+	ViewHolder-Klassen beschreiben jeweils ein einzelnes Element der Auflistung. Innerhalb eines ViewHolders sind Dinge wie das zu verwendende Layout und das zum Element gehörende Model referenziert. Es ist teilweise umstritten, wie weit der Aufgabenbereich der ViewHolder-Klasse einer Liste gehen soll. In der entwickelten Applikation hat der ViewHolder jeweils neben den bereits erwähnten Aufgaben auch die Aufgabe, das XML-Layout des Elementes auf die Informationen des Models anzupassen. Hierzu findet sich meist eine \emph{validate}-Methode, welche diese Modifikation der View ermöglicht. Ein Beispiel für eine solche ViewHolder-Klasse findet sich in Abbildung \ref{viewHolder}.
 
 \begin{code}
 	\begin{center}
@@ -331,7 +328,7 @@ class ResultViewHolder extends RecyclerView.ViewHolder{
 	%Bei der Darstellung einer Auflistung werden jeweils immer so viele ViewHolder-Objekte initialisiert, wie auf dem Bildschirm maximal sichtbar sein können. Daraufhin wird die validate-Methode für jeden ViewHolder aufgerufen, wobei ihr jeweils das dem Element zugewiesene Model als Parameter überreicht wird (Zeile 11). Wenn nun die Liste durchgesehen wird, bleibt die Anzahl der geladenen ViewHolder konstant. Es werden lediglich die nicht mehr sichtbaren ViewHolder wiederverwertet für die nun neu sichtbaren Elemente, wobei die validate-Methode des ViewHolders erneut mit einem anderen Model aufgerufen wird. Dieser Prozess wird als \emph{recycling} bezeichnet.
 	
 	\subsubsection{Die Adapter-Klassen}
-	Adapter-Klassen haben die Aufgabe, die Elemente und somit auch die ViewHolder-Objekte einer Liste zu verwalten. Sie bestimmen, welcher Datensatz welchem Element zukommt und welche View für ein Element verwendet werden soll. In der entwickelten Applikation wird hierzu für die Auflistung der Suchergebnisse und der offenen Chats eine Subklasse der \emph{RecyclerView.Adapter}-Klasse verwendet, während für die Chats selber eine Subklasse der \emph{FirebaseRecyclerAdapter}-Klasse verwendet wird. Grundsätzlich ist der Aufbau beider Adapterarten vergleichbar. Der grosse Unterschied ist jedoch, dass FirebaseRecyclerAdapter über eine Referenz mit einer Firebase Echtzeitdatenbank verknüpft sind. Der Datensatz der Auflistung wird jeweils in Echtzeit mit der Datenbank synchronisiert. Auf den FirebaseRecyclerAdapter soll hier nicht weiter eingegangen werden. Stattdessen wird der Fokus auf den normalen RecyclerAdapter gelegt. Ein Beispiel eines solchen Adapters findet sich in Abbildung \ref{chatOverviewAdapter}.
+	Adapter-Klassen haben die Aufgabe, die Elemente und somit auch die View"-Holder-Objekte einer Liste zu verwalten. Sie bestimmen, welcher Datensatz welchem Element zukommt und welche View für ein Element verwendet werden soll. In der entwickelten Applikation wird hierzu für die Auflistung der Suchergebnisse und der offenen Chats eine Subklasse der \emph{RecyclerView.Adapter}-Klasse verwendet, während für die Chats selber eine Subklasse der \emph{FirebaseRecyclerAdapter}-Klasse verwendet wird. Grundsätzlich ist der Aufbau beider Adapterarten vergleichbar. Der grosse Unterschied ist jedoch, dass FirebaseRecyclerAdapter über eine Referenz mit einer Firebase Echtzeitdatenbank verknüpft sind. Der Datensatz der Auflistung wird jeweils in Echtzeit mit der Datenbank synchronisiert. Auf den FirebaseRecyclerAdapter soll hier nicht weiter eingegangen werden. Stattdessen wird der Fokus auf den normalen RecyclerAdapter gelegt. Ein Beispiel eines solchen Adapters findet sich in Abbildung \ref{chatOverviewAdapter}.
 	
 \begin{code}
 	\begin{center}
@@ -385,7 +382,7 @@ class ChatoverviewAdapter extends RecyclerView.Adapter<OpenChatViewHolder>{
 	
 	\paragraph{Die onBindViewHolder-Methode}
 	\sloppy
-	Die \emph{onBindViewHolder}-Me"-tho"-de \newline wird jeweils für jeden ViewHolder der sichtbaren Elemente aufgerufen. Dabei wird den einzelnen ViewHolder-Objekten ihr Model über die validate-Methode zugewiesen (Zeile 21). Das zugewiesene Model wird dabei über die Position des Elementes innerhalb der RecyclerView bestimmt (Zeile 20). Im Falle der ChatoverviewAdapter-Klasse findet sich hier noch eine weiter Methode der ViewHolder-Klasse, die das Definieren eines zu verwendenden Profilbildes ermöglicht (Zeile 22).
+	Die \emph{onBindViewHolder}-Me"-tho"-de \newline wird jeweils für jeden ViewHolder der sichtbaren Elemente aufgerufen. Dabei wird den einzelnen ViewHolder-Objekten ihr Model über die validate-Methode zugewiesen (Zeile 21). Das zugewiesene Model wird dabei über die Position des Elementes innerhalb der RecyclerView bestimmt (Zeile 20). Im Falle der ChatoverviewAdapter-Klasse findet sich hier noch eine weitere Methode der ViewHolder-Klasse, die das Definieren eines zu verwendenden Profilbildes ermöglicht (Zeile 22).
 	\fussy
 	
 	Die onBindViewHolder-Methode wird nach dem Start der View aufgerufen, wenn ein Element vom Bildschirm verschwindet und ein neues erscheinen muss. Es wird dann der ViewHolder des verschwundenen Elements genommen und sein Model wird über die validate-Methode durch ein neues Model ersetzt. Damit kann erreicht werden, dass mit einer nur geringen Anzahl an gleichzeitig geladener Layouts trotzdem beliebig grosse Datensätze effizient dargestellt werden können. Dieser Prozess der Wiederverwertung von nicht mehr sichtbarer Elemente wird als \emph{recycling} bezeichnet, was auch den Namen der beiden Superklassen RecyclerView.ViewHolder und RecyclerView.Adapter erklärt.
@@ -410,10 +407,12 @@ mainprofileModel = new JSONtoInfo(getBaseContext()).createNewItem(new JSONObject
 	Die \emph{TempFileGenerator}-Klasse wird verwendet, um aus einem Base64 String eines Bildes eine entsprechende Datei um Cache zu erstellen. Hierzu wird die \emph{getTempFilePath}-Methode verwendet. Sollte der Base64 String jedoch dem Wert 0 entsprechen oder nicht gesetzt sein (null), wird ein vordefiniertes Platzhalter Bild an Stelle einer Datei im Cache verwendet. Der Pfad zur Bilddatei wird dann jeweils über den Rückgabewert zurückgegeben.
 	
 	\subsubsection{Die ProfilePictureLoader-Klasse}
-	Die \emph{ProfilePictureLoader}-Klasse wird verwendet, um mehrere Profilbilder gleichzeitig zu Laden. Dies wird bei der Darstellung von Auflistungen benötigt, wo mehrere Profile mit verschiedenen Profilbildern gezeigt werden. Dabei werden jeweils beim Start der Auflistungen die Profilbilder der ersten 20 Datensatzeinträge mithilfe der ProfilePictureLoader-Klasse geladen. Dann werden wenn noch ungeladene Profile gezeigt werden über die ProfilePictureLoader-Klasse die nächsten 20 Profilbilder geladen, bis schlussendlich, wenn alle Ergebnisse durchgesehen worden sind, alle Profilbilder geladen sind.
+	\sloppy
+	Die \emph{ProfilePictureLoader}-Klasse wird verwendet, um mehrere Profilbilder gleichzeitig zu Laden. Dies wird bei der Darstellung von Auflistungen benö"-tigt, wo mehrere Profile mit verschiedenen Profilbildern gezeigt werden. Dabei werden jeweils beim Start der Auflistungen die Profilbilder der ersten 20 Datensatzeinträge mithilfe der ProfilePicture"-Loader-Klasse jeweils geladen. Dann werden wenn noch ungeladene Profile gezeigt werden über die ProfilePictureLoader-Klasse die nächsten 20 Profilbilder geladen, bis schlussendlich, alle Profilbilder geladen sind.
+	\fussy
 	
 	\subsubsection{Die MyReader-Klasse und die SchoolMapper-Klasse}
-	Diese beide Klassen sind für die Auflistung der Schulen und der dazugehörigen Schulstufen verantwortlich. Dabei werden die von der Applikation unterstützten Schulen im einen Spinner angezeigt und wenn eine Auswahl getroffen wurde, werden die Schulstufen der ausgewählten Schule im zweiten Spinner angezeigt. Die unterstützten Schulen sind dabei in einem Textdokument gespeichert und mit einer Zahl versehen, die die Schulstufen der Schule bestimmt. Es ist die MyReader-Klasse, die dieses Dokument zu lesen vermag und anschliessend die gelesenen Zeile als Liste zurückgibt. Die SchoolMapper-Klasse übernimmt das Handling der beiden Spinner. Eine Abbildung der SchoolMapper-Klasse findet sich in Abbildung \ref{schoolMapper}.
+	Diese beide Klassen sind für die Auflistung der Schulen und der dazugehörigen Schulstufen verantwortlich. Dabei werden die von der Applikation unterstützten Schulen im einen Spinner angezeigt. Wenn eine Auswahl getroffen wurde, werden die Schulstufen der ausgewählten Schule im zweiten Spinner angezeigt. Die unterstützten Schulen sind dabei in einem Textdokument gespeichert und mit einer Zahl versehen, die die Schulstufen der Schule bestimmt. Es ist die MyReader-Klasse, die dieses Dokument zu lesen vermag und anschliessend die gelesenen Zeile als Liste zurückgibt. Die SchoolMapper-Klasse übernimmt das Handling der beiden Spinner. Eine Abbildung der SchoolMapper-Klasse findet sich in Abbildung \ref{schoolMapper}.
 	
 \begin{code}
 	\begin{center}
@@ -469,7 +468,7 @@ public class SchoolMapper {
 
 	Beim Initialisieren der Klasse werden die Referenzen zu den beiden Spinnern über die Parameter des Konstruktors der Klasse überreicht (Zeile 7). Wenn die \emph{startDisplay}-Methode (Zeile 25) aufgerufen wird, werden die beiden Spinner konfiguriert. 
 	
-	Hierzu wird zuerst über die \emph{map}-Methode (Zeile 13) das Textdokument mithilfe der MyReader-Klasse gelesen und die gelesenen Schulen (Zeile 29) gemeinsam mit der zugehörigen Schulstufenanzahl in eine \emph{LinkedHashMap} gespeichert (Zeile 14). Eine LinkedHashMap ist fast identisch zu einer normalen HashMap, wo auch jeweils ein Key gemeinsam mit einem Wert gespeichert werden. Der einzige Unterschied findet sich hier, dass sich die Reihenfolge, in welcher die Elemente in die HashMap eingefügt worden sind, gespeichert wird. Diese HashMap kann dann als Datensatz für den Schulspinner verwendet werden (Zeile 39).
+	Hierzu wird zuerst über die \emph{map}-Methode (Zeile 13) das Textdokument mithilfe der MyReader-Klasse gelesen und die gelesenen Schulen (Zeile 29) gemeinsam mit der zugehörigen Schulstufenanzahl in eine \emph{LinkedHashMap} gespeichert (Zeile 14). Eine LinkedHashMap ist fast identisch zu einer normalen HashMap, wo auch jeweils ein Key gemeinsam mit einem Wert gespeichert werden. Der einzige Unterschied ist, dass sich die Reihenfolge, in welcher die Elemente in die HashMap eingefügt worden sind, gespeichert wird. Diese HashMap kann dann als Datensatz für den Schulspinner verwendet werden (Zeile 39).
 
 	In den Schulspinner wird ein Listener implementiert, welcher bei der Auswahl einer Schule dann auch den Stufenspinner der ausgewählten Schule entsprechend konfiguriert (Zeile 43).
 
@@ -477,7 +476,7 @@ public class SchoolMapper {
 	%\subsubsection{Aufbau der Activity}
 	%\subsubsection{Aufbau der Fragments}
 	\subsection{Profilbilder und \emph{Image Cropping}} \label{imageCropping}
-	Kein Profil ist heutzutage ein richtiges Profil ohne ein passendes Profilbild. Ein Profilbild hilft den Benutzern/Benutzerinnen zum einen sich von einer möglichst guten Seite zu zeigen und um schnell einen ersten Eindruck von anderen Benutzern/Benutzerinnen zu bekommen. Auch in der entwickelten Applikation ist es möglich, ein Profilbild zu bestimmen. Dabei ist es Benutzern/Benutzerinnen möglich, vom Speicher des Gerätes ein Bild auszuwählen und es auf das gewünschte Format zuzuschneiden oder direkt mit der Kamera ein neues Bild aufzunehmen. Für die Implementierung dieser Features wurde auf zwei öffentliche Github Repositories zurückgegriffen, da die eigene Programmierung dieser Funktionen den Rahmen dieser Arbeit gesprengt hätte. Die Lizenzen für beide Repositories finden sich im Anhang.
+	Kein Profil ist heutzutage ein richtiges Profil ohne ein passendes Profilbild. Ein Profilbild hilft den Benutzern/Benutzerinnen zum einen sich von einer möglichst guten Seite zu zeigen und zum anderen um schnell einen ersten Eindruck von anderen Benutzern/Benutzerinnen zu bekommen. Auch in der entwickelten Applikation ist es möglich, ein Profilbild zu bestimmen. Dabei ist es Benutzern/Benutzerinnen möglich, vom Speicher des Gerätes ein Bild auszuwählen und es auf das gewünschte Format zuzuschneiden oder direkt mit der Kamera ein neues Bild aufzunehmen. Für die Implementierung dieser Features wurde auf zwei öffentliche Github Repositories zurückgegriffen, da die eigene Programmierung dieser Funktionen den Rahmen dieser Arbeit gesprengt hätte. Die Lizenzen für beide Repositories finden sich im Anhang.
 	
 	Das erste Repository läuft unter dem Namen \emph{EasyImage} und ermöglicht ein einfaches Zugreifen und Auslesen von Bildern aus der Galerie, wie auch direkt von der Kamera \cite{EasyImage}. Jedoch wären die Bilder an diesem Punkt einfach in der Grösse und Form, wie sie auf dem Gerät gerade gespeichert sind. Dies ist für ein Profilbild höchst ungeeignet. Hier kommt das zweite Repository ins Spiel. Dieses trägt den Namen \emph{Android Image Cropper} und basiert auf dem 2013 erschienenen \emph{Cropper} von Edmodo Inc. \cite{Cropper} \cite{edmodo}. Dieses Repository bringt eine Reihe an Funktionen für das Zuschneiden und Anpassen von Bildern mit sich. Dieser Prozess des Zuschneidens wird auch \emph{Cropping} genannt, was auch den Namen des Repositories erklärt. Wählt ein Benutzer/eine Benutzerin ein Bild aus, wird dieser Cropper gestartet. Ein Screenshot davon findet sich in Abbildung \ref{cropperImage}. Der Benutzer/Die Benutzerin kann daraufhin den Bereich des Bildes auswählen, welcher er/sie als Profilbild verwenden möchte. Danach kann die Auswahl bestätigt werden und das Bild wird daraufhin zugeschnitten. Dabei wird auch gleich die Qualität und Grösse des Bildes auf ein einheitliches Mass reduziert. So ist jedes Bild in der Datenbank ungefähr ähnlich gross. Zudem wird jedes Profilbild in einer zweiten, deutlich kleineren Version gespeichert. Dieses wird für die Suchergebnisse und die Aufgelisteten Chats verwendet, wo teilweise gleich 20 Bilder gleichzeitig geladen werden müssen. Um dabei Leistung zu sparen gibt es demnach von jedem Profilbild eine Version, die zwar sehr klein in Grösse und niedrig in Qualität ist, jedoch für die kleinen Icons bei der Suche komplett ausreicht. Beide Bilder werden in der Datenbank in der user\_profilepictures Tabelle gespeichert (siehe auch Kapitel \ref{MySQLStructure}).
 	
@@ -519,9 +518,9 @@ public class BigProfilePictureRequest extends StringRequest {
 	\end{center}
 \end{code}
 
-	Die Webadresse, an welche die Anfrage gehen soll, wird in einem der beiden Felder definiert (Zeile 3). Dabei wird angegeben, welches PHP-Skript aufgerufen werden soll. Das zweite Feld ist eine HashMap (Zeile 4). Die HashMap ist der Datencontainer für die zu übermittelnden Werte. Dabei sind im Falle des Beispiels der Key sowie der Wert der HashMap Strings. Die HashMap kann, nachdem sie erfolgreich an den Server übermittelt worden ist, verwendet werden, um die mitgegebenen Werte über die Keys wieder auszulesen.
+	Die Webadresse, an welche die Anfrage gehen soll, wird in einem der beiden Felder definiert (Zeile 3). Dabei wird angegeben, welches PHP-Skript aufgerufen werden soll. Das zweite Feld ist eine HashMap (Zeile 4). Die HashMap ist der Datencontainer für die zu übermittelnden Werte. Dabei sind im Beispiel der Key sowie der Wert der HashMap Strings. Die HashMap kann, nachdem sie erfolgreich an den Server übermittelt worden ist, verwendet werden, um die mitgegebenen Werte über die Keys wieder auszulesen.
 	
-	Der Konstruktor benötigt im Falle des Beispiels nur zwei Parameter: eine user\_id und ein Objekt der Klasse \emph{Response.Listener$<$String$>$} (Zeile 6). Daraufhin wird die Superklasse aufgerufen und die Anfragemethode, die URL, der ResponseListener (siehe Kapitel \ref{responseListener}) und ErrorListener als Parameter referenziert (Zeile 7). In der entwickelten Applikation wird immer die \emph{POST}-Methode für die Kommunikation zwischen Webserver und Client verwendet. Dann wird die user\_id als Wert in die HashMap eingefügt (Zeile 9).
+	Der Konstruktor benötigt im Beispiel nur zwei Parameter: eine user\_id und ein Objekt der Klasse \emph{Response.Listener$<$String$>$} (Zeile 6). Daraufhin wird die Superklasse aufgerufen und die Anfragemethode, die URL, der ResponseListener (siehe Kapitel \ref{responseListener}) und ErrorListener als Parameter referenziert (Zeile 7). In der entwickelten Applikation wird immer die \emph{POST}-Methode für die Kommunikation zwischen Webserver und Client verwendet. Dann wird die user\_id als Wert in die HashMap eingefügt (Zeile 9).
 	
 	\paragraph{Das Stellen der Anfrage}
 	Nachdem erfolgreich ein Objekt einer Request-Klasse instantiiert worden ist, kann die Request-Klasse über die sogenannte \emph{RequestQueue} aus der Volley Library als Anfrage an den Webserver gesendet werden. Ein Beispiel findet sich in Abbildung \ref{requestQueue}
@@ -571,19 +570,19 @@ class OnBigPictureResponseListener implements Response.Listener<String> {
 	\end{center}
 \end{code}		
 	
-	Bei einer empfangenen Antwort wird als erstes überprüft, ob die Aufgabe des PHP-Skriptes erfolgreich ausgeführt worden ist (Zeile 14 und 16). Je nachdem wird dann die Antwort weiter verarbeitet (Zeile 17) oder der Fehlschlag dem Benutzer/der Benutzerin mitgeteilt, sofern dies nötig ist (Zeile 19).
+	Bei einer empfangenen Antwort wird als Erstes überprüft, ob die Aufgabe des PHP-Skriptes erfolgreich ausgeführt worden ist (Zeile 14 und 16). Je nachdem wird dann die Antwort weiter verarbeitet (Zeile 17) oder der Fehlschlag dem Benutzer/der Benutzerin mitgeteilt, sofern dies nötig ist (Zeile 19).
 	
 	\subsection{Interaktion mit der Firebase Echtzeitdatenbank}
 	Die Interaktionen vom Client mit der Firebase Echtzeitdatenbank unterscheidet sich stark von der Interaktion mit dem Webserver. Anders als bei einem herkömmlichen Webserver ist das Implementieren von serverseitiger Datenverarbeitung in Form von Skripten sehr aufwändig und Firebase bietet hierzu kaum Tools. Deshalb wird bei der Arbeit mit Firebase Echtzeitdatenbanken oft sehr viel der Datenverarbeitung auf Seiten des Client gemacht. Dies bringt eine Menge potentieller Risiken in Bereichen Sicherheit mit sich, die jedoch im Rahmen dieser Arbeit in Kauf genommen worden sind. 
 	
 	\subsubsection{Verbindung}
-	Die Verbindung zum Server wird wie beim Webserver über eine Webadresse erstellt. Die Adresse wird dabei in einer separaten Datei definiert. Es ist auch in dieser Datei, wo die gesamten für die Authentifizierung benötigten Werte gespeichert sind. Die Authentifizierung wird dabei von Freibase selber geregelte und läuft über ein Google Konto.
+	Die Verbindung zum Server wird wie beim Webserver über eine Webadresse erstellt. Die Adresse wird dabei in einer separaten Datei definiert. In dieser Datei werden auch die gesamten für die Authentifizierung benötigten Werte gespeichert sind. Die Authentifizierung wird dabei von Firebase selber geregelt und läuft über ein Google Konto. Hierbei ist jedoch anzumerken, dass die Authentifizierung für die Studnetz-Applikation ausgeschaltet wurde. Sie müsste noch vor einer Veröffentlichung implementiert werden.
 	
 	\subsubsection{Zugriff vom Client auf die Echtzeitdatenbank}
 	Innerhalb des Clients wird über sogenannte \emph{Referenzen} auf den Server zugegriffen. Diese Referenzen sind im wesentlichen die Webadressen der verschiedenen JSON-Objekte. Über sie können neue Werte in die Datenbank eingefügt werden oder ausgelesen werden. Dieser Vorgang soll anhand zweier Beispiele demonstriert werden.
 	
 	\paragraph{Einfügen neuer Werte in die Firebase Echtzeitdatenbank}
-	Das Einfügen neuer Werte in die Echtzeitdatenbank ist eher simpel. Ein Beispiel hierfür findet sich in Abbildung \ref{FirebaseWrite} wo ein Ausschnitt des Einfügens einer neuen Nachricht in einem Chat dargestellt ist.
+	Das Ein"-fügen neuer Werte in die Echtzeitdatenbank ist eher simpel. Ein Beispiel hierfür findet sich in Abbildung \ref{FirebaseWrite} wo ein Ausschnitt des Einfügens einer neuen Nachricht in einem Chat dargestellt ist.
 
 \begin{code}
 	\begin{center}
@@ -631,19 +630,7 @@ class ChatsValueEventListener implements ValueEventListener {
 	\end{center}
 \end{code}
 	
-	Eine Klasse mit einem implementierten ValueEventListener-Interface kann jeweils einer oder mehreren Referenzen zugewiesen werden (siehe Abbildung \ref{implementFirebaseRead}). Hierzu wird innerhalb der Klasse bei der Zuweisung zu einer neuen Referenz und anschliessend immer wenn sich der Datensatz einer Referenz ändert die \emph{onDataChange}-Methode aufgerufen (Abbildung \ref{FirebaseRead}, Zeile 6). Diese bekommt über ihre Parameter einen sogenanntes \emph{DataSnapshot}-Objekt der Referenz. Ein solches DataSnapshot-Objekt ist eine Momentaufnahme aller im JSON-Objekt einer Referenz gespeicherten Werte. Diese Werte können dann innerhalb der onDataChange-Methode ausgelesen und weiter verarbeitet werden.
+	Eine Klasse mit einem implementierten ValueEventListener-Interface \newline kann jeweils einer oder mehreren Referenzen zugewiesen werden (siehe Abbildung \ref{implementFirebaseRead}). Hierzu wird innerhalb der Klasse bei der Zuweisung zu einer neuen Referenz und anschliessend immer wenn sich der Datensatz einer Referenz ändert die \emph{onDataChange}-Methode aufgerufen (Abbildung \ref{FirebaseRead}, Zeile 6). Diese bekommt über ihre Parameter einen sogenanntes \emph{DataSnapshot}-Objekt der Referenz. Ein solches DataSnapshot-Objekt ist eine Momentaufnahme aller im JSON-Objekt einer Referenz gespeicherten Werte. Diese Werte können dann innerhalb der onDataChange-Methode ausgelesen und weiter verarbeitet werden.
 	
 	Der grosse Vorteil dieser Art des Auslesens ist es, dass die Daten auf dem Client immer mit den Daten in der Firebase Echtzeitdatenbank synchronisiert werden.
-	
-	
-	\section{Herunterladen des Projektes und der Applikation} \label{github}
-	Das gesamte in dieser Arbeit beschriebene Projekt befindet sich auf GitHub. Es kann über die Webadresse https://github.com/florianmatura/Studnetz Aufgerufen werden. Dort finden sich drei Verzeichnisse.
-	
-	\begin{itemize}
-		\item Das \emph{AndroidStudioProject}-Verzeichnis enthält das Projekt für Android Studio. Das heruntergeladene Verzeichnis kann als Android Studio Projekt importiert werden (\emph{File} -\textgreater \emph{New Project} -\textgreater \emph{Import Project}). Gradle sollte dann automatisch mit dem Build des Projektes beginnen. Ansonsten kann der Build auch über \emph{Build} -\textgreater \emph{Rebuild Project manuell} ausgeführt werden.
-		\item Das \emph{release}-Verzeichnis beinhaltet die Applikation selber. Die \emph{Studnetz.apk} Datei kann auf Geräte mit einem installierten Android Betriebssystem mit einer Version $\ge4.2$ geladen und dann ausgeführt werden.
-		\item Das \emph{PHP\_Files}-Verzeichnis beinhaltet alle Dateien, welche auf dem Webserver verwendet werden, sowie eine Text-Datei für die in der MySQL-Datenbank benötigen SQL-Tabellenstrukturen.
-	\end{itemize}
-
-	Das Projekt ist bereits Verbunden mit einem Firebase-Server. Dieser läuft über ein Google Konto mit der Email hirtzflorianmatura@gmail.com. Sollte das Bedürfnis bestehen, Einsicht in diesen Server zu erlangen oder es sind anderweitige Probleme bezüglich der Einsicht in das Projekt aufgetreten, kann man mich gerne über dieselbe Email kontaktieren.
 \end{document}

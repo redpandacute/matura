@@ -1,16 +1,28 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
-	\chapter{Diskussion}
+	\chapter{Zusammenfassung und Diskussion}
+	
+		\section{Herunterladen des Projektes und der Applikation} \label{github}
+	Das gesamte in dieser Arbeit beschriebene Projekt befindet sich auf GitHub. GitHub ist eine Plattform für Entwickler und Entwicklerinnen, wo einfach Projekte der Öffentlichkeit zugänglich gemacht werden können. Das gesamte Projekt kann über die Webadresse https://github.com/florianmatura/Studnetz aufgerufen werden. Dort finden sich drei Verzeichnisse.
+	
+	\begin{itemize}
+		\item Das \emph{AndroidStudioProject}-Verzeichnis enthält das Projekt für Android Studio. Das heruntergeladene Verzeichnis kann als Android Studio Projekt importiert werden (\emph{File} -\textgreater \emph{New Project} -\textgreater \emph{Import Project}). Gradle (das von Android Studio verwendet \emph{Build-Management-System}) sollte dann automatisch mit dem Build des Projektes beginnen. Ansonsten kann der Build auch über \emph{Build} -\textgreater \emph{Rebuild Project manuell} ausgeführt werden.
+		\item Das \emph{release}-Verzeichnis beinhaltet die Applikation selber. Die \emph{Studnetz.apk} Datei kann auf Geräte mit einem installierten Android Betriebssystem mit einer Version $\ge4.2$ geladen und dann ausgeführt werden.
+		\item Das \emph{PHP\_Files}-Verzeichnis beinhaltet alle Dateien, welche auf dem Webserver verwendet werden, sowie eine Text-Datei für die in der MySQL-Datenbank benötigen SQL-Tabellenstrukturen.
+	\end{itemize}
+	
+	Das Projekt ist bereits verbunden mit einem Firebase-Server. Dieser läuft über ein Google Konto mit der Email hirtzflorianmatura@gmail.com. Sollte das Bedürfnis bestehen, Einsicht in diesen Server zu erlangen oder es sind anderweitige Probleme bezüglich der Einsicht in das Projekt aufgetreten, kann man mich gerne über dieselbe Email kontaktieren.
 	
 	\section{Verbesserungspotenzial}
-	In dem Stand, in welchem sich die entwickelte Applikation zur Zeit befindet, ist noch nicht an eine mögliche Veröffentlichung zu denken. Mögliche Mängel und nötige nächste Schritte sollen in diesem Kapitel etwas genauer diskutiert und betrachtet werden.
+	In dem Stand, in welchem sich die entwickelte Applikation zur Zeit befindet, ist noch nicht an eine Veröffentlichung zu denken. Mögliche Mängel und nötige nächste Schritte sollen in diesem Kapitel etwas genauer diskutiert und betrachtet werden.
 	
 	\subsection*{Datenschutz}
-	Damit eine Applikation heutzutage auf dem Markt angeboten werden darf, gelten eine Reihe von Gesetzen, die die Nutzer/Nutzerinnen einer Applikation schützen sollen.  Dieses Thema wurde mit der neuen DSGVO (Datenschutz Grundverordnung), welche in der EU seit 2018 gilt. Zwar gilt die DSGVO nicht für Schweizer und Schweizerinnen, jedoch für sämtliche EU-Bürger/EU-Bürgerinnen, deren Daten von der Applikation erfasst werden. Zudem kommt, dass sogar in der Schweiz in naher Zukunft Anpassungen im Datenschutz Gesetz (DSG) zu erwarten sind. Damit die Applikation regelkonform wäre, fehlt es ihr noch an einer Reihe von Features wie die Funktion, einen Account vollständig löschen zu können. Vor einem rechtlich abgesicherten Release müssten man sich noch vertiefter mit diesem Thema befassen und es müssten wahrscheinlich noch eine Reihe von Änderungen und Erweiterungen vorgenommen werden.  \cite{dsgvoschweiz}
+	Damit eine Applikation heutzutage auf dem Markt angeboten werden darf, gelten eine Reihe von Gesetzen, die die Nutzer/Nutzerinnen einer Applikation schützen sollen.  Dieses Thema wurde mit der neuen DSGVO (Datenschutz Grundverordnung) geregelt, welche in der EU seit 2018 gilt. Zwar gilt die DSGVO nicht für Schweizer und Schweizerinnen, jedoch für sämtliche EU-Bürger/EU-Bürgerinnen, deren Daten von der Applikation erfasst werden. Hinzu kommt, dass sogar in der Schweiz in naher Zukunft Anpassungen im Datenschutz Gesetz (DSG) zu erwarten sind. Damit die Applikation regelkonform wäre, fehlt es ihr noch an einer Reihe von Features wie zu Beispiel die Funktion, einen Account vollständig löschen zu können. Vor einem rechtlich abgesicherten Release müssten man sich noch vertiefter mit diesem Thema befassen und es müssten wahrscheinlich noch eine Reihe von Änderungen und Erweiterungen vorgenommen werden.  \cite{dsgvoschweiz}
 	
 	\subsection*{Sicherheit}
-	Die entwickelte Studnetz Applikation verfügt über sehr rudimentäre und teilweise stark unzureichende Sicherheitsvorkehrungen. Diese müssten vor einem Release unbedingt behoben werden.
+	Die entwickelte Studnetz Applikation verfügt über sehr rudimentäre und teilweise stark unzureichende Sicherheitsvorkehrungen. Diese müssten vor einem Release unbedingt behoben werden. Dazu gehört die noch unverschlüsselte Kommunikation zwischen Server und Client, die veraltete Hashfunktion und die fehlende Authentifizierung beim Zugriff auf den Firebase-Server. Besonders bezüglich des Firebase-Servers ist in noch viel zu tun, was im Rahmen dieser Arbeit keinen Platz mehr gefunden hat. Dazu gehört nicht nur die fehlende Authentifizierung sondern auch das ausstatten der einzelnen Felder mit Datentypen und das markieren von Key-Feldern.
+	
 	
 	\subsection*{Betatesting und Kompatibilität}
 	Die Applikation ist für einen Release noch unzureichend getestet. Dazu gehören sowohl Tests bezüglich ihrer Verwendung auf verschiedenen Geräten und Android Versionen wie auch Tests bezüglich ihrer Anwendbarkeit, wozu auch ein Betatest mit einer Gruppe von ausgewählten Benutzern gehören würde. Solche Betatests können durch Feedback von Benutzern einer Applikation helfen, da mit ihnen oft Fehler und Mängel entdeckt werden, die den Entwicklern/Entwicklerinnen ansonsten entgangen wären.
@@ -18,10 +30,10 @@
 	\subsection*{Benutzeroberfläche}
 	Die Benutzeroberfläche ist das verbindende Glied zwischen Funktion und Benutzer/Benutzerin. Wenn die Benutzeroberfläche einer Applikation die Benutzer/die Benutzerinnen nicht anspricht, werden sie auch die Funktionen einer Applikation kaum benutzen. Deshalb sind gut durchdachte Benutzeroberflächen heutzutage eine mindestens so wichtige Komponente einer Applikation wie ihre Funktionalität.
 	
-	Über die Qualität der Benutzeroberfläche der Studnetz Applikation lässt sich streiten. Sie ist definitiv nicht perfekt, erfüllt jedoch ihren Zweck. In meinen Augen jedoch gibt es definitiv Teile der Applikation, welche ein visuelles Upgrade ertragen würden. Gewisse Screens wirken zu überfüllt und die Icons für die Fächer wirken in ihrer Farbe etwas unpassend.
+	Über die Qualität der Benutzeroberfläche der Studnetz Applikation lässt sich streiten. Sie ist definitiv nicht perfekt, erfüllt jedoch ihren Zweck. Aus meiner Sicht gibt es Teile der Applikation, welche ein visuelles Upgrade ertragen würden. Gewisse Screens wirken zu überfüllt und die Icons für die Fächer wirken in ihrer Farbe etwas unpassend.
 	
 	\section{Fazit}
 	Das Ziel dieser Arbeit war es, eine Applikation zu entwickeln, die in ihren Grundelementen die Vermittlung von Nachhilfe unter Schülerinnen und Schülern vereinfachen soll. Dieses Ziel konnte zu einem grossen Teil erreicht werden. Die Applikation verfügt über alle dazu nötigen Features und bildet ein solides Fundament für die Entwicklung einer markttauglichen Version.
 	
-	Weiter habe ich als Entwickler während dieser Arbeit mir sehr viel neues Wissen aneignen können. Ich habe viel gelernt über die Planung und Umsetzung von grösseren Programmierprojekten. Zudem kommt das ganze technische  Wissen, welches nötig gewesen ist, um dieses Projekt zu realisieren.
+	Weiter habe ich mir als Entwickler während dieser Arbeit sehr viel neues Wissen aneignen können. Ich habe viel gelernt über die Planung und Umsetzung von grösseren Programmierprojekten. Hinzu kommt das ganze technische  Wissen, welches nötig gewesen ist, um dieses Projekt zu realisieren, welches ich mir nun erarbeitet habe.
 \end{document}
