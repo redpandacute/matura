@@ -2,14 +2,16 @@
 
 \begin{document}
 	
-	\chapter{Entwicklungsprozess}
+	\chapter{Entwicklungsprozess und das erarbeitete Projekt}
 	
-	\section{Vorbereitung}
+	\section{Entwicklungsprozess}
+	
+	\subsection{Vorbereitung}
 	Bevor mit dem Programmieren der Applikation begonnen werden konnte, mussten eine Reihe von Vorbereitungen getroffen werden. Dazu gehörte in erster Linie eine klare Zielsetzung. Über diverse Skizzen und Ideensammlungen wurden die Anforderungen an die Applikation ermittelt und mögliche Lösungsansätze konzipiert. Die Planung belief sich dabei hauptsächlich auf die Applikation aus der Sicht eines Benutzers/einer Benutzerin. Am Ende waren die grundlegenden Features der Applikation definiert worden und es waren erste Skizzen über mögliche Layouts angefertigt worden.
 	
 	Nun ging es darum, die nötigen Hilfsmittel für dieses Projekt zu ermitteln und aufzusetzen. Hierzu informierte ich mich hauptsächlich mithilfe von Online Blogs und Videos. Für die Entwicklung der Applikation wurde die Android Studio Umgebung und Notepad++ verwendet. Weitere verwendete Hilfsmittel waren FileZilla, Postman und Git.
 	
-	\section{Erstellen eines ersten Prototypen (Dezember - Januar)}
+	\subsection{Erstellen eines ersten Prototypen (Dezember - Januar)}
 	Nachdem die grundlegenden Vorbereitungen getroffen waren, galt es, einen ersten Grundbaustein für die Applikation zu legen. Hierzu sollte eine erste Version eines Clients entwickelt werden, der in der Lage ist, mit einem Server zu kommunizieren.
 	
 	\paragraph{Layouts}
@@ -23,7 +25,7 @@
 	\paragraph{Erste Features}
 	Das erste grosse Ziel war es, Benutzern/Benutzerinnen das Erstellen eines Accounts zu ermöglichen, über welchen sie auf die Dienste der Applikation zugreifen können. Zu diesem Feature gehört eine Registrierungsfunktion, eine Loginfunktion und eine Bearbeitungsfunktion für die Accountdetails. Die drei zu diesem Zeitpunkt entwickelten Funktionen waren in ihrer Funktionsweise noch sehr einfach gehalten. Es ging vorerst hauptsächlich um die Funktionalität und das Sammeln von Erfahrungen anstelle von Perfektion. Es gelang mir, bis Ende Januar alle drei Funktionen erfolgreich zu implementieren. Die drei Funktionen mussten im späteren Verlauf der Arbeit zwar nochmals grundlegend überarbeitet werden, dienten mir jedoch als ein solider Grundstein auf welchem ich aufbauen konnte.
 	
-	\section{Ausbauen des Prototypen (Februar - April)}
+	\subsection{Ausbauen des Prototypen (Februar - April)}
 	Nachdem ein grobes Fundament gelegt war, galt es die restlichen nötigen Features einzubauen. Dazu gehörte die Suchfunktion und ein Feature, über welches mit einem anderen Benutzer Kontakt aufgenommen werden konnte.
 	\paragraph{Suchfunktion}
 	Für die Entwicklung der Suchfunktion konzentrierte ich mich vorerst nur auf die Suche selber und nicht die Darstellung der Suchergebnisse. Hierzu begann ich mit einer Reihe von SQL Queries zu experimentieren, die mir dies ermöglichen sollten. Ich entwickelte einen Weg, wie ich eine Suche mithilfe von angegebenen Kriterien ermöglichen konnte. Die gefundenen Ergebnisse lagen anschliessend in Form eines Strings vor. 
@@ -36,7 +38,7 @@
 	\paragraph{Chatfunktion}
 	Für die Kontaktaufnahme mit anderen Benutzern beschloss ich eine Chatfunktion zu implementieren. Bei der Planung dieser Funktion stiess ich jedoch schnell auf eine Reihe von Problemen, zu welchen ich keine wirkliche Antwort hatte. Erst der Hinweis meines Onkels Peter Arrenbrecht, dass ich mir Firebase mal etwas genauer anschauen könnte, eröffnete mir neue Lösungswege für diese Probleme. Schlussendlich war es mir möglich, eine Chatfunktion zu implementieren, die eine Kommunikation in Echtzeit ermöglichte und somit den Anforderungen gerecht wurde.
 	
-	\section{Profilbilder und Passworthashing (Juni - Juli)}
+	\subsection{Profilbilder und Passworthashing (Juni - Juli)}
 	Das Profilbild-Feature und das Passworthashing-Feature waren die letzten beiden grossen Features, welche es zu implementieren galt.
 	\paragraph{Passworthashing}
 	Für das Passworthashing habe ich zu diesem Zeitpunkt ein nicht all zu effizientes und sicheres System entwickelt. Es basierte auf der Annahme, dass die Kommunikation zwischen Server und Client unverschlüsselt abläuft. Das entwickelte System vermied das Verschicken eines Passwortes in Klartext. Ein Angreifer wäre somit nur in Besitz des Passworthashes und des Salzes gekommen. Doch dieses System war nicht sicher, da das Bruteforcen des Passwortes noch immer deutlich zu einfach ausfiel, weshalb ich es später nochmals überarbeitet habe.
@@ -48,7 +50,7 @@
 	
 	Die zweite Schwierigkeit zeigte sich dann bei der Darstellung der Profilbilder innerhalb der Listen, wo gleich eine ganze Reihe von Profilbilder geladen werden mussten. Hierzu musste ich ein Verfahren entwickeln, welches dieses Problem effizient zu lösen wusste, was mir schlussendlich auch gelang.
 	
-	\section{Refactoring und Bugfixes (August - Oktober)}
+	\subsection{Refactoring und Bugfixes (August - Oktober)}
 	Zu diesem Zeitpunkt besass die Applikation alle nötigen Features, jedoch war ich noch sehr unzufrieden mit der Bedienung und der Benutzeroberfläche. Zudem war die Applikation noch weitgehend ungetestet.
 	\paragraph{Implementieren des BottomNavigationBars}
 	Ich entschloss mich für die Navigation innerhalb der Applikation auf einen Navigationsbalken (BottomNavigationBar) am unteren Ende des Bildschirms umzusteigen. Dies erforderte jedoch eine drastische Umstrukturierung des Codes, da von den bisher verwendeten Activities nun teilweise auf Fragments umgestellt werden musste. Das Endresultat war jedoch ein voller Erfolg. Nicht nur sah die Applikation besser aus und war einfacher zu bedienen, sie war auch bezüglich des Quellcodes deutlich schöner und systematischer geworden.
@@ -58,5 +60,16 @@
 	Der letzte Schritt war der Umstieg meines eigens entworfenen Hashverfahrens auf ein konventionelleres Verfahren auf Seiten des Servers mit dem Hashalgorithmus bcrypt. Ich habe bewusst über den Schönheitsfehler der noch immer unverschlüsselten Kommunikation hinweg gesehen, doch sie wäre theoretisch einfach zu implementieren. 
 	
 	Sobald eine solche Verschlüsselung implementiert wird, darf die Applikation als genug sicher betrachtet werden, was das Handling der Passwörter anbelangt.
+	
+	\section{Herunterladen des Projektes und der Applikation} \label{github}
+	Das gesamte in dieser Arbeit beschriebene Projekt befindet sich auf GitHub. GitHub ist eine Plattform für Entwickler und Entwicklerinnen, wo einfach Projekte der Öffentlichkeit zugänglich gemacht werden können. Das gesamte Projekt kann über die Webadresse https://github.com/florianmatura/Studnetz aufgerufen werden. Dort finden sich drei Verzeichnisse.
+	
+	\begin{itemize}
+		\item Das \emph{AndroidStudioProject}-Verzeichnis enthält das Projekt für Android Studio. Das heruntergeladene Verzeichnis kann als Android Studio Projekt importiert werden (\emph{File} -\textgreater \emph{New Project} -\textgreater \emph{Import Project}). Gradle (das von Android Studio verwendet \emph{Build-Management-System}) sollte dann automatisch mit dem Build des Projektes beginnen. Ansonsten kann der Build auch über \emph{Build} -\textgreater \emph{Rebuild Project manuell} ausgeführt werden.
+		\item Das \emph{release}-Verzeichnis beinhaltet die Applikation selber. Die \emph{Studnetz.apk} Datei kann auf Geräte mit einem installierten Android Betriebssystem mit einer Version $\ge4.2$ geladen und dann ausgeführt werden.
+		\item Das \emph{PHP\_Files}-Verzeichnis beinhaltet alle Dateien, welche auf dem Webserver verwendet werden, sowie eine Text-Datei für die in der MySQL-Datenbank benötigen SQL-Tabellenstrukturen.
+	\end{itemize}
+	
+	Das Projekt ist bereits verbunden mit einem Firebase-Server. Dieser läuft über ein Google Konto mit der Email hirtzflorianmatura@gmail.com. Sollte das Bedürfnis bestehen, Einsicht in diesen Server zu erlangen oder es sind anderweitige Probleme bezüglich der Einsicht in das Projekt aufgetreten, kann man mich gerne über dieselbe Email kontaktieren.
 	
 \end{document}

@@ -12,6 +12,7 @@
 \usepackage{fancyhdr}
 \usepackage{subfiles}
 \usepackage{hyperref}
+\usepackage{pdfpages}
 
 \newenvironment{code}{\captionsetup{type=figure}}{}
 \newenvironment{image}{\captionsetup{type=figure}}{}
@@ -33,7 +34,10 @@
 \title{Studnetz, eine Applikation für Mobilgeräte zur Vermittlung von Nachhilfeunterricht}
 
 \begin{document}
-	\maketitle	
+	%\maketitle	
+	\pagenumbering{gobble}
+	\includepdf[pages={1}]{titlepage.pdf}
+	\pagenumbering{arabic}
 	\tableofcontents
 	
 	\newpage
@@ -55,15 +59,19 @@
 	%Uncorrected
 	\subfile{chapters/Der_Client}
 	%Uncorrected
-	\subfile{chapters/Diskussion}
 	
-	\appendix
 	\subfile{chapters/Arbeitsprozess.tex}
 	
+	\subfile{chapters/Diskussion}
 	
+	{\raggedright
+		\listoffigures
+		\bibliography{literatur}
+	}
+
 	\newpage
-	\raggedright
-	\bibliography{literatur}
+	
+	
 	
 	
 \end{document}
