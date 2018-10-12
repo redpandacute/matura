@@ -62,7 +62,7 @@ public class ActivityName extends AppCompatActivity {
 	}
 }	
 		\end{minted}
-		\caption{Grundgerüst einer Activity}
+		\caption{Grundgerüst einer Activity (Quelle: Eigene Darstellung)}
 		\label{activityStructure}
 	\end{center}
 	
@@ -120,7 +120,7 @@ public class FragmentName extends Fragment {
 	}
 }	
 			\end{minted}
-			\caption{Grundgerüst eines Fragments}
+			\caption{Grundgerüst eines Fragments (Quelle: Eigene Darstellung)}
 			\label{fragmentStructure}
 		\end{center}
 		
@@ -182,7 +182,7 @@ public userInfo(int id, String username, String name, String firstname, [...], S
 	this.temp_profilepicture_path = temp_profilepicture_path;
 }
 		\end{minted}
-		\caption{Konstruktor der UserModel-Klasse}
+		\caption{Konstruktor der UserModel-Klasse (Quelle: Eigene Darstellung)}
 		\label{userModelConst}
 	\end{center}
 	
@@ -236,7 +236,7 @@ public class ProfilePictureModel {
 	[...]
 }
 		\end{minted}
-		\caption{Felder und Konstruktoren der ProfilePictureModel-Klasse}
+		\caption{Felder und Konstruktoren der ProfilePictureModel-Klasse (Quelle: Eigene Darstellung)}
 		\label{profilePictureModelConst}
 	\end{center}
 	
@@ -265,7 +265,7 @@ public class ChatModel {
 }
 
 		\end{minted}
-		\caption{Felder und Konstruktor der ChatModel-Klasse}
+		\caption{Felder und Konstruktor der ChatModel-Klasse (Quelle: Eigene Darstellung)}
 		\label{chatModelConst}
 	\end{center}
 	
@@ -320,7 +320,7 @@ class ResultViewHolder extends RecyclerView.ViewHolder{
 	
 }
 		\end{minted}
-		\caption{ViewHolder-Klasse für die Auflistung der Suchergebnisse}
+		\caption{ViewHolder-Klasse für die Auflistung der Suchergebnisse (Quelle: Eigene Darstellung)}
 		\label{viewHolder}
 	\end{center}
 \end{code}
@@ -364,7 +364,7 @@ class ChatoverviewAdapter extends RecyclerView.Adapter<OpenChatViewHolder>{
 	}
 }
 		\end{minted}
-		\caption{RecyclerAdapter-Klasse für die Auflistung der offenen Chats}
+		\caption{RecyclerAdapter-Klasse für die Auflistung der offenen Chats (Quelle: Eigene Darstellung)}
 		\label{chatOverviewAdapter}
 	\end{center}
 \end{code}
@@ -398,7 +398,7 @@ class ChatoverviewAdapter extends RecyclerView.Adapter<OpenChatViewHolder>{
 		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
 mainprofileModel = new JSONtoInfo(getBaseContext()).createNewItem(new JSONObject(extras.getString("clientInfo")));			
 		\end{minted}
-		\caption{Instantiierung eines UserModel-Objektes aus den Extras}
+		\caption{Instantiierung eines UserModel-Objektes aus den Extras (Quelle: Eigene Darstellung)}
 		\label{JSONtoInfoAnwendung}
 	\end{center}
 \end{code}
@@ -461,7 +461,7 @@ public class SchoolMapper {
 	}
 }	
 		\end{minted}
-		\caption{Instantiierung eines UserModel-Objektes aus den Extras}
+		\caption{Instantiierung eines UserModel-Objektes aus den Extras (Quelle: Eigene Darstellung)}
 		\label{schoolMapper}
 	\end{center}
 \end{code}
@@ -513,7 +513,7 @@ public class BigProfilePictureRequest extends StringRequest {
 	
 }
 		\end{minted}
-		\caption{Request-Klasse für die Anfrage nach einem Profilbild eines Benutzers}
+		\caption{Request-Klasse für die Anfrage nach einem Profilbild eines Benutzers (Quelle: Eigene Darstellung)}
 		\label{requestKlasse}
 	\end{center}
 \end{code}
@@ -532,7 +532,7 @@ BigProfilePictureRequest request = new BigProfilePictureRequest(mUserModel.getId
 RequestQueue queue = Volley.newRequestQueue(mActivity); //Instantiieren einer neuen RequestQueue
 queue.add(request); //Das Stellen der Request-Klasse als Anfrage an den Server
 		\end{minted}
-		\caption{Request-Klasse für die Anfrage nach einem Profilbild eines Benutzers}
+		\caption{Request-Klasse für die Anfrage nach einem Profilbild eines Benutzers (Quelle: Eigene Darstellung)}
 		\label{requestQueue}
 	\end{center}
 \end{code}	
@@ -565,7 +565,7 @@ class OnBigPictureResponseListener implements Response.Listener<String> {
 	}
 }
 		\end{minted}
-		\caption{OnBigPictureResponseListener-Klasse}
+		\caption{OnBigPictureResponseListener-Klasse (Quelle: Eigene Darstellung)}
 		\label{OnResponseListener}
 	\end{center}
 \end{code}		
@@ -590,7 +590,7 @@ class OnBigPictureResponseListener implements Response.Listener<String> {
 final DatabaseReference newPost = mChatModel.getChatRef().child("Messages").push();
 newPost.child("messageUser").setValue(messageUser);
 		\end{minted}
-		\caption{Einfügen von neuen Werten in die Firebase Echtzeitdatenbank}
+		\caption{Einfügen von neuen Werten in die Firebase Echtzeitdatenbank (Quelle: Eigene Darstellung)}
 		\label{FirebaseWrite}
 	\end{center}
 \end{code}
@@ -615,7 +615,7 @@ class ChatsValueEventListener implements ValueEventListener {
 	[...]
 }
 		\end{minted}
-		\caption{ValueEventListener-Klasse für das Auslesen von Daten aus der Firebase Echtzeitdatenbank}
+		\caption{ValueEventListener-Klasse für das Auslesen von Daten aus der Firebase Echtzeitdatenbank (Quelle: Eigene Darstellung)}
 		\label{FirebaseRead}
 	\end{center}
 \end{code}
@@ -625,7 +625,7 @@ class ChatsValueEventListener implements ValueEventListener {
 		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
 [Firebase Reference].addValueEventListener(new ChatsValueEventListener(this));
 		\end{minted}
-		\caption{Zuweisung eines ValueEventListeners zu einer Referenz}
+		\caption{Zuweisung eines ValueEventListeners zu einer Referenz (Quelle: Eigene Darstellung)}
 		\label{implementFirebaseRead}
 	\end{center}
 \end{code}
