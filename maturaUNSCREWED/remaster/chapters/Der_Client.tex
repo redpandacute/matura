@@ -71,7 +71,7 @@ public class ActivityName extends AppCompatActivity {
 	Alle dargestellten Funktionen sind optional und müssen deshalb nicht zwangsweise in einer Activity vorkommen. Sie werden jedoch in der Studnetz-Applikation so gut wie immer benutzt.
 
 	\paragraph{Die onCreate-Methode}
-	Die \emph{onCreate}-Methode in den Zeilen drei bis acht ist die Kernfunktion einer jeden Activity. Sie ist die erste Funktion die in einem Lebenszyklus einer Activty ausgeführt wird und definiert das zu verwendende XML-Layout (Zeile 7). Anschliessend folgen meist die Instantiierungen der einzelnen, für die Activity relevanten Objekte. Dazu gehören zum einen rein Java seitige Objekte wie zum Beispiel ein Objekt der Klasse \emph{UserModel} (siehe Kapitel \ref{models}) aber es werden auch bestimmten Komponenten der View wie beispielsweise Schaltflächen passende Listener-Klassen zugewiesen. Diese Objekte erlauben es, die dazugehörige View zu manipulieren und ihnen neue Eigenschaften zuzusprechen.
+	Die \emph{onCreate}-Methode in den Zeilen drei bis acht ist die Kernfunktion einer jeden Activity. Sie ist die erste Funktion die in einem Lebenszyklus einer Activty ausgeführt wird und definiert das zu verwendende XML-Layout (Zeile 7). Anschliessend folgen meist die Instanziierungen der einzelnen, für die Activity relevanten Objekte. Dazu gehören zum einen rein Java seitige Objekte wie zum Beispiel ein Objekt der Klasse \emph{UserModel} (siehe Kapitel \ref{models}) aber es werden auch bestimmten Komponenten der View wie beispielsweise Schaltflächen passende Listener-Klassen zugewiesen. Diese Objekte erlauben es, die dazugehörige View zu manipulieren und ihnen neue Eigenschaften zuzusprechen.
 
 	\paragraph{Die onStart-Methode}
 	Die \emph{onStart}-Methode in Zeile 12 bis 15 ist die zweite Methode, die im Lebenszyklus einer Activity ausgeführt wird. Zum Zeitpunkt, bei welcher sie ausgeführt wird, ist der Screen für den Benutzer/die Benutzerin bereits sichtbar. In ihr werden meist diese Prozesse ausgeführt, die ansonsten zu grösseren Verzögerungen beim Laden einer Activity führen würden. Ein Beispiel hierfür wäre das Laden eines Profilbildes oder andere mit dem Server verknüpfte Prozesse.
@@ -130,7 +130,7 @@ public class FragmentName extends Fragment {
 	Die \emph{onAttach}-Methode (Zeile 3 bis 10) ist die erste Funktion im Lebenszyklus eines Fragments. In der entwickelten Applikation wird sie verwendet, um dem Fragment eine Referenz zur momentanen Applikationsumgebung (\emph{Context}) zu geben, in welcher sich die Parent-Activity befindet (Zeile 6). Dieses Objekt wird für diverse Prozesse benötigt, die auf Ressourcen der Applikation zugreifen müssen oder anderweitig mit dem Gerät interagieren. \cite{context}
 	
 	\paragraph{Die onCreateView-Methode}
-	Die \emph{onCreateView}-Methode in den Zeilen 13 bis 20 ist nach der onAttach- und der onCreate-Methode die dritte Methode im Lebenszyklus eines Fragments. Die onCreate-Methode wird in den Fragments der Studnetz selten verwendet, weshalb sie hier nicht selber aufgeführt ist. Stattdessen übernimmt die onCreateView-Methode die Aufgabe des Definierens der View (Layout) und der wichtigen Objekte. Dabei wird zuerst in Zeile 15 ein neues Layout der Klasse \emph{View} instantiiert. Über dieses Objekt kann dann auf die einzelnen View-Komponenten des Layouts zugegriffen werden. Schlussendlich wird die fertig konfigurierte View in Zeile 19 zurückgegeben, wo sie dann für das Fragment als Layout verwendet wird.
+	Die \emph{onCreateView}-Methode in den Zeilen 13 bis 20 ist nach der onAttach- und der onCreate-Methode die dritte Methode im Lebenszyklus eines Fragments. Die onCreate-Methode wird in den Fragments der Studnetz selten verwendet, weshalb sie hier nicht selber aufgeführt ist. Stattdessen übernimmt die onCreateView-Methode die Aufgabe des Definierens der View (Layout) und der wichtigen Objekte. Dabei wird zuerst in Zeile 15 ein neues Layout der Klasse \emph{View} instanziiert. Über dieses Objekt kann dann auf die einzelnen View-Komponenten des Layouts zugegriffen werden. Schlussendlich wird die fertig konfigurierte View in Zeile 19 zurückgegeben, wo sie dann für das Fragment als Layout verwendet wird.
 	
 	\paragraph{Die onStart-Methode}
 	Die \emph{onStart}-Methode eines Fragments ist direkt vergleichbar mit der onStart-Methode einer Activity. Gleich wie in einer Activity wird die onStart-Methode ausgeführt, wenn das Layout des Fragments bereits sichtbar ist. Auch sie wird für vom Server abhängige Prozesse verwendet, bei welchen mit Verzögerungen zu rechnen ist.
@@ -378,7 +378,7 @@ class ChatoverviewAdapter extends RecyclerView.Adapter<OpenChatViewHolder>{
 	In den Zeilen 12 bis 24 finden sich die beiden Kernmethoden eines RecyclerAdapters.
 	
 	\paragraph{Die onCreateViewHolder-Methode}
-	Die \emph{onCreateViewHolder}-Me"-tho"-de hat die Aufgabe, das Layout eines einzelnen Elements zu laden (Zeile 13) und ein neues ViewHolder-Objekt zu instantiieren (Zeile 14). Diese Methode wird jeweils so oft aufgerufen, wie Elemente auf dem Bildschirm des Gerätes maximal sichtbar sein können und geschieht deshalb gleich beim Start der Auflistung. Zu diesem Zeitpunkt unterscheiden sich die verschiedenen Elemente jedoch noch nicht und sehen alle gleich aus. Die Methode wird nach dem Start der Auflistung nicht mehr aufgerufen, selbst wenn die Liste durchgesehen wird und neue Elemente sichtbar werden müssen.
+	Die \emph{onCreateViewHolder}-Me"-tho"-de hat die Aufgabe, das Layout eines einzelnen Elements zu laden (Zeile 13) und ein neues ViewHolder-Objekt zu instanziieren (Zeile 14). Diese Methode wird jeweils so oft aufgerufen, wie Elemente auf dem Bildschirm des Gerätes maximal sichtbar sein können und geschieht deshalb gleich beim Start der Auflistung. Zu diesem Zeitpunkt unterscheiden sich die verschiedenen Elemente jedoch noch nicht und sehen alle gleich aus. Die Methode wird nach dem Start der Auflistung nicht mehr aufgerufen, selbst wenn die Liste durchgesehen wird und neue Elemente sichtbar werden müssen.
 	
 	\paragraph{Die onBindViewHolder-Methode}
 	\sloppy
@@ -391,14 +391,14 @@ class ChatoverviewAdapter extends RecyclerView.Adapter<OpenChatViewHolder>{
 	
 	\subsection{Utility-Klassen}
 	\subsubsection{Die JSONtoInfo-Klasse}
-	Die \emph{JSONtoInfo}-Klasse ist eine in der Applikation sehr oft verwendete Klasse. Sie ist in der Lage über eine \emph{createNewItem}-Methode aus einem JSON-Objekt, wie es vom Server erhalten wird, ein UserModel-Model zu instantiieren. Diese Datenkonversion ist von grossem Vorteil, da UserModel-Objekte nicht zwischen Activities weitergegeben werden können, jedoch der String eines JSON-Objektes schon. Somit wird zu Beginn einer Activity jeweils aus den Extras der String des JSON-Objektes entzogen, dieser zu einem JSON-Objekt gemacht und dieses wiederum zu einem UserModel-Objekt konvertiert. Ein Beispiel für eine solche Anwendung wird in Abbildung \ref{JSONtoInfoAnwendung} dargestellt.
+	Die \emph{JSONtoInfo}-Klasse ist eine in der Applikation sehr oft verwendete Klasse. Sie ist in der Lage über eine \emph{createNewItem}-Methode aus einem JSON-Objekt, wie es vom Server erhalten wird, ein UserModel-Model zu instanziieren. Diese Datenkonversion ist von grossem Vorteil, da UserModel-Objekte nicht zwischen Activities weitergegeben werden können, jedoch der String eines JSON-Objektes schon. Somit wird zu Beginn einer Activity jeweils aus den Extras der String des JSON-Objektes entzogen, dieser zu einem JSON-Objekt gemacht und dieses wiederum zu einem UserModel-Objekt konvertiert. Ein Beispiel für eine solche Anwendung wird in Abbildung \ref{JSONtoInfoAnwendung} dargestellt.
 	
 \begin{code}
 	\begin{center}
 		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
 mainprofileModel = new JSONtoInfo(getBaseContext()).createNewItem(new JSONObject(extras.getString("clientInfo")));			
 		\end{minted}
-		\caption{Instantiierung eines UserModel-Objektes aus den Extras (Quelle: Eigene Darstellung)}
+		\caption{Instanziierung eines UserModel-Objektes aus den Extras (Quelle: Eigene Darstellung)}
 		\label{JSONtoInfoAnwendung}
 	\end{center}
 \end{code}
@@ -461,7 +461,7 @@ public class SchoolMapper {
 	}
 }	
 		\end{minted}
-		\caption{Instantiierung eines UserModel-Objektes aus den Extras (Quelle: Eigene Darstellung)}
+		\caption{Instanziierung eines UserModel-Objektes aus den Extras (Quelle: Eigene Darstellung)}
 		\label{schoolMapper}
 	\end{center}
 \end{code}
@@ -523,13 +523,13 @@ public class BigProfilePictureRequest extends StringRequest {
 	Der Konstruktor benötigt im Beispiel nur zwei Parameter: eine user\_id und ein Objekt der Klasse \emph{Response.Listener$<$String$>$} (Zeile 6). Daraufhin wird die Superklasse aufgerufen und die Anfragemethode, die URL, der ResponseListener (siehe Kapitel \ref{responseListener}) und ErrorListener als Parameter referenziert (Zeile 7). In der entwickelten Applikation wird immer die \emph{POST}-Methode für die Kommunikation zwischen Webserver und Client verwendet. Dann wird die user\_id als Wert in die HashMap eingefügt (Zeile 9).
 	
 	\paragraph{Das Stellen der Anfrage}
-	Nachdem erfolgreich ein Objekt einer Request-Klasse instantiiert worden ist, kann die Request-Klasse über die sogenannte \emph{RequestQueue} aus der Volley Library als Anfrage an den Webserver gesendet werden. Ein Beispiel findet sich in Abbildung \ref{requestQueue}
+	Nachdem erfolgreich ein Objekt einer Request-Klasse instanziiert worden ist, kann die Request-Klasse über die sogenannte \emph{RequestQueue} aus der Volley Library als Anfrage an den Webserver gesendet werden. Ein Beispiel findet sich in Abbildung \ref{requestQueue}
 	
 \begin{code}
 	\begin{center}
 		\begin{minted}[breaklines, mathescape, linenos, tabsize = 5]{java}
-BigProfilePictureRequest request = new BigProfilePictureRequest(mUserModel.getId(), new OnBigPictureResponseListener(this)); 		 //Instantiieren der Request-Klasse
-RequestQueue queue = Volley.newRequestQueue(mActivity); //Instantiieren einer neuen RequestQueue
+BigProfilePictureRequest request = new BigProfilePictureRequest(mUserModel.getId(), new OnBigPictureResponseListener(this)); 		 //Instanziieren der Request-Klasse
+RequestQueue queue = Volley.newRequestQueue(mActivity); //Instanziieren einer neuen RequestQueue
 queue.add(request); //Das Stellen der Request-Klasse als Anfrage an den Server
 		\end{minted}
 		\caption{Request-Klasse für die Anfrage nach einem Profilbild eines Benutzers (Quelle: Eigene Darstellung)}
@@ -537,7 +537,7 @@ queue.add(request); //Das Stellen der Request-Klasse als Anfrage an den Server
 	\end{center}
 \end{code}	
 	
-	\subsubsection{Das Verarbeitung einer Antwort} \label{responseListener}
+	\subsubsection{Die Verarbeitung einer Antwort} \label{responseListener}
 	\paragraph{OnResponseListener-Klasse} Die \emph{OnResponseListener}-Klasse ist einer Subklasse der Response.Listener$<$String$>$-Klasse der Volley-Bibliothek. Diese Listener-Klasse wird aufgerufen, wenn eine Antwort vom Server auf eine Anfrage empfangen wird. Die Antwort wird dabei in Form eines Strings übermittelt, der dann in ein JSON-Objekt umgewandelt werden kann. Ein Beispiel einer solchen Klasse findet sich in Abbildung \ref{OnResponseListener}.
 	
 \begin{code}
@@ -579,7 +579,7 @@ class OnBigPictureResponseListener implements Response.Listener<String> {
 	Die Verbindung zum Server wird wie beim Webserver über eine Webadresse erstellt. Die Adresse wird dabei in einer separaten Datei definiert. In dieser Datei werden auch die gesamten für die Authentifizierung benötigten Werte gespeichert sind. Die Authentifizierung wird dabei von Firebase selber geregelt und läuft über ein Google Konto. Hierbei ist jedoch anzumerken, dass die Authentifizierung für die Studnetz-Applikation ausgeschaltet wurde. Sie müsste noch vor einer Veröffentlichung implementiert werden.
 	
 	\subsubsection{Zugriff vom Client auf die Echtzeitdatenbank}
-	Innerhalb des Clients wird über sogenannte \emph{Referenzen} auf den Server zugegriffen. Diese Referenzen sind im wesentlichen die Webadressen der verschiedenen JSON-Objekte. Über sie können neue Werte in die Datenbank eingefügt werden oder ausgelesen werden. Dieser Vorgang soll anhand zweier Beispiele demonstriert werden.
+	Innerhalb des Clients wird über sogenannte \emph{Referenzen} auf den Server zugegriffen. Diese Referenzen sind im Wesentlichen die Webadressen der verschiedenen JSON-Objekte. Über sie können neue Werte in die Datenbank eingefügt werden oder ausgelesen werden. Dieser Vorgang soll anhand zweier Beispiele demonstriert werden.
 	
 	\paragraph{Einfügen neuer Werte in die Firebase Echtzeitdatenbank}
 	Das Ein"-fügen neuer Werte in die Echtzeitdatenbank ist eher simpel. Ein Beispiel hierfür findet sich in Abbildung \ref{FirebaseWrite} wo ein Ausschnitt des Einfügens einer neuen Nachricht in einem Chat dargestellt ist.
